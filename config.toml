@@ -1,4 +1,4 @@
-baseURL = "https://rappopo.com/docs/"
+baseURL = "https://docs.rappopo.com/"
 languageCode = "en-us"
 title = "Documentation"
 publishDir = "docs"

@@ -1,153 +1,153 @@
 [
 {
-	"uri": "https://rappopo.com/docs/nesu/setup/",
+	"uri": "https://docs.rappopo.com/nesu/setup/",
 	"title": "Setup",
 	"tags": [],
 	"description": "",
 	"content": " Setup as Command Line Tool Run this to install Nesu as a global package:\n$ npm install -g @rappopo/nesu  Go to your project folder, and invoke:\n$ nesu  The first time Nesu starts, it\u0026rsquo;ll create an empty config.json configuration file, transformer and last_seq folder in your project folder. Quit Nesu by pressing Ctrl-c and start customizing its configurations (please see details below).\nSetup as a Library Go to your node.js application project folder, and type:\n$ npm install --save @rappopo/nesu  Create an empty new js file, e.g.: nesu.js, and enter the following code:\nvar nesu = require('@rappopo/nesu') nesu()  Also create the config.json configuration file in the same folder as nesu.js file above like this example below:\n{ \u0026quot;db\u0026quot;: { \u0026quot;mydb1\u0026quot;: { \u0026quot;idleTimeout\u0026quot;: 0 }, \u0026quot;mydb2\u0026quot;: { \u0026quot;cdb\u0026quot;: { \u0026quot;url\u0026quot;: \u0026quot;http://couchdb:5984\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;mycouchdb1\u0026quot; }, \u0026quot;es\u0026quot;: { \u0026quot;url\u0026quot;: \u0026quot;http://elasticsearch:9200\u0026quot;, \u0026quot;name\u0026quot;: \u0026quot;myesindex1\u0026quot; }, \u0026quot;bulkLimit\u0026quot;: 500, \u0026quot;idleTimeout\u0026quot;: 10 } }, \u0026quot;default\u0026quot;: { \u0026quot;bulkLimit\u0026quot;: 5000 } }  And finaly:\n$ node nesu.js  But most likely you\u0026rsquo;ll want to use a process manager like pm2.\nProgram will automatically create an empty config.js file if missing. Two empty folders transformer and last_seq will also be created.\nYou might also want to change the configuration object above dynamically within your script, like this:\n... nesu({ config: \u0026lt;config\u0026gt; }) ...  The value of \u0026lt;config\u0026gt; will simply be merged with the above configuration file.\n"
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/find/",
+	"uri": "https://docs.rappopo.com/dab/method/find/",
 	"title": "Find",
 	"tags": [],
 	"description": "",
 	"content": " find (params)\n Query specific document from selected database using MongoDB-like query language.\nParams (optional) As parameter, pass the following object:\n query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:\n[{ name: 'asc', age: 'desc' }]  limit: max. number of documents in one page. Optional, default: 25. Overrideable through options object.\n page: page number, starting from 1. Optional, defaults: 1\n  Example:\n{ query: { age: { $gt: 20 } }, page: 1, limit: 25 }  Response It should return object according to this schema:\n{ success: true, total: 120, data: [ { id: 'james-bond', name: 'James Bond', age: 20 }, { id: 'jack-bauer', name: 'Jack Bauer', age: 20 }, { id: 'jason-bourne', name: 'Jason Bourne', age: 20 }, ... ] }  If no document found, it should NOT yield error. Instead, it sould return an empty data with total = 0.\ntotal is the total number of documents found matched with your query. Optional, but strongly recommended to return this value.\n"
 },
 {
-	"uri": "https://rappopo.com/docs/dab/about/",
+	"uri": "https://docs.rappopo.com/dab/about/",
 	"title": "About",
 	"tags": [],
 	"description": "",
 	"content": " All of these are for dummies only!!! If you\u0026rsquo;re considered yourself as a kungfu master, than you\u0026rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you\u0026rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!\n Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily. It won\u0026rsquo;t be a very sophisticated and overly complex library. On the contrary, it\u0026rsquo;ll only support the most basic operations. Not because we don\u0026rsquo;t need it, but simply because I\u0026rsquo;m too stupid \u0026amp; lazy to write one :)\nIn my work as a lousy programmer right now, I have to work with many different database. Be it relational or NoSQL. And through all the times, I have to face the same problem over and over again: different ways to access the data, learning it\u0026rsquo;s query language, and so on. The list grows very quickly.\nThat\u0026rsquo;s why this project is born. It should helps lazy and stupid people like me to get more time to drink beer. Not learning a new alien language over-and-over again.\nExisting libraries are way to complex for me. I only need the most basic ones: queryable through MongoDB-like query language, pagination mechanism. And simple import \u0026amp; export data. I also a true fan of RESTful APIs, so why don\u0026rsquo;t I blindly copy their way to get, create, update \u0026amp; remove records? No more learning! More time for beer!!\nUsage For developers: this package gives you a basic class and guide lines on how to write package for some particular database. All you need to do is just extends this basic class and write methods according to its specification.\nFor end user: never use this package directly, because it won\u0026rsquo;t gives you anything other than useless stuffs! Instead, pick one of its implementation library below that match the database you\u0026rsquo;re currently working with.\nIf for some reason you want to change the database later, the only thing you need to do is just requiring a different library and put its options correctly. Everything else should be the same.\nExample (development):\nvar Dab = require('@rappopo/dab-ne'), dab = new Dab({ dbName: 'mydb' }) dab.find().then(function (results) =\u0026gt; { ... })  And later in production, just change to this:\nvar Dab = require('@rappopo/dab-couch'), dab = new Dab({ url: 'http://localhost:5984', dbName: 'mydb' }) // everything below this line should still be the same dab.find().then(function (results) =\u0026gt; { ... })  "
 },
 {
-	"uri": "https://rappopo.com/docs/nesu/config/",
+	"uri": "https://docs.rappopo.com/nesu/config/",
 	"title": "Configuration",
 	"tags": [],
 	"description": "",
 	"content": " You need to create/edit the configuration file config.js in the same folder as your bootstrap file. Please see the example above.\nMain Entries db.\u0026lt;mydb\u0026gt;.\u0026lt;prop\u0026gt;: put your database info here. \u0026lt;mydb\u0026gt; is the name of CouchDB database you want to stream to Elasticsearch. Put as many databases you want here, Nesu will stream all away.\ndefault.\u0026lt;prop\u0026gt;: serve as default properties. Will be used if none are provided in db.\u0026lt;mydb\u0026gt;.\u0026lt;prop\u0026gt; section.\nProperties bulkLimit: max. number of documents in a bulk operation. Optional, defaults to 1000 documents\nidleTimeout: how long to wait for a new changes to arrive. In seconds, optional, default to 2 seconds. If you put 0 in it, it\u0026rsquo;ll use continuous stream provided by nano.db.follow instead of regular polling (nano.db.changes)\ncdb.url: the url of your CouchDB server endpoint. Optional, defaults to http://localhost:5984\ncdb.name: name of CouchDB database if different from the db\u0026rsquo;s key name. Optional, defaults to the db\u0026rsquo;s key\nes.url: the url of your Elasticsearch endpoint. Optional, defaults to http://localhost:9200\nes.name: name of Elasticsearch index if different from the db\u0026rsquo;s key name. Optional, defaults to the db\u0026rsquo;s key\nes.typeField: document\u0026rsquo;s key name to be used as Elasticsearch\u0026rsquo;s type field. Optional, defaults to doc.\nTransformer You have the ability to transform each document to something new before written to Elasticsearch easily.\nAll you need to do is just create a new js file inside the transformer folder with the exact name as its corresponding database. E.g. if your database name is mydb, than your transformer file will be mydb.js\nAnd use the following code fragment as your start:\nmodule.exports = function(doc, callback) { ..... callback(doc) }  Last Sequence Everytime a bulk of documents is written to Elasticsearch, its last sequence is saved in a file named after the database name, inside last_seq folder.\nTo reset the sequence from the very beginning, just delete the file. To start from an exact known sequence, just override its content. And to start from the actual one, put \u0026lsquo;now\u0026rsquo; (without the quotes) in it\n"
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/find-one/",
+	"uri": "https://docs.rappopo.com/dab/method/find-one/",
 	"title": "Find One",
 	"tags": [],
 	"description": "",
 	"content": "findOne (id, params)\n "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/",
+	"uri": "https://docs.rappopo.com/dab/",
 	"title": "DAB",
 	"tags": [],
 	"description": "",
 	"content": " DAB Project For dummies! Collection of the most useless data access layers! Ever!\nImage source\n"
 },
 {
-	"uri": "https://rappopo.com/docs/dab/getting-started/",
+	"uri": "https://docs.rappopo.com/dab/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/create/",
+	"uri": "https://docs.rappopo.com/dab/method/create/",
 	"title": "Create",
 	"tags": [],
 	"description": "",
 	"content": "create (body, params)\n "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/",
+	"uri": "https://docs.rappopo.com/dab/method/",
 	"title": "Methods &amp; Features",
 	"tags": [],
 	"description": "",
 	"content": " All methods should return promises. Still, node\u0026rsquo;s callback style can be used by chaining the promise with .asCallback(fn)\nExample:\n... // promise-way findOne('my-doc') .then(function (result) { console.log(result) }) .catch(function (err) { console.log(err) }) // callback-way findOne('my-doc').asCallback(function (err, result) { if (err) console.log(err) else console.log(result) })  Methods  Find   Find One   Create   Update   Remove   Bulk Create   Bulk Update   Bulk Remove   Copy From   Copy To   Aliases   "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/update/",
+	"uri": "https://docs.rappopo.com/dab/method/update/",
 	"title": "Update",
 	"tags": [],
 	"description": "",
 	"content": "update (id, body, params)\n "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/implementation/",
+	"uri": "https://docs.rappopo.com/dab/implementation/",
 	"title": "Implementation",
 	"tags": [],
 	"description": "",
 	"content": "While each and every DAB implementation share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:\n @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/remove/",
+	"uri": "https://docs.rappopo.com/dab/method/remove/",
 	"title": "Remove",
 	"tags": [],
 	"description": "",
 	"content": "remove (id, params)\n "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/bulk-create/",
+	"uri": "https://docs.rappopo.com/dab/method/bulk-create/",
 	"title": "Bulk Create",
 	"tags": [],
 	"description": "",
 	"content": " bulkCreate (body, params)\n Method for creating/inserting many documents in one shot.\nBody (array, required) Body is always an array of objects. If no id is found in the object, it\u0026rsquo;ll be generated automatically for you. Example:\n[ { _id: 'james-bond', name: 'James Bond' }, { _id: 'jack-bauer', name: 'Jack Bauer' }, { name: 'Johnny English' } // id isn't provided here, it'll be created automatically ... ]  Params (optional) The optional parameter object:\nwithDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.\nResponse Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, if enabled through withDetail parameter above.\nThe order of insertion result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/bulk-update/",
+	"uri": "https://docs.rappopo.com/dab/method/bulk-update/",
 	"title": "Bulk Update",
 	"tags": [],
 	"description": "",
 	"content": " bulkUpdate (body, params)\n Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.\nBody (array, required) Body is always an array of objects. Every object needs to have an id, otherwise, it\u0026rsquo;ll yield a Not found error. Example:\n[ { _id: 'james-bond', name: 'James Bond 007' }, { _id: 'jack-bauer-001', name: 'Mr. Jack Bauer' }, { name: 'Johnie Englesh' } // id isn't provided here, it'll yield an error ... ]  Parameter (optional) The optional parameter object:\nwithDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.\nResponse Method should always return a response, eventhough one or more update could fail. If failed, those corresponding rows should tell why it failed, if enabled through withDetail parameter above.\nThe order of update result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 1, fail: 2, total: 3 }, detail: [ { _id: 'james-bond', success: true }, { _id: 'jack-bauer-001', success: false, message: 'Not found' }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: false, message: 'Not found' } ] }  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/bulk-remove/",
+	"uri": "https://docs.rappopo.com/dab/method/bulk-remove/",
 	"title": "Bulk Remove",
 	"tags": [],
 	"description": "",
 	"content": " bulkRemove (body, params)\n Method for removing many documents in one shot.\nBody (array, required) Body is always an array of strings or numbers. Those represent the id of its corresponding documents\nExample:\n[ 'james-bond', 'jack-bauer-001', 'johnny-english', ... ]  Params (optional) The optional parameter object:\nwithDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.\nResponse Method should always return a response, eventhough one or more removal could fail. If failed, those corresponding rows should tell why it failed, if enabled through withDetail parameter above.\nThe order of removal result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 1, fail: 2, total: 3 }, detail: [ { _id: 'james-bond', success: true }, { _id: 'jack-bauer-001', success: false, message: 'Not found' }, { _id: 'johnny-english', success: false, message: 'Not found' } ] }  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/copy-from/",
+	"uri": "https://docs.rappopo.com/dab/method/copy-from/",
 	"title": "Copy From",
 	"tags": [],
 	"description": "",
 	"content": " copyFrom (source, params)\n This method gives you a full power of document imports.\nSource (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:\n... dab.copyFrom('/path/of/my/file.json').then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:\nvar source = new DabCouch({ ... }), dab = new DabMemory() dab.copyFrom(source, { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... })  Params (optional) query: query target datasource, optional, defaults to {}. Ignored if source is a filename.\nlimit: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you\u0026rsquo;re gonna get. You\u0026rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won\u0026rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it\u0026rsquo;ll also introduce more danger as your server will consume much more memories.\nwithDetail: if true, like in all bulk methods, result will carry the detail of every transaction. Default: false\nResponse Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, if enabled through withDetail parameter above.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/copy-to/",
+	"uri": "https://docs.rappopo.com/dab/method/copy-to/",
 	"title": "Copy To",
 	"tags": [],
 	"description": "",
 	"content": " copyTo (dest, params)\n Use this method to export your datasource.\nDestination (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:\n... dab.copyTo('/path/of/my/file.json', { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks. E.g:\nvar dab = new DabCouch({ ... }), destination = new DabMemory() dab.copyTo(destination, { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... })  Params (optional) query: query target datasource, optional, defaults to {}.\nlimit: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you\u0026rsquo;re gonna get. You\u0026rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won\u0026rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it\u0026rsquo;ll also introduce more danger as your server will consume much more memories.\nwithDetail: if true, like in all bulk methods, result will carry the detail of every transaction. Default: false\nResponse Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, if enabled through withDetail parameter above.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
 },
 {
-	"uri": "https://rappopo.com/docs/dab/method/alias/",
+	"uri": "https://docs.rappopo.com/dab/method/alias/",
 	"title": "Aliases",
 	"tags": [],
 	"description": "",
 	"content": "   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete    "
 },
 {
-	"uri": "https://rappopo.com/docs/",
+	"uri": "https://docs.rappopo.com/",
 	"title": "Documentation",
 	"tags": [],
 	"description": "",
 	"content": " Welcome to Documentation  DAB   NESU   "
 },
 {
-	"uri": "https://rappopo.com/docs/nesu/",
+	"uri": "https://docs.rappopo.com/nesu/",
 	"title": "NESU",
 	"tags": [],
 	"description": "",
 	"content": " NESU A dead simple CouchDB to Elasticsearch synchronizer\nImage source\nThis is Nesu, a CouchDB to Elasticsearch synchronizer, or CouchDB changes input plugin for Logstash \u0026ldquo;contender\u0026rdquo;, or \u0026ldquo;CouchDB River Plugin resurrection\u0026rdquo;, or whatever you want it to call.\n"
 },
 {
-	"uri": "https://rappopo.com/docs/categories/",
+	"uri": "https://docs.rappopo.com/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://rappopo.com/docs/tags/",
+	"uri": "https://docs.rappopo.com/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
