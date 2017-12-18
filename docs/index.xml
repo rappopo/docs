@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation</title>
+    <link>https://rappopo.com/docs/</link>
+    <description>Recent content on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Dec 2017 14:21:45 +0700</lastBuildDate>
+    
+	<atom:link href="https://rappopo.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup</title>
+      <link>https://rappopo.com/docs/nesu/setup/</link>
+      <pubDate>Mon, 18 Dec 2017 14:16:12 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/nesu/setup/</guid>
+      <description>Setup as Command Line Tool Run this to install Nesu as a global package:
+$ npm install -g @rappopo/nesu  Go to your project folder, and invoke:
+$ nesu  The first time Nesu starts, it&amp;rsquo;ll create an empty config.json configuration file, transformer and last_seq folder in your project folder. Quit Nesu by pressing Ctrl-c and start customizing its configurations (please see details below).
+Setup as a Library Go to your node.</description>
+    </item>
+    
+    <item>
+      <title>Find</title>
+      <link>https://rappopo.com/docs/dab/method/find/</link>
+      <pubDate>Mon, 18 Dec 2017 13:37:03 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/find/</guid>
+      <description>find (params)
+ Query specific document from selected database using MongoDB-like query language.
+Params (optional) As parameter, pass the following object:
+ query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:
+[{ name: &#39;asc&#39;, age: &#39;desc&#39; }]  limit: max. number of documents in one page. Optional, default: 25. Overrideable through options object.
+ page: page number, starting from 1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://rappopo.com/docs/dab/about/</link>
+      <pubDate>Mon, 18 Dec 2017 10:14:47 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/about/</guid>
+      <description>All of these are for dummies only!!! If you&amp;rsquo;re considered yourself as a kungfu master, than you&amp;rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you&amp;rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!
+ Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily.</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://rappopo.com/docs/nesu/config/</link>
+      <pubDate>Mon, 18 Dec 2017 14:17:51 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/nesu/config/</guid>
+      <description>You need to create/edit the configuration file config.js in the same folder as your bootstrap file. Please see the example above.
+Main Entries db.&amp;lt;mydb&amp;gt;.&amp;lt;prop&amp;gt;: put your database info here. &amp;lt;mydb&amp;gt; is the name of CouchDB database you want to stream to Elasticsearch. Put as many databases you want here, Nesu will stream all away.
+default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none are provided in db.&amp;lt;mydb&amp;gt;.&amp;lt;prop&amp;gt; section.</description>
+    </item>
+    
+    <item>
+      <title>Find One</title>
+      <link>https://rappopo.com/docs/dab/method/find-one/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:05 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/find-one/</guid>
+      <description>findOne (id, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://rappopo.com/docs/dab/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/getting-started/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create</title>
+      <link>https://rappopo.com/docs/dab/method/create/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:10 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/create/</guid>
+      <description>create (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>Update</title>
+      <link>https://rappopo.com/docs/dab/method/update/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:15 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/update/</guid>
+      <description>update (id, body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>Implementation</title>
+      <link>https://rappopo.com/docs/dab/implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/implementation/</guid>
+      <description>While each and every DAB implementation share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:
+ @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  </description>
+    </item>
+    
+    <item>
+      <title>Remove</title>
+      <link>https://rappopo.com/docs/dab/method/remove/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:19 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/remove/</guid>
+      <description>remove (id, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>Bulk Create</title>
+      <link>https://rappopo.com/docs/dab/method/bulk-create/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:27 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/bulk-create/</guid>
+      <description>bulkCreate (body, params)
+ Method for creating/inserting many documents in one shot.
+Body (array, required) Body is always an array of objects. If no id is found in the object, it&amp;rsquo;ll be generated automatically for you. Example:
+[ { _id: &#39;james-bond&#39;, name: &#39;James Bond&#39; }, { _id: &#39;jack-bauer&#39;, name: &#39;Jack Bauer&#39; }, { name: &#39;Johnny English&#39; } // id isn&#39;t provided here, it&#39;ll be created automatically ... ]  Params (optional) The optional parameter object:</description>
+    </item>
+    
+    <item>
+      <title>Bulk Update</title>
+      <link>https://rappopo.com/docs/dab/method/bulk-update/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:31 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/bulk-update/</guid>
+      <description>bulkUpdate (body, params)
+ Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.
+Body (array, required) Body is always an array of objects. Every object needs to have an id, otherwise, it&amp;rsquo;ll yield a Not found error. Example:</description>
+    </item>
+    
+    <item>
+      <title>Bulk Remove</title>
+      <link>https://rappopo.com/docs/dab/method/bulk-remove/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:37 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/bulk-remove/</guid>
+      <description>bulkRemove (body, params)
+ Method for removing many documents in one shot.
+Body (array, required) Body is always an array of strings or numbers. Those represent the id of its corresponding documents
+Example:
+[ &#39;james-bond&#39;, &#39;jack-bauer-001&#39;, &#39;johnny-english&#39;, ... ]  Params (optional) The optional parameter object:
+withDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above.</description>
+    </item>
+    
+    <item>
+      <title>Copy From</title>
+      <link>https://rappopo.com/docs/dab/method/copy-from/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:42 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/copy-from/</guid>
+      <description>copyFrom (source, params)
+ This method gives you a full power of document imports.
+Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:
+... dab.copyFrom(&#39;/path/of/my/file.json&#39;).then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:
+var source = new DabCouch({ ... }), dab = new DabMemory() dab.</description>
+    </item>
+    
+    <item>
+      <title>Copy To</title>
+      <link>https://rappopo.com/docs/dab/method/copy-to/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:46 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/copy-to/</guid>
+      <description>copyTo (dest, params)
+ Use this method to export your datasource.
+Destination (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
+... dab.copyTo(&#39;/path/of/my/file.json&#39;, { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks.</description>
+    </item>
+    
+    <item>
+      <title>Aliases</title>
+      <link>https://rappopo.com/docs/dab/method/alias/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:55 +0700</pubDate>
+      
+      <guid>https://rappopo.com/docs/dab/method/alias/</guid>
+      <description>   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete    </description>
+    </item>
+    
+  </channel>
+</rss>
