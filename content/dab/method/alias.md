@@ -1,5 +1,5 @@
 ---
-title: "Aliases"
+title: "Alias"
 date: 2017-12-18T13:38:55+07:00
 draft: false
 weight: 110

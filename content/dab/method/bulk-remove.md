@@ -1,18 +1,16 @@
 ---
-menuTitle: "bulkRemove"
-title: "Bulk Remove"
+title: "bulkRemove"
 date: 2017-12-18T13:38:37+07:00
 draft: false
 weight: 80
 ---
 
-{{% notice note %}}
-bulkRemove (body, params)
-{{% /notice %}}
+> **bulkRemove (body, params)**
 
 Method for removing many documents in one shot.
 
-## Body (array, required)
+## Arguments
+### Body (array, required)
 
 Body is always an array of strings or numbers. Those represent the **id** of its corresponding documents
 
@@ -22,7 +20,7 @@ Example:
 [ 'james-bond', 'jack-bauer-001', 'johnny-english', ... ]
 ```
 
-## Params (optional)
+### Params (optional)
 
 The optional parameter object:
 

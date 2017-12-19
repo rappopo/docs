@@ -1,18 +1,17 @@
 ---
-title: "Bulk Create"
-menuTitle: "bulkCreate"
+title: "bulkCreate"
 date: 2017-12-18T13:38:27+07:00
 draft: false
 weight: 60
 ---
 
-{{% notice note %}}
-bulkCreate (body, params)
-{{% /notice %}}
+> **bulkCreate (body, params)**
+
 
 Method for creating/inserting many documents in one shot.
 
-## Body (array, required)
+## Arguments
+### Body (array, required)
 
 Body is always an array of objects. If no **id** is found in the object, it'll be generated automatically for you. Example:
 
@@ -25,7 +24,7 @@ Body is always an array of objects. If no **id** is found in the object, it'll b
 ]
 ```
 
-## Params (optional)
+### Params (optional)
 
 The optional parameter object:
 

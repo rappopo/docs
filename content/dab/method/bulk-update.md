@@ -1,18 +1,16 @@
 ---
-menuTitle: "bulkUpdate"
-title: "Bulk Update"
+title: "bulkUpdate"
 date: 2017-12-18T13:38:31+07:00
 draft: false
 weight: 70
 ---
 
-{{% notice note %}}
-bulkUpdate (body, params)
-{{% /notice %}}
+> **bulkUpdate (body, params)**
 
 Method for updating many documents in one shot. Due to the complexity and effectiveness, it is **always** a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.
 
-## Body (array, required)
+## Arguments
+### Body (array, required)
 
 Body is always an array of objects. Every object needs to have an **id**, otherwise, it'll yield a *Not found* error. Example:
 
@@ -25,7 +23,7 @@ Body is always an array of objects. Every object needs to have an **id**, otherw
 ]
 ```
 
-## Parameter (optional)
+### Parameter (optional)
 
 The optional parameter object:
 

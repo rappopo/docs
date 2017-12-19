@@ -31,4 +31,4 @@ findOne('my-doc').asCallback(function (err, result) {
 
 ## Methods
 
-{{% children %}}
+{{% children showhidden="true" %}}

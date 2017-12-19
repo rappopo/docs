@@ -47,12 +47,13 @@
   </url>
   
   <url>
-    <loc>https://docs.rappopo.com/dab/method/update/</loc>
-    <lastmod>2017-12-18T13:38:15+07:00</lastmod>
+    <loc>https://docs.rappopo.com/dab/implementation/</loc>
+    <lastmod>2017-12-19T09:22:51+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.rappopo.com/dab/implementation/</loc>
+    <loc>https://docs.rappopo.com/dab/method/update/</loc>
+    <lastmod>2017-12-18T13:38:15+07:00</lastmod>
   </url>
   
   <url>
@@ -81,13 +82,58 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/dab/dab-memory/</loc>
+    <lastmod>2017-12-19T09:33:22+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/copy-to/</loc>
     <lastmod>2017-12-18T13:38:46+07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/dab/dab-ne/</loc>
+    <lastmod>2017-12-19T09:33:32+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/alias/</loc>
     <lastmod>2017-12-18T13:38:55+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-mongo/</loc>
+    <lastmod>2017-12-19T09:33:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-knex/</loc>
+    <lastmod>2017-12-19T09:33:17+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-pouch/</loc>
+    <lastmod>2017-12-19T09:33:38+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-couch/</loc>
+    <lastmod>2017-12-19T09:24:46+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-es/</loc>
+    <lastmod>2017-12-19T09:33:12+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-couch-es/</loc>
+    <lastmod>2017-12-19T10:21:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/dab-redis/</loc>
+    <lastmod>2017-12-19T09:33:43+07:00</lastmod>
   </url>
   
   <url>

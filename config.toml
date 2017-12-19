@@ -3,25 +3,26 @@ languageCode = "en-us"
 title = "Documentation"
 publishDir = "docs"
 theme = "hugo-theme-learn"
+
 [outputs]
-home = [ "HTML", "RSS", "JSON"]
+  home = [ "HTML", "RSS", "JSON"]
 
 [params]
-author="Ardhi Lukianto <ardhi@lukianto.com>"
-themeVariant="blue"
+  author="Ardhi Lukianto <ardhi@lukianto.com>"
+  themeVariant="blue"
 
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github Repos"
-url = "https://github.com/rappopo"
-weight = 10
+  name = "<i class='fa fa-github'></i> Github Repos"
+  url = "https://github.com/rappopo"
+  weight = 10
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-twitter'></i> Twitter"
-url = "https://twitter.com/rappopoto"
-weight = 20
+  name = "<i class='fa fa-twitter'></i> Twitter"
+  url = "https://twitter.com/rappopoto"
+  weight = 20
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-home'></i> Homepage"
-url = "https://rappopo.com/"
-weight = 30
+  name = "<i class='fa fa-home'></i> Homepage"
+  url = "https://rappopo.com/"
+  weight = 30

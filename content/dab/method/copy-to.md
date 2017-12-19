@@ -1,18 +1,16 @@
 ---
-menuTitle: "copyTo"
-title: "Copy To"
+title: "copyTo"
 date: 2017-12-18T13:38:46+07:00
 draft: false
 weight: 100
 ---
 
-{{% notice note %}}
-copyTo (dest, params)
-{{% /notice %}}
+> **copyTo (dest, params)**
 
 Use this method to export your datasource.
 
-## Destination (mixed, required)
+## Arguments
+### Dest (mixed, required)
 
 If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
 
@@ -45,7 +43,7 @@ dab.copyTo(destination, {
 }).then(function (result) { ... })
 ```
 
-## Params (optional)
+### Params (optional)
 
 `query`: query target datasource, optional, defaults to `{}`.
 

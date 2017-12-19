@@ -24,14 +24,14 @@ Setup as a Library Go to your node.</description>
     </item>
     
     <item>
-      <title>Find</title>
+      <title>find</title>
       <link>https://docs.rappopo.com/dab/method/find/</link>
       <pubDate>Mon, 18 Dec 2017 13:37:03 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/find/</guid>
       <description>find (params)
  Query specific document from selected database using MongoDB-like query language.
-Params (optional) As parameter, pass the following object:
+Arguments Params (optional) As parameter, pass the following object:
  query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:
 [{ name: &#39;asc&#39;, age: &#39;desc&#39; }]  limit: max. number of documents in one page. Optional, default: 25. Overrideable through options object.
  page: page number, starting from 1.</description>
@@ -59,12 +59,12 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
     </item>
     
     <item>
-      <title>Find One</title>
+      <title>findOne</title>
       <link>https://docs.rappopo.com/dab/method/find-one/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:05 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/find-one/</guid>
-      <description>findOne (id, params)
+      <description> findOne (id, params)
  </description>
     </item>
     
@@ -78,29 +78,19 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
     </item>
     
     <item>
-      <title>Create</title>
+      <title>create</title>
       <link>https://docs.rappopo.com/dab/method/create/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:10 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/create/</guid>
-      <description>create (body, params)
- </description>
-    </item>
-    
-    <item>
-      <title>Update</title>
-      <link>https://docs.rappopo.com/dab/method/update/</link>
-      <pubDate>Mon, 18 Dec 2017 13:38:15 +0700</pubDate>
-      
-      <guid>https://docs.rappopo.com/dab/method/update/</guid>
-      <description>update (id, body, params)
+      <description> create (body, params)
  </description>
     </item>
     
     <item>
       <title>Implementation</title>
       <link>https://docs.rappopo.com/dab/implementation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Dec 2017 09:22:51 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/implementation/</guid>
       <description>While each and every DAB implementation share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:
@@ -108,84 +98,207 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
     </item>
     
     <item>
-      <title>Remove</title>
-      <link>https://docs.rappopo.com/dab/method/remove/</link>
-      <pubDate>Mon, 18 Dec 2017 13:38:19 +0700</pubDate>
+      <title>update</title>
+      <link>https://docs.rappopo.com/dab/method/update/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:15 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/method/remove/</guid>
-      <description>remove (id, params)
+      <guid>https://docs.rappopo.com/dab/method/update/</guid>
+      <description> update (id, body, params)
  </description>
     </item>
     
     <item>
-      <title>Bulk Create</title>
+      <title>remove</title>
+      <link>https://docs.rappopo.com/dab/method/remove/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:19 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/method/remove/</guid>
+      <description> remove (id, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>bulkCreate</title>
       <link>https://docs.rappopo.com/dab/method/bulk-create/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:27 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/bulk-create/</guid>
       <description>bulkCreate (body, params)
  Method for creating/inserting many documents in one shot.
-Body (array, required) Body is always an array of objects. If no id is found in the object, it&amp;rsquo;ll be generated automatically for you. Example:
+Arguments Body (array, required) Body is always an array of objects. If no id is found in the object, it&amp;rsquo;ll be generated automatically for you. Example:
 [ { _id: &#39;james-bond&#39;, name: &#39;James Bond&#39; }, { _id: &#39;jack-bauer&#39;, name: &#39;Jack Bauer&#39; }, { name: &#39;Johnny English&#39; } // id isn&#39;t provided here, it&#39;ll be created automatically ... ]  Params (optional) The optional parameter object:</description>
     </item>
     
     <item>
-      <title>Bulk Update</title>
+      <title>bulkUpdate</title>
       <link>https://docs.rappopo.com/dab/method/bulk-update/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:31 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/bulk-update/</guid>
       <description>bulkUpdate (body, params)
  Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.
-Body (array, required) Body is always an array of objects. Every object needs to have an id, otherwise, it&amp;rsquo;ll yield a Not found error. Example:</description>
+Arguments Body (array, required) Body is always an array of objects. Every object needs to have an id, otherwise, it&amp;rsquo;ll yield a Not found error.</description>
     </item>
     
     <item>
-      <title>Bulk Remove</title>
+      <title>bulkRemove</title>
       <link>https://docs.rappopo.com/dab/method/bulk-remove/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:37 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/bulk-remove/</guid>
       <description>bulkRemove (body, params)
  Method for removing many documents in one shot.
-Body (array, required) Body is always an array of strings or numbers. Those represent the id of its corresponding documents
+Arguments Body (array, required) Body is always an array of strings or numbers. Those represent the id of its corresponding documents
 Example:
 [ &#39;james-bond&#39;, &#39;jack-bauer-001&#39;, &#39;johnny-english&#39;, ... ]  Params (optional) The optional parameter object:
 withDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above.</description>
     </item>
     
     <item>
-      <title>Copy From</title>
+      <title>copyFrom</title>
       <link>https://docs.rappopo.com/dab/method/copy-from/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:42 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/copy-from/</guid>
       <description>copyFrom (source, params)
  This method gives you a full power of document imports.
-Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:
+Arguments Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:
 ... dab.copyFrom(&#39;/path/of/my/file.json&#39;).then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:
 var source = new DabCouch({ ... }), dab = new DabMemory() dab.</description>
     </item>
     
     <item>
-      <title>Copy To</title>
+      <title>@rappopo/dab-memory</title>
+      <link>https://docs.rappopo.com/dab/dab-memory/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:22 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-memory/</guid>
+      <description>A DAB implementation for in-memory datastore, powered by Lodash and lodash-query.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-memory  And within your script:
+const DabMemory = require(&#39;@rappopo/dab-memory&#39;) const dab = new DabMemory({ data: [ .... ] }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options data: your in-memory data as array of objects, with id as the primary key. Defaults to empty array.</description>
+    </item>
+    
+    <item>
+      <title>copyTo</title>
       <link>https://docs.rappopo.com/dab/method/copy-to/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:46 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/copy-to/</guid>
       <description>copyTo (dest, params)
  Use this method to export your datasource.
-Destination (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
+Arguments Dest (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
 ... dab.copyTo(&#39;/path/of/my/file.json&#39;, { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks.</description>
     </item>
     
     <item>
-      <title>Aliases</title>
+      <title>@rappopo/dab-ne</title>
+      <link>https://docs.rappopo.com/dab/dab-ne/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:32 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-ne/</guid>
+      <description>A DAB implementation for NeDB.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-ne  And within your script:
+const DabNe = require(&#39;@rappopo/dab-ne&#39;) const dab = new DabNe({ path: &#39;/path/to/nedb&#39;, dbName: &#39;mydb&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options path: the path where all NeDB files will be saved and reside. If it not provided, it&amp;rsquo;ll defaults to /tmp
+dbName: the database name. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to test</description>
+    </item>
+    
+    <item>
+      <title>Alias</title>
       <link>https://docs.rappopo.com/dab/method/alias/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:55 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/alias/</guid>
       <description>   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete    </description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-mongo</title>
+      <link>https://docs.rappopo.com/dab/dab-mongo/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:27 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-mongo/</guid>
+      <description>A DAB implementation for MongoDB.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-mongo  And within your script:
+const DabMongo = require(&#39;@rappopo/dab-mongo&#39;) const dab = new DabMongo({ url: &#39;mongodb://localhost:27017/mydb&#39;, collection: &#39;docs&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your MongoDB url endpoint. If it not provided, it defauts to: mongodb://localhost:27017/test
+collection: the collection name. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to docs</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-knex</title>
+      <link>https://docs.rappopo.com/dab/dab-knex/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:17 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-knex/</guid>
+      <description>A DAB implementation for Knex
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-knex  Don&amp;rsquo;t forget to also install the needed client library, e.g (if you choose to use sqlite3):
+$ npm install sqlite3  And within your script:
+const DabKnex = require(&#39;@rappopo/dab-knex&#39;) const dab = new DabKnex({ client: &#39;sqlite3&#39;, connection: { filename: &#39;/tmp/mydb.sqlite3&#39; }, table: &#39;mytable&#39; }) ... dab.findOne(&#39;my-doc&#39;, { table: &#39;othertable&#39; }).</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-pouch</title>
+      <link>https://docs.rappopo.com/dab/dab-pouch/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:38 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-pouch/</guid>
+      <description>A DAB implementation for PouchDB.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-pouch  And within your script:
+const DabPouch = require(&#39;@rappopo/dab-pouch&#39;) const dab = new DabPouch({ path: &#39;/home/me/pouchdb&#39;, dbName: &#39;mydb&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options path: the path where all PouchDB folder will be saved and reside. If it not provided, it&amp;rsquo;ll defaults to /tmp
+dbName: the database name. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to test</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-couch</title>
+      <link>https://docs.rappopo.com/dab/dab-couch/</link>
+      <pubDate>Tue, 19 Dec 2017 09:24:46 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-couch/</guid>
+      <description>A DAB implementation for CouchDB 2.0 and above.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-couch  And within your script:
+const DabCouch = require(&#39;@rappopo/dab-couch&#39;) const dab = new DabCouch({ url: &#39;http://localhost:5984&#39;, dbName: &#39;mydb&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your CouchDB url endpoint. If it not provided, it defauts to: http://localhost:5984
+dbName: the database name to connect to. Defaults to test</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-es</title>
+      <link>https://docs.rappopo.com/dab/dab-es/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:12 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-es/</guid>
+      <description>A DAB implementation for Elasticsearch. The excellent library e3po is used to transform Mongo Query Language to Elasticsearch DSB.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-es  And within your script:
+const DabEs = require(&#39;@rappopo/dab-es&#39;) const dab = new DabEs({ hosts: [&#39;localhost:9200&#39;], index: &#39;myindex&#39;, type: &#39;mytype&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options hosts: your Elasticsearch hosts array. If it not provided, it defauts to: [&amp;lsquo;localhost:9200&amp;rsquo;]</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-couch-es</title>
+      <link>https://docs.rappopo.com/dab/dab-couch-es/</link>
+      <pubDate>Tue, 19 Dec 2017 10:21:48 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-couch-es/</guid>
+      <description>A DAB implementation for CouchDB 2.0 AND Elasticsearch for finding documents.
+You might ask yourself, why this useless package if there are already @rappopo/dab-couch and @rappopo/dab-es? Well, this package is a thin wrapper around those two. Only the find method is taken from @rappopo/dab-es, while the rest are from @rappopo/dab-couch.
+I make this stupid package because I work alot with both CouchDB and Elasticsearch. Both systems are connected to each other through @rappopo/nesu in the back, which basically listen to CouchDB changes stream and forward it to Elasticsearch for indexing.</description>
+    </item>
+    
+    <item>
+      <title>@rappopo/dab-redis</title>
+      <link>https://docs.rappopo.com/dab/dab-redis/</link>
+      <pubDate>Tue, 19 Dec 2017 09:33:43 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/dab-redis/</guid>
+      <description>A DAB implementation for Redis.
+Installation Simply invoke this command in your project folder:
+$ npm install --save @rappopo/dab-redis  And within your script:
+const DabRedis = require(&#39;@rappopo/dab-redis&#39;) const dab = new DabRedis({ url: &#39;redis://myhost:6379&#39;, ns: &#39;docs&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your Redis url endpoint. If it not provided, it defauts to: redis://localhost:6379
+ns: your namespace. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to doc</description>
     </item>
     
   </channel>

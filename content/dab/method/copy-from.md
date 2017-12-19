@@ -1,18 +1,16 @@
 ---
-menuTitle: "copyFrom"
-title: "Copy From"
+title: "copyFrom"
 date: 2017-12-18T13:38:42+07:00
 draft: false
 weight: 90
 ---
 
-{{% notice note %}}
-copyFrom (source, params)
-{{% /notice %}}
+> **copyFrom (source, params)**
 
 This method gives you a full power of document imports.
 
-## Source (mixed, required)
+## Arguments
+### Source (mixed, required)
 
 If source is a json file, than all contained documents will be inserted to the database, e.g:
 
@@ -38,7 +36,7 @@ dab.copyFrom(source, {
 }).then(function (result) { ... })
 ```
 
-## Params (optional)
+### Params (optional)
 
 `query`: query target datasource, optional, defaults to `{}`. Ignored if source is a filename.
 

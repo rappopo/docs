@@ -1,18 +1,16 @@
 ---
-menuTitle: "find"
-title: "Find"
+title: "find"
 date: 2017-12-18T13:37:03+07:00
 draft: false
 weight: 10
 ---
 
-{{% notice note %}}
-find (params)
-{{% /notice %}}
+> **find (params)**
 
 Query specific document from selected database using MongoDB-like query language. 
 
-## Params (optional)
+## Arguments
+### Params (optional)
 
 As parameter, pass the following object:
 
