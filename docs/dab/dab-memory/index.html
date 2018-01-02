@@ -13,19 +13,19 @@
     <title>@rappopo/dab-memory :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1513685249" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1513685249" rel="stylesheet">
-    <link href="/css/hybrid.css?1513685249" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1513685249" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1513685249" rel="stylesheet">
-    <link href="/css/auto-complete.css?1513685249" rel="stylesheet">
-    <link href="/css/theme.css?1513685249" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1513685249" rel="stylesheet">
+    <link href="/css/nucleus.css?1514897140" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1514897140" rel="stylesheet">
+    <link href="/css/hybrid.css?1514897140" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1514897140" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1514897140" rel="stylesheet">
+    <link href="/css/auto-complete.css?1514897140" rel="stylesheet">
+    <link href="/css/theme.css?1514897140" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1514897140" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1513685249" rel="stylesheet">
+      <link href="/css/theme-blue.css?1514897140" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1513685249"></script>
+    <script src="/js/jquery-2.x.min.js?1514897140"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1513685249"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1513685249"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1514897140"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1514897140"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1513685249"></script>
+<script type="text/javascript" src="/js/search.js?1514897140"></script>
 
     
   </div>
@@ -339,6 +339,63 @@
       <li data-nav-id="/dab/method/copy-to/" title="copyTo" class="dd-item ">
         <a href="/dab/method/copy-to/">
         copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+        <a href="/dab/method/create-collection/">
+        createCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+        <a href="/dab/method/rename-collection/">
+        renameCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove-collection/" title="removeCollection" class="dd-item ">
+        <a href="/dab/method/remove-collection/">
+        removeCollection
         
         </a>
     </li>
@@ -728,7 +785,7 @@
 <ul>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#methods">Methods</a></li>
+<li><a href="#features">Features</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -763,40 +820,47 @@
 <p>And within your script:</p>
 
 <pre><code class="language-javascript">const DabMemory = require('@rappopo/dab-memory')
-const dab = new DabMemory({
-  data: [
-    ....
-  ]
-})
+const dab = new DabMemory()
+// prepare collections
+dab.createCollection({ name: 'test' })
+  .then(result =&gt; {
+    return dab.bulkCreate(data, { collection: 'test' })
+  })
 ...
-dab.findOne('my-doc').then(function(doc) { ... })
+// lets dab!
+dab.findOne('my-doc', 'test').then(function(doc) { ... })
 </code></pre>
 
 <h2 id="options">Options</h2>
 
-<p><code>data</code>: your in-memory data as array of objects, with <strong>id</strong> as the primary key. Defaults to empty array.</p>
+<p>Currently, no options necessary.</p>
 
-<p>Example:</p>
+<h2 id="features">Features</h2>
 
-<pre><code class="language-javascript">data: [
-  { id: 'jack-bauer', name: 'Jack Bauer' },
-  { id: 'james-bond', name: 'James Bond' }
+<p>Data is internally saved as collections as follows:</p>
+
+<pre><code class="language-javascript">dab.data.&lt;collection-name&gt; = [
+  { _id: &quot;key1&quot;, name: &quot;name1&quot;, ... },
+  { _id: &quot;key2&quot;, name: &quot;name2&quot;, ... }
 ]
 </code></pre>
 
-<h2 id="methods">Methods</h2>
+<p>To enforce structured data throughout DAB and use features provided by collections, you need to <code>createCollection ()</code> with your custom fields as <a href="https://docs/rappopo.com/dab/method/create-collection/">explained here</a></p>
 
 <ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/find/">find</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/find-one/">findOne</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/create/">create</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/update/">update</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/remove/">remove</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-create/">bulkCreate</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-update/">bulkUpdate</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-remove/">bulkRemove</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/copy-from/">copyFrom</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/copy-to/">copyTo</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/find/">find</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/find-one/">findOne</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/create/">create</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/update/">update</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/remove/">remove</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/bulk-create/">bulkCreate</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/bulk-update/">bulkUpdate</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/bulk-remove/">bulkRemove</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/copy-from/">copyFrom</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/copy-to/">copyTo</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/create-collection/">createCollection</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/rename-collection/">renameCollection</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://docs.rappopo.com/dab/method/remove-collection/">removeCollection</a></label></li>
 </ul>
 
 
@@ -894,6 +958,54 @@ dab.findOne('my-doc').then(function(doc) { ... })
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1308,20 +1420,20 @@ dab.findOne('my-doc').then(function(doc) { ... })
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1513685249"></script>
-    <script src="/js/jquery.sticky.js?1513685249"></script>
-    <script src="/js/featherlight.min.js?1513685249"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1513685249"></script>
-    <script src="/js/highlight.pack.js?1513685249"></script>
+    <script src="/js/clipboard.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1514897140"></script>
+    <script src="/js/jquery.sticky.js?1514897140"></script>
+    <script src="/js/featherlight.min.js?1514897140"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1514897140"></script>
+    <script src="/js/highlight.pack.js?1514897140"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1513685249"></script>
-    <script src="/js/learn.js?1513685249"></script>
-    <script src="/js/hugo-learn.js?1513685249"></script>
+    <script src="/js/modernizr.custom.71422.js?1514897140"></script>
+    <script src="/js/learn.js?1514897140"></script>
+    <script src="/js/hugo-learn.js?1514897140"></script>
 
-    <link href="/mermaid/mermaid.css?1513685249" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1513685249"></script>
+    <link href="/mermaid/mermaid.css?1514897140" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1514897140"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

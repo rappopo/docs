@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Setup :: Documentation</title>
+    <title>renameCollection :: Documentation</title>
     
     
     <link href="/css/nucleus.css?1514897140" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/nesu/setup/">
+  <body class="" data-url="/dab/method/rename-collection/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/dab/" title="DAB" class="dd-item 
-        
+        parent
         
         
         ">
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/dab/method/" title="Methods &amp; Features" class="dd-item 
-        
+        parent
         
         
         ">
@@ -374,7 +374,7 @@
  
   
     
-      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item active">
         <a href="/dab/method/rename-collection/">
         renameCollection
         
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/nesu/" title="NESU" class="dd-item 
-        parent
+        
         
         
         ">
@@ -662,7 +662,7 @@
  
   
     
-      <li data-nav-id="/nesu/setup/" title="Setup" class="dd-item active">
+      <li data-nav-id="/nesu/setup/" title="Setup" class="dd-item ">
         <a href="/nesu/setup/">
         Setup
         
@@ -767,7 +767,13 @@
             
           
           
-            <a href='/'>Documentation</a> > <a href='/nesu/'>NESU</a> > Setup
+            
+            
+          
+          
+            <a href='/'>Documentation</a> > <a href='/dab/'>DAB</a> > <a href='/dab/method/'>Methods & Features</a> > renameCollection
+          
+         
           
          
           
@@ -783,8 +789,17 @@
 <ul>
 <li>
 <ul>
-<li><a href="#setup-as-command-line-tool">Setup as Command Line Tool</a></li>
-<li><a href="#setup-as-a-library">Setup as a Library</a></li>
+<li><a href="#arguments">Arguments</a>
+<ul>
+<li><a href="#old-name-required">Old Name (required)</a></li>
+<li><a href="#new-name-required">New Name (required)</a></li>
+<li><a href="#params-optional">Params (optional)</a></li>
+</ul></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#result">Result</a></li>
+<li><a href="#error">Error</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -799,7 +814,7 @@
         
         <div id="body-inner">
           
-            <h1>Setup</h1>
+            <h1>renameCollection</h1>
           
 
         
@@ -807,76 +822,44 @@
 
 
 
-<h2 id="setup-as-command-line-tool">Setup as Command Line Tool</h2>
+<blockquote>
+<p><strong>renameCollection (oldName, newName, params)</strong></p>
+</blockquote>
 
-<p>Run this to install <strong>Nesu</strong> as a global package:</p>
+<p>Method to rename a collection.</p>
 
-<pre><code>$ npm install -g @rappopo/nesu
-</code></pre>
+<h2 id="arguments">Arguments</h2>
 
-<p>Go to your project folder, and invoke:</p>
+<h3 id="old-name-required">Old Name (required)</h3>
 
-<pre><code>$ nesu
-</code></pre>
+<p>A string that indicate the existing collection name</p>
 
-<p>The first time <strong>Nesu</strong> starts, it&rsquo;ll create an empty <em>config.json</em> configuration file, <em>transformer</em> and <em>last_seq</em> folder in your project folder. Quit <strong>Nesu</strong> by pressing <code>Ctrl-c</code> and start customizing its configurations (please see details below).</p>
+<h3 id="new-name-required">New Name (required)</h3>
 
-<h2 id="setup-as-a-library">Setup as a Library</h2>
+<p>A string for what the new collection will be named</p>
 
-<p>Go to your node.js application project folder, and type:</p>
+<h3 id="params-optional">Params (optional)</h3>
 
-<pre><code>$ npm install --save @rappopo/nesu
-</code></pre>
+<ul>
+<li><code>withSchema</code>: optional, defaults to <em>false</em>. If set <em>true</em>, it&rsquo;ll try to rename the internal database while keeping its existing schema and data intact. In SQL database, this means: rename table</li>
+</ul>
 
-<p>Create an empty new js file, e.g.: <strong>nesu.js</strong>, and enter the following code:</p>
+<h2 id="response">Response</h2>
 
-<pre><code class="language-javascript">var nesu = require('@rappopo/nesu')
-nesu()
-</code></pre>
+<h3 id="result">Result</h3>
 
-<p>Also create the <em>config.json</em> configuration file in the same folder as <strong>nesu.js</strong> file above like this example below:</p>
+<p>It should return an object like below:</p>
 
 <pre><code class="language-javascript">{
-  &quot;db&quot;: {
-    &quot;mydb1&quot;: {
-      &quot;idleTimeout&quot;: 0
-    },
-    &quot;mydb2&quot;: {
-      &quot;cdb&quot;: {
-        &quot;url&quot;: &quot;http://couchdb:5984&quot;,
-        &quot;name&quot;: &quot;mycouchdb1&quot;
-      },
-      &quot;es&quot;: {
-        &quot;url&quot;: &quot;http://elasticsearch:9200&quot;,
-        &quot;name&quot;: &quot;myesindex1&quot;
-      },
-      &quot;bulkLimit&quot;: 500,
-      &quot;idleTimeout&quot;: 10
-    }
-  },
-  &quot;default&quot;: {
-    &quot;bulkLimit&quot;: 5000
-  }
+  success: true
 }
 </code></pre>
 
-<p>And finaly:</p>
+<h3 id="error">Error</h3>
 
-<pre><code>$ node nesu.js
-</code></pre>
+<p>It&rsquo;ll yield <strong>Collection already exists</strong> error if the new collection name has been used before. And <strong>Collection not found</strong> if the named collection is nowhere to be found.</p>
 
-<p>But most likely you&rsquo;ll want to use a process manager like <strong>pm2</strong>.</p>
-
-<p>Program will automatically create an empty <em>config.js</em> file if missing. Two empty folders <em>transformer</em> and <em>last_seq</em> will also be created.</p>
-
-<p>You might also want to change the configuration object above dynamically within your script, like this:</p>
-
-<pre><code class="language-javascript">...
-nesu({ config: &lt;config&gt; })
-...
-</code></pre>
-
-<p>The value of <code>&lt;config&gt;</code> will simply be merged with the above configuration file.</p>
+<p>Any other error will yield a normal Node error object you can catch through promise easily.</p>
 
 
 <footer class=" footline" >
@@ -915,8 +898,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -932,6 +913,9 @@ nesu({ config: &lt;config&gt; })
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -965,6 +949,7 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
+                    
                 
                 
 
@@ -978,21 +963,8 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1170,6 +1142,26 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1368,7 +1360,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                    
                 
                 
 
@@ -1382,7 +1373,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                    
                 
                 
 
@@ -1399,9 +1389,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -1423,10 +1410,10 @@ nesu({ config: &lt;config&gt; })
 
 
         
-            <a class="nav nav-prev" href="/nesu/" title="NESU"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/dab/method/create-collection/" title="createCollection"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/nesu/config/" title="Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/dab/method/remove-collection/" title="removeCollection" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

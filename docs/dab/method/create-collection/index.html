@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Setup :: Documentation</title>
+    <title>createCollection :: Documentation</title>
     
     
     <link href="/css/nucleus.css?1514897140" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/nesu/setup/">
+  <body class="" data-url="/dab/method/create-collection/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/dab/" title="DAB" class="dd-item 
-        
+        parent
         
         
         ">
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/dab/method/" title="Methods &amp; Features" class="dd-item 
-        
+        parent
         
         
         ">
@@ -355,7 +355,7 @@
  
   
     
-      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item active">
         <a href="/dab/method/create-collection/">
         createCollection
         
@@ -638,7 +638,7 @@
   
     
     <li data-nav-id="/nesu/" title="NESU" class="dd-item 
-        parent
+        
         
         
         ">
@@ -662,7 +662,7 @@
  
   
     
-      <li data-nav-id="/nesu/setup/" title="Setup" class="dd-item active">
+      <li data-nav-id="/nesu/setup/" title="Setup" class="dd-item ">
         <a href="/nesu/setup/">
         Setup
         
@@ -767,7 +767,13 @@
             
           
           
-            <a href='/'>Documentation</a> > <a href='/nesu/'>NESU</a> > Setup
+            
+            
+          
+          
+            <a href='/'>Documentation</a> > <a href='/dab/'>DAB</a> > <a href='/dab/method/'>Methods & Features</a> > createCollection
+          
+         
           
          
           
@@ -783,8 +789,16 @@
 <ul>
 <li>
 <ul>
-<li><a href="#setup-as-command-line-tool">Setup as Command Line Tool</a></li>
-<li><a href="#setup-as-a-library">Setup as a Library</a></li>
+<li><a href="#arguments">Arguments</a>
+<ul>
+<li><a href="#definition-required">Definition (required)</a></li>
+<li><a href="#params-optional">Params (optional)</a></li>
+</ul></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#result">Result</a></li>
+<li><a href="#error">Error</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -799,7 +813,7 @@
         
         <div id="body-inner">
           
-            <h1>Setup</h1>
+            <h1>createCollection</h1>
           
 
         
@@ -807,76 +821,100 @@
 
 
 
-<h2 id="setup-as-command-line-tool">Setup as Command Line Tool</h2>
+<blockquote>
+<p><strong>createCollection (definition, params)</strong></p>
+</blockquote>
 
-<p>Run this to install <strong>Nesu</strong> as a global package:</p>
+<p>Method to create a collection.</p>
 
-<pre><code>$ npm install -g @rappopo/nesu
-</code></pre>
+<h2 id="arguments">Arguments</h2>
 
-<p>Go to your project folder, and invoke:</p>
+<h3 id="definition-required">Definition (required)</h3>
 
-<pre><code>$ nesu
-</code></pre>
+<p>Collection definition is a plain javascript object. In its simples form, it only need a <code>name</code>:</p>
 
-<p>The first time <strong>Nesu</strong> starts, it&rsquo;ll create an empty <em>config.json</em> configuration file, <em>transformer</em> and <em>last_seq</em> folder in your project folder. Quit <strong>Nesu</strong> by pressing <code>Ctrl-c</code> and start customizing its configurations (please see details below).</p>
+<ul>
+<li><code>name</code>: a unique name to identify the collection. Required.</li>
+<li><code>fields</code>: an array of column definitions. Optional.</li>
+</ul>
 
-<h2 id="setup-as-a-library">Setup as a Library</h2>
-
-<p>Go to your node.js application project folder, and type:</p>
-
-<pre><code>$ npm install --save @rappopo/nesu
-</code></pre>
-
-<p>Create an empty new js file, e.g.: <strong>nesu.js</strong>, and enter the following code:</p>
-
-<pre><code class="language-javascript">var nesu = require('@rappopo/nesu')
-nesu()
-</code></pre>
-
-<p>Also create the <em>config.json</em> configuration file in the same folder as <strong>nesu.js</strong> file above like this example below:</p>
+<p>Take a look at the example below:</p>
 
 <pre><code class="language-javascript">{
-  &quot;db&quot;: {
-    &quot;mydb1&quot;: {
-      &quot;idleTimeout&quot;: 0
-    },
-    &quot;mydb2&quot;: {
-      &quot;cdb&quot;: {
-        &quot;url&quot;: &quot;http://couchdb:5984&quot;,
-        &quot;name&quot;: &quot;mycouchdb1&quot;
-      },
-      &quot;es&quot;: {
-        &quot;url&quot;: &quot;http://elasticsearch:9200&quot;,
-        &quot;name&quot;: &quot;myesindex1&quot;
-      },
-      &quot;bulkLimit&quot;: 500,
-      &quot;idleTimeout&quot;: 10
-    }
-  },
-  &quot;default&quot;: {
-    &quot;bulkLimit&quot;: 5000
-  }
+  name: 'users',
+  fields: [
+    { id: '_id', type: 'string', required: true },
+    { id: 'username', type: 'string', length: 20, required: true },
+    { id: 'fullname', type: 'string', required: true },
+    { id: 'admin', type: 'boolean', required: true, default: false },
+    { id: 'age', type: 'integer' }
+  ]
 }
 </code></pre>
 
-<p>And finaly:</p>
+<p>Supported column types: <code>string</code>, <code>integer</code>, <code>float</code>, <code>boolean</code>, <code>text</code>, <code>date</code>, <code>datetime</code>.</p>
 
-<pre><code>$ node nesu.js
-</code></pre>
+<p>To hide some column from result set, use <code>hidden</code> property and set it to <em>true</em></p>
 
-<p>But most likely you&rsquo;ll want to use a process manager like <strong>pm2</strong>.</p>
+<p>To transform the key to something else, use <code>mask</code> property and set it to any key name.</p>
 
-<p>Program will automatically create an empty <em>config.js</em> file if missing. Two empty folders <em>transformer</em> and <em>last_seq</em> will also be created.</p>
-
-<p>You might also want to change the configuration object above dynamically within your script, like this:</p>
+<p>Example:</p>
 
 <pre><code class="language-javascript">...
-nesu({ config: &lt;config&gt; })
+// internally saved as this:
+[
+  { _id: 'james-bond', name: 'James Bond', gender: 'Male', age: 45 },
+  { _id: 'jason-bourne', name: 'Jason Bourne', gender: 'Male', age: 36 },
+  ...
+]
 ...
+// with this fields definition:
+{
+  name: 'agents',
+  fields: [
+    { id: '_id', type: 'string', mask: 'code' },
+    { id: 'name', type: 'string', mask: 'fullName' },
+    { id: 'gender', type: 'string', mask: 'sex' },
+    { id: 'age', type: 'integer', hidden: true }
+  ]
+}
+...
+// and execute this method:
+dab.find({ collection: 'agents' })
+...
+// will return this result set:
+{
+  success: true,
+  data: [
+    { code: 'james-bond', fullName: 'James Bond', sex: 'Male' },
+    { code: 'jason-bourne', fullName: 'Jason Bourne', sex: 'Male' },
+    ...
+  ]
+}
 </code></pre>
 
-<p>The value of <code>&lt;config&gt;</code> will simply be merged with the above configuration file.</p>
+<h3 id="params-optional">Params (optional)</h3>
+
+<ul>
+<li><code>withSchema</code>: optional, defaults to <em>false</em>. If set <em>true</em>, it&rsquo;ll destroy its internal database schema and rebuild a new one. In SQL database, this means <strong>very dangerous</strong>: drop existing table and recreate a new one with a schema built from the fields definition. All existing records &amp; schema will be lost forever.</li>
+</ul>
+
+<h2 id="response">Response</h2>
+
+<h3 id="result">Result</h3>
+
+<p>It should return an object like below:</p>
+
+<pre><code class="language-javascript">{
+  success: true
+}
+</code></pre>
+
+<h3 id="error">Error</h3>
+
+<p>It&rsquo;ll yield <strong>Collection already exists</strong> error if the collection name has been used before.</p>
+
+<p>Any other error will yield a normal Node error object you can catch through promise easily.</p>
 
 
 <footer class=" footline" >
@@ -915,8 +953,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -932,6 +968,9 @@ nesu({ config: &lt;config&gt; })
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -965,6 +1004,7 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
+                    
                 
                 
 
@@ -978,21 +1018,8 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1154,6 +1181,26 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1368,7 +1415,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                    
                 
                 
 
@@ -1382,7 +1428,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                    
                 
                 
 
@@ -1399,9 +1444,6 @@ nesu({ config: &lt;config&gt; })
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -1423,10 +1465,10 @@ nesu({ config: &lt;config&gt; })
 
 
         
-            <a class="nav nav-prev" href="/nesu/" title="NESU"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/dab/method/copy-to/" title="copyTo"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/nesu/config/" title="Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/dab/method/rename-collection/" title="renameCollection" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -13,19 +13,19 @@
     <title>copyTo :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1513685249" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1513685249" rel="stylesheet">
-    <link href="/css/hybrid.css?1513685249" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1513685249" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1513685249" rel="stylesheet">
-    <link href="/css/auto-complete.css?1513685249" rel="stylesheet">
-    <link href="/css/theme.css?1513685249" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1513685249" rel="stylesheet">
+    <link href="/css/nucleus.css?1514897140" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1514897140" rel="stylesheet">
+    <link href="/css/hybrid.css?1514897140" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1514897140" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1514897140" rel="stylesheet">
+    <link href="/css/auto-complete.css?1514897140" rel="stylesheet">
+    <link href="/css/theme.css?1514897140" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1514897140" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1513685249" rel="stylesheet">
+      <link href="/css/theme-blue.css?1514897140" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1513685249"></script>
+    <script src="/js/jquery-2.x.min.js?1514897140"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1513685249"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1513685249"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1514897140"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1514897140"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1513685249"></script>
+<script type="text/javascript" src="/js/search.js?1514897140"></script>
 
     
   </div>
@@ -339,6 +339,63 @@
       <li data-nav-id="/dab/method/copy-to/" title="copyTo" class="dd-item active">
         <a href="/dab/method/copy-to/">
         copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+        <a href="/dab/method/create-collection/">
+        createCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+        <a href="/dab/method/rename-collection/">
+        renameCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove-collection/" title="removeCollection" class="dd-item ">
+        <a href="/dab/method/remove-collection/">
+        removeCollection
         
         </a>
     </li>
@@ -735,7 +792,7 @@
 <li><a href="#arguments">Arguments</a>
 <ul>
 <li><a href="#dest-mixed-required">Dest (mixed, required)</a></li>
-<li><a href="#params-optional">Params (optional)</a></li>
+<li><a href="#params-required">Params (required)</a></li>
 </ul></li>
 <li><a href="#response">Response</a></li>
 </ul></li>
@@ -774,6 +831,7 @@
 
 <pre><code class="language-javascript">...
 dab.copyTo('/path/of/my/file.json', {
+  collection: 'test',
   query: {
     age: {
       $gt: 20
@@ -790,6 +848,8 @@ dab.copyTo('/path/of/my/file.json', {
   destination = new DabMemory()
 
 dab.copyTo(destination, {
+  collection: 'test',
+  destCollection: 'newtable',
   query: {
     age: {
       $gt: 20
@@ -799,17 +859,19 @@ dab.copyTo(destination, {
 }).then(function (result) { ... })
 </code></pre>
 
-<h3 id="params-optional">Params (optional)</h3>
+<h3 id="params-required">Params (required)</h3>
 
-<p><code>query</code>: query target datasource, optional, defaults to <code>{}</code>.</p>
-
-<p><code>limit</code>: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you&rsquo;re gonna get. You&rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won&rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it&rsquo;ll also introduce more danger as your server will consume much more memories.</p>
-
-<p><code>withDetail</code>: if <em>true</em>, like in all bulk methods, result will carry the detail of every transaction. Default: <em>false</em></p>
+<ul>
+<li><code>collection</code>: Required, the name of collection you want to work with.</li>
+<li><code>destCollection</code>: Optional, the name of destination&rsquo;s collection. If empty, defaults to <code>collection</code> above.</li>
+<li><code>query</code>: query target datasource, optional, defaults to <code>{}</code>.</li>
+<li><code>limit</code>: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you&rsquo;re gonna get. You&rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won&rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it&rsquo;ll also introduce more danger as your server will consume much more memories.</li>
+<li><code>withDetail</code>: if <em>true</em>, like in all bulk methods, result will carry the detail of every transaction. Default: <em>false</em></li>
+</ul>
 
 <h2 id="response">Response</h2>
 
-<p>Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, if enabled through <code>withDetail</code> parameter above.</p>
+<p>Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through <code>withDetail</code> parameter above.</p>
 
 <p>Promise rejection error should only occour when something very bad happened within the script.</p>
 
@@ -823,7 +885,7 @@ dab.copyTo(destination, {
     total: 3
   },
   detail: [
-    { _id: 'james-bond', success: false, message: 'Exists' },
+    { _id: 'james-bond', success: false, message: 'Document already exists' },
     { _id: 'jack-bauer', success: true },
     { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true }
   ]
@@ -1110,6 +1172,54 @@ dab.copyTo(destination, {
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1334,7 +1444,7 @@ dab.copyTo(destination, {
             <a class="nav nav-prev" href="/dab/method/copy-from/" title="copyFrom"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/dab/method/alias/" title="Alias" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/dab/method/create-collection/" title="createCollection" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1343,20 +1453,20 @@ dab.copyTo(destination, {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1513685249"></script>
-    <script src="/js/jquery.sticky.js?1513685249"></script>
-    <script src="/js/featherlight.min.js?1513685249"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1513685249"></script>
-    <script src="/js/highlight.pack.js?1513685249"></script>
+    <script src="/js/clipboard.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1514897140"></script>
+    <script src="/js/jquery.sticky.js?1514897140"></script>
+    <script src="/js/featherlight.min.js?1514897140"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1514897140"></script>
+    <script src="/js/highlight.pack.js?1514897140"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1513685249"></script>
-    <script src="/js/learn.js?1513685249"></script>
-    <script src="/js/hugo-learn.js?1513685249"></script>
+    <script src="/js/modernizr.custom.71422.js?1514897140"></script>
+    <script src="/js/learn.js?1514897140"></script>
+    <script src="/js/hugo-learn.js?1514897140"></script>
 
-    <link href="/mermaid/mermaid.css?1513685249" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1513685249"></script>
+    <link href="/mermaid/mermaid.css?1514897140" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1514897140"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

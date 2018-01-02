@@ -13,19 +13,19 @@
     <title>bulkUpdate :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1513685249" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1513685249" rel="stylesheet">
-    <link href="/css/hybrid.css?1513685249" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1513685249" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1513685249" rel="stylesheet">
-    <link href="/css/auto-complete.css?1513685249" rel="stylesheet">
-    <link href="/css/theme.css?1513685249" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1513685249" rel="stylesheet">
+    <link href="/css/nucleus.css?1514897140" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1514897140" rel="stylesheet">
+    <link href="/css/hybrid.css?1514897140" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1514897140" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1514897140" rel="stylesheet">
+    <link href="/css/auto-complete.css?1514897140" rel="stylesheet">
+    <link href="/css/theme.css?1514897140" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1514897140" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1513685249" rel="stylesheet">
+      <link href="/css/theme-blue.css?1514897140" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1513685249"></script>
+    <script src="/js/jquery-2.x.min.js?1514897140"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1513685249"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1513685249"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1514897140"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1514897140"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1513685249"></script>
+<script type="text/javascript" src="/js/search.js?1514897140"></script>
 
     
   </div>
@@ -339,6 +339,63 @@
       <li data-nav-id="/dab/method/copy-to/" title="copyTo" class="dd-item ">
         <a href="/dab/method/copy-to/">
         copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+        <a href="/dab/method/create-collection/">
+        createCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+        <a href="/dab/method/rename-collection/">
+        renameCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove-collection/" title="removeCollection" class="dd-item ">
+        <a href="/dab/method/remove-collection/">
+        removeCollection
         
         </a>
     </li>
@@ -735,7 +792,7 @@
 <li><a href="#arguments">Arguments</a>
 <ul>
 <li><a href="#body-array-required">Body (array, required)</a></li>
-<li><a href="#parameter-optional">Parameter (optional)</a></li>
+<li><a href="#params-required">Params (required)</a></li>
 </ul></li>
 <li><a href="#response">Response</a></li>
 </ul></li>
@@ -764,13 +821,15 @@
 <p><strong>bulkUpdate (body, params)</strong></p>
 </blockquote>
 
-<p>Method for updating many documents in one shot. Due to the complexity and effectiveness, it is <strong>always</strong> a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.</p>
+<p>Method for updating many documents in one shot. Due to the complexity and effectiveness, it is <strong>always</strong> a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided.</p>
+
+<p>Partial updates are not supported.</p>
 
 <h2 id="arguments">Arguments</h2>
 
 <h3 id="body-array-required">Body (array, required)</h3>
 
-<p>Body is always an array of objects. Every object needs to have an <strong>id</strong>, otherwise, it&rsquo;ll yield a <em>Not found</em> error. Example:</p>
+<p>Body is always an array of objects. Every object needs to have an <strong>ID</strong>, otherwise, it&rsquo;ll yield a <em>Not found</em> error. Example:</p>
 
 <pre><code class="language-javascript">[
   { _id: 'james-bond', name: 'James Bond 007' },
@@ -780,15 +839,16 @@
 ]
 </code></pre>
 
-<h3 id="parameter-optional">Parameter (optional)</h3>
+<h3 id="params-required">Params (required)</h3>
 
-<p>The optional parameter object:</p>
-
-<p><code>withDetail</code>: default is <em>false</em>. If <em>true</em>, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.</p>
+<ul>
+<li><code>collection</code>: Required, the name of collection you want to work with.</li>
+<li><code>withDetail</code>: default is <em>false</em>. If <em>true</em>, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.</li>
+</ul>
 
 <h2 id="response">Response</h2>
 
-<p>Method should always return a response, eventhough one or more update could fail. If failed, those corresponding rows should tell why it failed, if enabled through <code>withDetail</code> parameter above.</p>
+<p>Method should always return a response, eventhough one or more update could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through <code>withDetail</code> parameter above.</p>
 
 <p>The order of update result should match with the order of body request.</p>
 
@@ -805,8 +865,8 @@
   },
   detail: [
     { _id: 'james-bond', success: true },
-    { _id: 'jack-bauer-001', success: false, message: 'Not found' },
-    { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: false, message: 'Not found' }
+    { _id: 'jack-bauer-001', success: false, message: 'Document not found' },
+    { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: false, message: 'Document not found' }
   ]
 }
 </code></pre>
@@ -1031,6 +1091,54 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1324,20 +1432,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1513685249"></script>
-    <script src="/js/jquery.sticky.js?1513685249"></script>
-    <script src="/js/featherlight.min.js?1513685249"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1513685249"></script>
-    <script src="/js/highlight.pack.js?1513685249"></script>
+    <script src="/js/clipboard.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1514897140"></script>
+    <script src="/js/jquery.sticky.js?1514897140"></script>
+    <script src="/js/featherlight.min.js?1514897140"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1514897140"></script>
+    <script src="/js/highlight.pack.js?1514897140"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1513685249"></script>
-    <script src="/js/learn.js?1513685249"></script>
-    <script src="/js/hugo-learn.js?1513685249"></script>
+    <script src="/js/modernizr.custom.71422.js?1514897140"></script>
+    <script src="/js/learn.js?1514897140"></script>
+    <script src="/js/hugo-learn.js?1514897140"></script>
 
-    <link href="/mermaid/mermaid.css?1513685249" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1513685249"></script>
+    <link href="/mermaid/mermaid.css?1514897140" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1514897140"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

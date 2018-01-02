@@ -31,10 +31,9 @@ Setup as a Library Go to your node.</description>
       <guid>https://docs.rappopo.com/dab/method/find/</guid>
       <description>find (params)
  Query specific document from selected database using MongoDB-like query language.
-Arguments Params (optional) As parameter, pass the following object:
- query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:
-[{ name: &#39;asc&#39;, age: &#39;desc&#39; }]  limit: max. number of documents in one page. Optional, default: 25. Overrideable through options object.
- page: page number, starting from 1.</description>
+Arguments Params (required) As parameter, pass the following object:
+ collection: Required, the name of collection you want to work with. query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:
+[{ name: &#39;asc&#39;, age: &#39;desc&#39; }]  limit: max. number of documents in one page.</description>
     </item>
     
     <item>
@@ -43,7 +42,7 @@ Arguments Params (optional) As parameter, pass the following object:
       <pubDate>Mon, 18 Dec 2017 10:14:47 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/about/</guid>
-      <description>All of these are for dummies only!!! If you&amp;rsquo;re considered yourself as a kungfu master, than you&amp;rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you&amp;rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!
+      <description>These are for dummies only!!! If you&amp;rsquo;re considered yourself as a kungfu master, than you&amp;rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you&amp;rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!
  Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily.</description>
     </item>
     
@@ -64,8 +63,12 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
       <pubDate>Mon, 18 Dec 2017 13:38:05 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/find-one/</guid>
-      <description> findOne (id, params)
- </description>
+      <description>findOne (id, params)
+ Find specific document by its ID throughout a collection.
+Arguments ID (required) Document ID to look for.
+Params (required, mixed) A plain javascript object of:
+ collection: Required, the name of collection you want to work with.  Or, you&amp;rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.
+Response Result It should return an object like the one below:</description>
     </item>
     
     <item>
@@ -83,8 +86,10 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
       <pubDate>Mon, 18 Dec 2017 13:38:10 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/create/</guid>
-      <description> create (body, params)
- </description>
+      <description>create (body, params)
+ Create or add a new document into a collection.
+Arguments Body (required) Document body should be a plain javascript object. If ID is not provided, it&amp;rsquo;ll be created automatically.
+If collection has fields definition, than the document body will be sanitized according to its type. Columns that aren&amp;rsquo;t listed in collection fields will also discarded. This is to make sure that you&amp;rsquo;ll always get a clean and correct document saved in the database.</description>
     </item>
     
     <item>
@@ -103,8 +108,11 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
       <pubDate>Mon, 18 Dec 2017 13:38:15 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/update/</guid>
-      <description> update (id, body, params)
- </description>
+      <description>update (id, body, params)
+ Update an existing document in a collection.
+Arguments ID (required) The document ID.
+Body (required) The new document body to be used as replacement.
+If collection has fields definition, than the document body will be sanitized according to its type. Columns that aren&amp;rsquo;t listed in collection fields will also discarded. This is to make sure that you&amp;rsquo;ll always get a clean and correct document saved in the database.</description>
     </item>
     
     <item>
@@ -113,8 +121,11 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
       <pubDate>Mon, 18 Dec 2017 13:38:19 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/method/remove/</guid>
-      <description> remove (id, params)
- </description>
+      <description>remove (id, params)
+ Remove an existing document from a collection.
+Arguments ID (required) The document ID.
+Params (required, mixed) A plain javascript object of:
+ collection: Required, the name of collection you want to work with. withSource: If you want to get the related document before deleted, set it to true. The document will be put under source key. Optional, defaults to false  Or, you&amp;rsquo;re also allowed to pass a string.</description>
     </item>
     
     <item>
@@ -125,8 +136,8 @@ default.&amp;lt;prop&amp;gt;: serve as default properties. Will be used if none 
       <guid>https://docs.rappopo.com/dab/method/bulk-create/</guid>
       <description>bulkCreate (body, params)
  Method for creating/inserting many documents in one shot.
-Arguments Body (array, required) Body is always an array of objects. If no id is found in the object, it&amp;rsquo;ll be generated automatically for you. Example:
-[ { _id: &#39;james-bond&#39;, name: &#39;James Bond&#39; }, { _id: &#39;jack-bauer&#39;, name: &#39;Jack Bauer&#39; }, { name: &#39;Johnny English&#39; } // id isn&#39;t provided here, it&#39;ll be created automatically ... ]  Params (optional) The optional parameter object:</description>
+Arguments Body (array, required) Body is always an array of objects. If no ID is not provided, it&amp;rsquo;ll be generated automatically for you. Example:
+[ { _id: &#39;james-bond&#39;, name: &#39;James Bond&#39; }, { _id: &#39;jack-bauer&#39;, name: &#39;Jack Bauer&#39; }, { name: &#39;Johnny English&#39; } // ID isn&#39;t provided here, it&#39;ll be created automatically ... ]  Params (required)  collection: Required, the name of collection you want to work with.</description>
     </item>
     
     <item>
@@ -136,8 +147,9 @@ Arguments Body (array, required) Body is always an array of objects. If no id is
       
       <guid>https://docs.rappopo.com/dab/method/bulk-update/</guid>
       <description>bulkUpdate (body, params)
- Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided. Partial update is not supported.
-Arguments Body (array, required) Body is always an array of objects. Every object needs to have an id, otherwise, it&amp;rsquo;ll yield a Not found error.</description>
+ Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided.
+Partial updates are not supported.
+Arguments Body (array, required) Body is always an array of objects. Every object needs to have an ID, otherwise, it&amp;rsquo;ll yield a Not found error.</description>
     </item>
     
     <item>
@@ -148,10 +160,9 @@ Arguments Body (array, required) Body is always an array of objects. Every objec
       <guid>https://docs.rappopo.com/dab/method/bulk-remove/</guid>
       <description>bulkRemove (body, params)
  Method for removing many documents in one shot.
-Arguments Body (array, required) Body is always an array of strings or numbers. Those represent the id of its corresponding documents
+Arguments Body (array, required) Body is always an array of strings or numbers. Those represent the ID of its corresponding documents
 Example:
-[ &#39;james-bond&#39;, &#39;jack-bauer-001&#39;, &#39;johnny-english&#39;, ... ]  Params (optional) The optional parameter object:
-withDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above.</description>
+[ &#39;james-bond&#39;, &#39;jack-bauer-001&#39;, &#39;johnny-english&#39;, ... ]  Params (required)  collection: Required, the name of collection you want to work with. withDetail: Optional, defaults to false. If true, details of operation will be returned. It is an array of objects in the same order as body request above.</description>
     </item>
     
     <item>
@@ -161,10 +172,10 @@ withDetail: default is false. If true, details of operation will be returned. It
       
       <guid>https://docs.rappopo.com/dab/method/copy-from/</guid>
       <description>copyFrom (source, params)
- This method gives you a full power of document imports.
+ This method gives you the full power of document imports.
 Arguments Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:
-... dab.copyFrom(&#39;/path/of/my/file.json&#39;).then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:
-var source = new DabCouch({ ... }), dab = new DabMemory() dab.</description>
+... dab.copyFrom(&#39;/path/of/my/file.json&#39;, { collection: &#39;test&#39; }) .then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:
+var source = new DabKnex({ .</description>
     </item>
     
     <item>
@@ -176,7 +187,7 @@ var source = new DabCouch({ ... }), dab = new DabMemory() dab.</description>
       <description>A DAB implementation for in-memory datastore, powered by Lodash and lodash-query.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-memory  And within your script:
-const DabMemory = require(&#39;@rappopo/dab-memory&#39;) const dab = new DabMemory({ data: [ .... ] }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options data: your in-memory data as array of objects, with id as the primary key. Defaults to empty array.</description>
+const DabMemory = require(&#39;@rappopo/dab-memory&#39;) const dab = new DabMemory() // prepare collections dab.createCollection({ name: &#39;test&#39; }) .then(result =&amp;gt; { return dab.bulkCreate(data, { collection: &#39;test&#39; }) }) ... // lets dab! dab.findOne(&#39;my-doc&#39;, &#39;test&#39;).then(function(doc) { ... })  Options Currently, no options necessary.</description>
     </item>
     
     <item>
@@ -188,7 +199,20 @@ const DabMemory = require(&#39;@rappopo/dab-memory&#39;) const dab = new DabMemo
       <description>copyTo (dest, params)
  Use this method to export your datasource.
 Arguments Dest (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
-... dab.copyTo(&#39;/path/of/my/file.json&#39;, { query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks.</description>
+... dab.copyTo(&#39;/path/of/my/file.json&#39;, { collection: &#39;test&#39;, query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks.</description>
+    </item>
+    
+    <item>
+      <title>createCollection</title>
+      <link>https://docs.rappopo.com/dab/method/create-collection/</link>
+      <pubDate>Tue, 02 Jan 2018 10:57:39 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/method/create-collection/</guid>
+      <description>createCollection (definition, params)
+ Method to create a collection.
+Arguments Definition (required) Collection definition is a plain javascript object. In its simples form, it only need a name:
+ name: a unique name to identify the collection. Required. fields: an array of column definitions. Optional.  Take a look at the example below:
+{ name: &#39;users&#39;, fields: [ { id: &#39;_id&#39;, type: &#39;string&#39;, required: true }, { id: &#39;username&#39;, type: &#39;string&#39;, length: 20, required: true }, { id: &#39;fullname&#39;, type: &#39;string&#39;, required: true }, { id: &#39;admin&#39;, type: &#39;boolean&#39;, required: true, default: false }, { id: &#39;age&#39;, type: &#39;integer&#39; } ] }  Supported column types: string, integer, float, boolean, text, date, datetime.</description>
     </item>
     
     <item>
@@ -205,12 +229,16 @@ dbName: the database name. You&amp;rsquo;ll most likely want to give a custom na
     </item>
     
     <item>
-      <title>Alias</title>
-      <link>https://docs.rappopo.com/dab/method/alias/</link>
-      <pubDate>Mon, 18 Dec 2017 13:38:55 +0700</pubDate>
+      <title>renameCollection</title>
+      <link>https://docs.rappopo.com/dab/method/rename-collection/</link>
+      <pubDate>Tue, 02 Jan 2018 10:57:52 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/method/alias/</guid>
-      <description>   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete    </description>
+      <guid>https://docs.rappopo.com/dab/method/rename-collection/</guid>
+      <description>renameCollection (oldName, newName, params)
+ Method to rename a collection.
+Arguments Old Name (required) A string that indicate the existing collection name
+New Name (required) A string for what the new collection will be named
+Params (optional)  withSchema: optional, defaults to false. If set true, it&amp;rsquo;ll try to rename the internal database while keeping its existing schema and data intact. In SQL database, this means: rename table  Response Result It should return an object like below:</description>
     </item>
     
     <item>
@@ -227,6 +255,19 @@ collection: the collection name. You&amp;rsquo;ll most likely want to give a cus
     </item>
     
     <item>
+      <title>removeCollection</title>
+      <link>https://docs.rappopo.com/dab/method/remove-collection/</link>
+      <pubDate>Tue, 02 Jan 2018 10:57:59 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/method/remove-collection/</guid>
+      <description>removeCollection (name, params)
+ Method to remove a collection.
+Arguments Name (required) A string that indicate which collection to be removed
+Params (optional)  withSchema: optional, defaults to false. If set true, it&amp;rsquo;ll destroy both the internal schema and data for good.  Response Result It should return an object like below:
+{ success: true }  Error It&amp;rsquo;ll yield Collection not found if the named collection is nowhere to be found.</description>
+    </item>
+    
+    <item>
       <title>@rappopo/dab-knex</title>
       <link>https://docs.rappopo.com/dab/dab-knex/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:17 +0700</pubDate>
@@ -236,7 +277,7 @@ collection: the collection name. You&amp;rsquo;ll most likely want to give a cus
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-knex  Don&amp;rsquo;t forget to also install the needed client library, e.g (if you choose to use sqlite3):
 $ npm install sqlite3  And within your script:
-const DabKnex = require(&#39;@rappopo/dab-knex&#39;) const dab = new DabKnex({ client: &#39;sqlite3&#39;, connection: { filename: &#39;/tmp/mydb.sqlite3&#39; }, table: &#39;mytable&#39; }) ... dab.findOne(&#39;my-doc&#39;, { table: &#39;othertable&#39; }).</description>
+const DabKnex = require(&#39;@rappopo/dab-knex&#39;) const dab = new DabKnex({ client: &#39;sqlite3&#39;, connection: { filename: &#39;/tmp/mydb.sqlite3&#39; } }) // prepare collections dab.createCollection({ name: &#39;test&#39; }) .</description>
     </item>
     
     <item>
@@ -250,6 +291,15 @@ Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-pouch  And within your script:
 const DabPouch = require(&#39;@rappopo/dab-pouch&#39;) const dab = new DabPouch({ path: &#39;/home/me/pouchdb&#39;, dbName: &#39;mydb&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options path: the path where all PouchDB folder will be saved and reside. If it not provided, it&amp;rsquo;ll defaults to /tmp
 dbName: the database name. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to test</description>
+    </item>
+    
+    <item>
+      <title>Alias</title>
+      <link>https://docs.rappopo.com/dab/method/alias/</link>
+      <pubDate>Mon, 18 Dec 2017 13:38:55 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/method/alias/</guid>
+      <description>   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete , bulkDestroy   createCollection addCollection   removeCollection deleteCollection, destroyCollection    </description>
     </item>
     
     <item>

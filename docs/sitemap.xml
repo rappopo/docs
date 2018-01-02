@@ -92,18 +92,28 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/dab/method/create-collection/</loc>
+    <lastmod>2018-01-02T10:57:39+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/dab-ne/</loc>
     <lastmod>2017-12-19T09:33:32+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.rappopo.com/dab/method/alias/</loc>
-    <lastmod>2017-12-18T13:38:55+07:00</lastmod>
+    <loc>https://docs.rappopo.com/dab/method/rename-collection/</loc>
+    <lastmod>2018-01-02T10:57:52+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://docs.rappopo.com/dab/dab-mongo/</loc>
     <lastmod>2017-12-19T09:33:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/method/remove-collection/</loc>
+    <lastmod>2018-01-02T10:57:59+07:00</lastmod>
   </url>
   
   <url>
@@ -114,6 +124,11 @@
   <url>
     <loc>https://docs.rappopo.com/dab/dab-pouch/</loc>
     <lastmod>2017-12-19T09:33:38+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/method/alias/</loc>
+    <lastmod>2017-12-18T13:38:55+07:00</lastmod>
   </url>
   
   <url>

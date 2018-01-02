@@ -13,19 +13,19 @@
     <title>remove :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1513685249" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1513685249" rel="stylesheet">
-    <link href="/css/hybrid.css?1513685249" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1513685249" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1513685249" rel="stylesheet">
-    <link href="/css/auto-complete.css?1513685249" rel="stylesheet">
-    <link href="/css/theme.css?1513685249" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1513685249" rel="stylesheet">
+    <link href="/css/nucleus.css?1514897140" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1514897140" rel="stylesheet">
+    <link href="/css/hybrid.css?1514897140" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1514897140" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1514897140" rel="stylesheet">
+    <link href="/css/auto-complete.css?1514897140" rel="stylesheet">
+    <link href="/css/theme.css?1514897140" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1514897140" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1513685249" rel="stylesheet">
+      <link href="/css/theme-blue.css?1514897140" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1513685249"></script>
+    <script src="/js/jquery-2.x.min.js?1514897140"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1513685249"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1513685249"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1514897140"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1514897140"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1513685249"></script>
+<script type="text/javascript" src="/js/search.js?1514897140"></script>
 
     
   </div>
@@ -339,6 +339,63 @@
       <li data-nav-id="/dab/method/copy-to/" title="copyTo" class="dd-item ">
         <a href="/dab/method/copy-to/">
         copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+        <a href="/dab/method/create-collection/">
+        createCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+        <a href="/dab/method/rename-collection/">
+        renameCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove-collection/" title="removeCollection" class="dd-item ">
+        <a href="/dab/method/remove-collection/">
+        removeCollection
         
         </a>
     </li>
@@ -728,7 +785,23 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#arguments">Arguments</a>
+<ul>
+<li><a href="#id-required">ID (required)</a></li>
+<li><a href="#params-required-mixed">Params (required, mixed)</a></li>
+</ul></li>
+<li><a href="#response">Response</a>
+<ul>
+<li><a href="#result">Result</a></li>
+<li><a href="#error">Error</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -746,9 +819,60 @@
         
 
 
+
+
 <blockquote>
 <p><strong>remove (id, params)</strong></p>
 </blockquote>
+
+<p>Remove an existing document from a collection.</p>
+
+<h2 id="arguments">Arguments</h2>
+
+<h3 id="id-required">ID (required)</h3>
+
+<p>The document ID.</p>
+
+<h3 id="params-required-mixed">Params (required, mixed)</h3>
+
+<p>A plain javascript object of:</p>
+
+<ul>
+<li><code>collection</code>: Required, the name of collection you want to work with.</li>
+<li><code>withSource</code>: If you want to get the related document before deleted, set it to <em>true</em>. The document will be put under <code>source</code> key. Optional, defaults to <em>false</em></li>
+</ul>
+
+<p>Or, you&rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.</p>
+
+<h2 id="response">Response</h2>
+
+<h3 id="result">Result</h3>
+
+<p>It should return an object like the one below:</p>
+
+<pre><code class="language-javascript">{
+  success: true
+}
+</code></pre>
+
+<p>And with <code>withSource</code> set to <em>true</em>:</p>
+
+<pre><code class="language-javascript">{
+  success: true,
+  source: {
+    _id: 'james-bond',
+    name: 'James Bond',
+    age: 40
+    ...
+  }
+}
+</code></pre>
+
+<h3 id="error">Error</h3>
+
+<p>If no document found, it&rsquo;ll yield <strong>Document not found</strong> error.</p>
+
+<p>Any other error will yield a normal Node error object you can catch through promise easily.</p>
 
 
 <footer class=" footline" >
@@ -938,6 +1062,54 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1263,20 +1435,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.min.js?1513685249"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1513685249"></script>
-    <script src="/js/jquery.sticky.js?1513685249"></script>
-    <script src="/js/featherlight.min.js?1513685249"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1513685249"></script>
-    <script src="/js/highlight.pack.js?1513685249"></script>
+    <script src="/js/clipboard.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.min.js?1514897140"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1514897140"></script>
+    <script src="/js/jquery.sticky.js?1514897140"></script>
+    <script src="/js/featherlight.min.js?1514897140"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1514897140"></script>
+    <script src="/js/highlight.pack.js?1514897140"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1513685249"></script>
-    <script src="/js/learn.js?1513685249"></script>
-    <script src="/js/hugo-learn.js?1513685249"></script>
+    <script src="/js/modernizr.custom.71422.js?1514897140"></script>
+    <script src="/js/learn.js?1514897140"></script>
+    <script src="/js/hugo-learn.js?1514897140"></script>
 
-    <link href="/mermaid/mermaid.css?1513685249" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1513685249"></script>
+    <link href="/mermaid/mermaid.css?1514897140" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1514897140"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
