@@ -1,5 +1,26 @@
 [
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-validate/",
+	"title": "beforeValidate",
+	"tags": [],
+	"description": "",
+	"content": " beforeValidate (body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/init/",
+	"title": "init",
+	"tags": [],
+	"description": "",
+	"content": " init (options)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/add-dab/",
+	"title": "addDab",
+	"tags": [],
+	"description": "",
+	"content": " addDab (id, dab)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/nesu/setup/",
 	"title": "Setup",
 	"tags": [],
@@ -19,6 +40,27 @@
 	"tags": [],
 	"description": "",
 	"content": " These are for dummies only!!! If you\u0026rsquo;re considered yourself as a kungfu master, than you\u0026rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you\u0026rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!\n Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily. It won\u0026rsquo;t be a very sophisticated and overly complex library. On the contrary, it\u0026rsquo;ll only support the most basic operations. Not because I don\u0026rsquo;t need it, but simply because I\u0026rsquo;m too stupid \u0026amp; lazy to write such beast :)\nIn my work as a proud-to-be-called lazy programmer right now, I have to work with many different databases. Be it relational or NoSQL. And through all the times, I have to face the same problem over and over again: different ways to access the data, learning it\u0026rsquo;s query language, and so on. The list grows very quickly.\nThat\u0026rsquo;s why this project is born. It should helps lazy and stupid people like me to get more time to drink beer. Not learning a new alien language over and over again.\nExisting libraries are way to complex for me. I only need the most basic ones: queryable through MongoDB-like query language, pagination mechanism. And a simple import \u0026amp; export data. Also, being a true fan of RESTful APIs, so why don\u0026rsquo;t I blindly steal their ways to find, create, update \u0026amp; remove documents? No more learning! And that means more time for beer!!\nUsage For developers: this package gives you a basic class and guide lines on how to write package for some particular database. All you need to do is just extends this basic class and write methods according to its specification.\nFor end user: never use this package directly, because it won\u0026rsquo;t gives you anything other than useless stuffs! Instead, pick one of its implementation library below that match the database you want to work with.\nIf for some reason you want to change to another one later, the only thing you need to do is just requiring a different library and put its options correctly. Everything else should be the same.\nExample (development):\nvar Dab = require('@rappopo/dab-memory'), dab = new Dab() dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  And later in production, just change to this:\nvar Dab = require('@rappopo/dab-couch'), dab = new Dab({ url: 'http://localhost:5984', dbName: 'mydb' }) // everything below this line should still be the same dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-validate/",
+	"title": "afterValidate",
+	"tags": [],
+	"description": "",
+	"content": " afterValidate (body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/get-dab/",
+	"title": "getDab",
+	"tags": [],
+	"description": "",
+	"content": " getDab ()\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/get-dab/",
+	"title": "getDab",
+	"tags": [],
+	"description": "",
+	"content": " getDab (id)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/nesu/config/",
@@ -49,6 +91,27 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-create/",
+	"title": "beforeCreate",
+	"tags": [],
+	"description": "",
+	"content": " beforeCreate (body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/get-dab-collection/",
+	"title": "getDabCollection",
+	"tags": [],
+	"description": "",
+	"content": " getDabCollection ()\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/del-dab/",
+	"title": "delDab",
+	"tags": [],
+	"description": "",
+	"content": " delDab (id)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/create/",
 	"title": "create",
 	"tags": [],
@@ -61,6 +124,20 @@
 	"tags": [],
 	"description": "",
 	"content": " All methods should return promises. Still, node\u0026rsquo;s callback style can be used by chaining the promise with .asCallback(fn)\nExample:\n... // promise-way findOne('my-doc', { collection: 'docs' }) .then(function (result) { console.log(result) }) .catch(function (err) { console.log(err) }) // callback-way findOne('my-doc', { collection: 'docs' }).asCallback(function (err, result) { if (err) console.log(err) else console.log(result) })  Methods  find   findOne   create   update   remove   bulkCreate   bulkUpdate   bulkRemove   copyFrom   copyTo   createCollection   renameCollection   removeCollection   Alias   "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-create/",
+	"title": "afterCreate",
+	"tags": [],
+	"description": "",
+	"content": " afterCreate (body, createResult, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/add-model/",
+	"title": "addModel",
+	"tags": [],
+	"description": "",
+	"content": " addModel (modelDef)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/implementation/",
@@ -77,11 +154,39 @@
 	"content": "  update (id, body, params)\n Update an existing document in a collection.\nArguments ID (required) The document ID.\nBody (required) The new document body to be used as replacement.\nIf collection has fields definition, than the document body will be sanitized according to its type. Columns that aren\u0026rsquo;t listed in collection fields will also discarded. This is to make sure that you\u0026rsquo;ll always get a clean and correct document saved in the database.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with. fullReplace: If you want to have a full replacement, you should set it to true. Else it\u0026rsquo;ll only update document partially. Optional, defaults to false  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name and replacement mode is set to partial update.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If no document found, it\u0026rsquo;ll yield Document not found error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-update/",
+	"title": "beforeUpdate",
+	"tags": [],
+	"description": "",
+	"content": " beforeUpdate (id, body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/get-model/",
+	"title": "getModel",
+	"tags": [],
+	"description": "",
+	"content": " getModel (name)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/remove/",
 	"title": "remove",
 	"tags": [],
 	"description": "",
 	"content": "  remove (id, params)\n Remove an existing document from a collection.\nArguments ID (required) The document ID.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with. withSource: If you want to get the related document before deleted, set it to true. The document will be put under source key. Optional, defaults to false  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.\nResponse Result It should return an object like the one below:\n{ success: true }  And with withSource set to true:\n{ success: true, source: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If no document found, it\u0026rsquo;ll yield Document not found error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-update/",
+	"title": "afterUpdate",
+	"tags": [],
+	"description": "",
+	"content": " afterUpdate (id, body, updateResult, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/del-model/",
+	"title": "delModel",
+	"tags": [],
+	"description": "",
+	"content": " delModel (name)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/method/bulk-create/",
@@ -91,11 +196,25 @@
 	"content": "  bulkCreate (body, params)\n Method for creating/inserting many documents in one shot.\nArguments Body (array, required) Body is always an array of objects. If no ID is not provided, it\u0026rsquo;ll be generated automatically for you. Example:\n[ { _id: 'james-bond', name: 'James Bond' }, { _id: 'jack-bauer', name: 'Jack Bauer' }, { name: 'Johnny English' } // ID isn't provided here, it'll be created automatically ... ]  Params (required)  collection: Required, the name of collection you want to work with. withDetail: Optional, defaults to false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.  Response Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through withDetail parameter above.\nThe order of insertion result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Document already exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-remove/",
+	"title": "beforeRemove",
+	"tags": [],
+	"description": "",
+	"content": " beforeRemove (id, params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/bulk-update/",
 	"title": "bulkUpdate",
 	"tags": [],
 	"description": "",
 	"content": "  bulkUpdate (body, params)\n Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided.\nPartial updates are not supported.\nArguments Body (array, required) Body is always an array of objects. Every object needs to have an ID, otherwise, it\u0026rsquo;ll yield a Not found error. Example:\n[ { _id: 'james-bond', name: 'James Bond 007' }, { _id: 'jack-bauer-001', name: 'Mr. Jack Bauer' }, { name: 'Johnie Englesh' } // id isn't provided here, it'll yield an error ... ]  Params (required)  collection: Required, the name of collection you want to work with. withDetail: default is false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.  Response Method should always return a response, eventhough one or more update could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through withDetail parameter above.\nThe order of update result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 1, fail: 2, total: 3 }, detail: [ { _id: 'james-bond', success: true }, { _id: 'jack-bauer-001', success: false, message: 'Document not found' }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: false, message: 'Document not found' } ] }  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-remove/",
+	"title": "afterRemove",
+	"tags": [],
+	"description": "",
+	"content": " afterRemove (id, removeResult, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/method/bulk-remove/",
@@ -105,11 +224,25 @@
 	"content": "  bulkRemove (body, params)\n Method for removing many documents in one shot.\nArguments Body (array, required) Body is always an array of strings or numbers. Those represent the ID of its corresponding documents\nExample:\n[ 'james-bond', 'jack-bauer-001', 'johnny-english', ... ]  Params (required)  collection: Required, the name of collection you want to work with. withDetail: Optional, defaults to false. If true, details of operation will be returned. It is an array of objects in the same order as body request above. See example below.  Response Method should always return a response, eventhough one or more removal could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through withDetail parameter above.\nThe order of removal result should match with the order of body request.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 1, fail: 2, total: 3 }, detail: [ { _id: 'james-bond', success: true }, { _id: 'jack-bauer-001', success: false, message: 'Document not found' }, { _id: 'johnny-english', success: false, message: 'Document not found' } ] }  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-bulk-create/",
+	"title": "beforeBulkCreate",
+	"tags": [],
+	"description": "",
+	"content": " beforeBulkCreate (body, params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/copy-from/",
 	"title": "copyFrom",
 	"tags": [],
 	"description": "",
 	"content": "  copyFrom (source, params)\n This method gives you the full power of document imports.\nArguments Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:\n... dab.copyFrom('/path/of/my/file.json', { collection: 'test' }) .then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:\nvar source = new DabKnex({ ... }), dab = new DabMemory() dab.copyFrom(source, { collection: 'test', srcCollection: 'tablesrc', query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... })  Params (required)  collection: Required, the name of collection you want to work with. srcCollection: Optional, the name of source\u0026rsquo;s collection. If empty, defaults to collection above. query: query target datasource, optional, defaults to {}. Ignored if source is a filename. limit: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you\u0026rsquo;re gonna get. You\u0026rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won\u0026rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it\u0026rsquo;ll also introduce more danger as your server will consume much more memories. withDetail: if true, like in all bulk methods, result will carry the detail of every transaction. Default: false  Response Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through withDetail parameter above.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Document already exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-bulk-create/",
+	"title": "afterBulkCreate",
+	"tags": [],
+	"description": "",
+	"content": " afterBulkCreate (body, bulkCreateResult, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/dab-memory/",
@@ -126,6 +259,20 @@
 	"content": "  copyTo (dest, params)\n Use this method to export your datasource.\nArguments Dest (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:\n... dab.copyTo('/path/of/my/file.json', { collection: 'test', query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks. E.g:\nvar dab = new DabCouch({ ... }), destination = new DabMemory() dab.copyTo(destination, { collection: 'test', destCollection: 'newtable', query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... })  Params (required)  collection: Required, the name of collection you want to work with. destCollection: Optional, the name of destination\u0026rsquo;s collection. If empty, defaults to collection above. query: query target datasource, optional, defaults to {}. limit: max. number of rows per page/chunk. Optional, defaults to 25. This is NOT the max. rows you\u0026rsquo;re gonna get. You\u0026rsquo;ll always get ALL rows matched with your query. It is here to limit the query results so it won\u0026rsquo;t crash your server. The higher you put the limit, the faster to get things done. But it\u0026rsquo;ll also introduce more danger as your server will consume much more memories. withDetail: if true, like in all bulk methods, result will carry the detail of every transaction. Default: false  Response Method should always return a response, eventhough one or more insertion could fail. If failed, those corresponding rows should tell why it failed, assuming it is enabled through withDetail parameter above.\nPromise rejection error should only occour when something very bad happened within the script.\nExample:\n{ success: true, stat: { ok: 2, fail: 1, total: 3 }, detail: [ { _id: 'james-bond', success: false, message: 'Document already exists' }, { _id: 'jack-bauer', success: true }, { _id: '337b116d-650e-4581-8bef-7b119467b05c', success: true } ] }  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-bulk-update/",
+	"title": "beforeBulkUpdate",
+	"tags": [],
+	"description": "",
+	"content": " beforeBulkUpdate (body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/find/",
+	"title": "find",
+	"tags": [],
+	"description": "",
+	"content": " find (params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/create-collection/",
 	"title": "createCollection",
 	"tags": [],
@@ -138,6 +285,20 @@
 	"tags": [],
 	"description": "",
 	"content": " A DAB implementation for NeDB.\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-ne  And within your script:\nconst DabNe = require('@rappopo/dab-ne') const dab = new DabNe({ path: '/path/to/nedb', dbName: 'mydb' }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options path: the path where all NeDB files will be saved and reside. If it not provided, it\u0026rsquo;ll defaults to /tmp\ndbName: the database name. You\u0026rsquo;ll most likely want to give a custom name, otherwise it defaults to test\ninMemory: if it true, data won\u0026rsquo;t be persisted. Defaults to false\nMethods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-bulk-update/",
+	"title": "afterBulkUpdate",
+	"tags": [],
+	"description": "",
+	"content": " afterBulkUpdate (body, bulkUpdateResult, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/find-one/",
+	"title": "findOne",
+	"tags": [],
+	"description": "",
+	"content": " findOne (id, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/method/rename-collection/",
@@ -154,6 +315,20 @@
 	"content": " A DAB implementation for MongoDB.\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-mongo  And within your script:\nconst DabMongo = require('@rappopo/dab-mongo') const dab = new DabMongo({ url: 'mongodb://localhost:27017/mydb', collection: 'docs' }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options url: your MongoDB url endpoint. If it not provided, it defauts to: mongodb://localhost:27017/test\ncollection: the collection name. You\u0026rsquo;ll most likely want to give a custom name, otherwise it defaults to docs\nMethods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/hook/before-bulk-remove/",
+	"title": "beforeBulkRemove",
+	"tags": [],
+	"description": "",
+	"content": " beforeBulkRemove (body, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/create/",
+	"title": "create",
+	"tags": [],
+	"description": "",
+	"content": " create (body, params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/remove-collection/",
 	"title": "removeCollection",
 	"tags": [],
@@ -166,6 +341,20 @@
 	"tags": [],
 	"description": "",
 	"content": " A DAB implementation for Knex\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-knex  Don\u0026rsquo;t forget to also install the needed client library, e.g (if you choose to use sqlite3):\n$ npm install sqlite3  And within your script:\nconst DabKnex = require('@rappopo/dab-knex') const dab = new DabKnex({ client: 'sqlite3', connection: { filename: '/tmp/mydb.sqlite3' } }) // prepare collections dab.createCollection({ name: 'test' }) .then(result =\u0026gt; { return dab.bulkCreate(data, { collection: 'test' }) }) ... // lets dab! dab.findOne('my-doc', 'test').then(function(doc) { ... })  Options  client: your Knex\u0026rsquo;s client database library connection: your Knex\u0026rsquo;s connection settings  Features find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo createCollection renameCollection removeCollection  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/after-bulk-remove/",
+	"title": "afterBulkRemove",
+	"tags": [],
+	"description": "",
+	"content": " afterBulkRemove (body, bulkRemoveResult, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/update/",
+	"title": "update",
+	"tags": [],
+	"description": "",
+	"content": " update (id, body, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/dab-pouch/",
@@ -182,11 +371,25 @@
 	"content": "   Method Aliases     create add, insert   update edit   remove delete, destroy   bulkCreate bulkAdd, bulkInsert   bulkUpdate bulkEdit   bulkRemove bulkDelete , bulkDestroy   createCollection addCollection   removeCollection deleteCollection, destroyCollection    "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/method/remove/",
+	"title": "remove",
+	"tags": [],
+	"description": "",
+	"content": " remove (id, params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/dab-couch/",
 	"title": "@rappopo/dab-couch",
 	"tags": [],
 	"description": "",
 	"content": " A DAB implementation for CouchDB 2.0 and above.\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-couch  And within your script:\nconst DabCouch = require('@rappopo/dab-couch') const dab = new DabCouch({ url: 'http://localhost:5984', dbName: 'mydb' }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options url: your CouchDB url endpoint. If it not provided, it defauts to: http://localhost:5984\ndbName: the database name to connect to. Defaults to test\nretainOnRemove: array of columns to retain when a document is deleted. Default: [].\nWhen CouchDB delete a document, it actually PUTs a document with content like this:\n{ \u0026quot;_id\u0026quot;: \u0026quot;\u0026lt;doc_id\u0026gt;\u0026quot;, \u0026quot;_rev\u0026quot;: \u0026quot;\u0026lt;rev_id\u0026gt;\u0026quot;, \u0026quot;_deleted\u0026quot;: true }  But sometimes you want to also have some columns to be put on that deleted document. The retainOnRemove simply left those columns intact, e.g:\n{ \u0026quot;_id\u0026quot;: \u0026quot;\u0026lt;doc_id\u0026gt;\u0026quot;, \u0026quot;_rev\u0026quot;: \u0026quot;\u0026lt;rev_id\u0026gt;\u0026quot;, \u0026quot;_deleted\u0026quot;: true, \u0026quot;type\u0026quot;: \u0026quot;ADDRESS\u0026quot; }  Methods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/bulk-create/",
+	"title": "bulkCreate",
+	"tags": [],
+	"description": "",
+	"content": " bulkCreate (body, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/dab-es/",
@@ -196,11 +399,25 @@
 	"content": " A DAB implementation for Elasticsearch. The excellent library e3po is used to transform Mongo Query Language to Elasticsearch DSB.\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-es  And within your script:\nconst DabEs = require('@rappopo/dab-es') const dab = new DabEs({ hosts: ['localhost:9200'], index: 'myindex', type: 'mytype' }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options hosts: your Elasticsearch hosts array. If it not provided, it defauts to: [\u0026lsquo;localhost:9200\u0026rsquo;]\nindex: the index name to bound to. Defaults to test\ntype: the default type use. Defaults to doc\nIndex and/or type can also be provided as params during a method call. If you do this, the provided one will be used instead.\nMethods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/method/bulk-update/",
+	"title": "bulkUpdate",
+	"tags": [],
+	"description": "",
+	"content": " bulkUpdate (body, params)\n "
+},
+{
 	"uri": "https://docs.rappopo.com/dab/dab-couch-es/",
 	"title": "@rappopo/dab-couch-es",
 	"tags": [],
 	"description": "",
 	"content": " A DAB implementation for CouchDB 2.0 AND Elasticsearch for finding documents.\nYou might ask yourself, why this useless package if there are already @rappopo/dab-couch and @rappopo/dab-es? Well, this package is a thin wrapper around those two. Only the find method is taken from @rappopo/dab-es, while the rest are from @rappopo/dab-couch.\nI make this stupid package because I work alot with both CouchDB and Elasticsearch. Both systems are connected to each other through @rappopo/nesu in the back, which basically listen to CouchDB changes stream and forward it to Elasticsearch for indexing.\nSo whenever I create/update/delete document on CouchDB, it will be ready for querying in Elasticsearch. Perfecto! Right? Or, \u0026hellip; emh\u0026hellip; still pretty stupid isn\u0026rsquo;t it ??\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-couch-es  And within your script:\nconst DabCouchEs = require('@rappopo/dab-couch-es') const dab = new DabCouchEs({ couch: { url: 'http://localhost:5984', dbName: 'mydb' }, es: { hosts: ['localhost:9200'], index: 'myindex', type: 'mytype' }, delay: 1000 }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options couch: see @rappopo/dab-couch options\nes: see @rappopo/dab-es options\ndelay: time to wait (in ms) to let CouchDB fully synchronize with Elasticsearch after a create/update/remove action. Optional, defaults to 1000 ms\nMethods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/bulk-remove/",
+	"title": "bulkRemove",
+	"tags": [],
+	"description": "",
+	"content": " bulkRemove (body, params)\n "
 },
 {
 	"uri": "https://docs.rappopo.com/dab/dab-redis/",
@@ -210,11 +427,60 @@
 	"content": " A DAB implementation for Redis.\nInstallation Simply invoke this command in your project folder:\n$ npm install --save @rappopo/dab-redis  And within your script:\nconst DabRedis = require('@rappopo/dab-redis') const dab = new DabRedis({ url: 'redis://myhost:6379', ns: 'docs' }) ... dab.findOne('my-doc').then(function(doc) { ... })  Options url: your Redis url endpoint. If it not provided, it defauts to: redis://localhost:6379\nns: your namespace. You\u0026rsquo;ll most likely want to give a custom name, otherwise it defaults to doc\nMethods find findOne create update remove bulkCreate bulkUpdate bulkRemove copyFrom copyTo  "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/model/method/copy-from/",
+	"title": "copyFrom",
+	"tags": [],
+	"description": "",
+	"content": " copyFrom (source, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/copy-to/",
+	"title": "copyTo",
+	"tags": [],
+	"description": "",
+	"content": " copyTo (dest, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/hook/",
+	"title": "Hooks",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/method/",
+	"title": "Methods",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/model/",
+	"title": "Model",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/method/",
+	"title": "Methods",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.rappopo.com/bdez/",
+	"title": "BDEZ",
+	"tags": [],
+	"description": "",
+	"content": " BDEZ An ORM/ODM wannabe for Rappopo DAB\nImage source\n"
+},
+{
 	"uri": "https://docs.rappopo.com/",
 	"title": "Documentation",
 	"tags": [],
 	"description": "",
-	"content": " Welcome to Documentation  DAB   NESU   "
+	"content": " Welcome to Documentation  DAB   BDEZ   NESU   "
 },
 {
 	"uri": "https://docs.rappopo.com/nesu/",

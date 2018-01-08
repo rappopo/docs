@@ -12,6 +12,36 @@
     
     
     <item>
+      <title>beforeValidate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-validate/</link>
+      <pubDate>Mon, 08 Jan 2018 09:56:21 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-validate/</guid>
+      <description> beforeValidate (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>https://docs.rappopo.com/bdez/model/method/init/</link>
+      <pubDate>Mon, 08 Jan 2018 09:51:51 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/init/</guid>
+      <description> init (options)
+ </description>
+    </item>
+    
+    <item>
+      <title>addDab</title>
+      <link>https://docs.rappopo.com/bdez/method/add-dab/</link>
+      <pubDate>Mon, 08 Jan 2018 09:49:36 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/add-dab/</guid>
+      <description> addDab (id, dab)
+ </description>
+    </item>
+    
+    <item>
       <title>Setup</title>
       <link>https://docs.rappopo.com/nesu/setup/</link>
       <pubDate>Mon, 18 Dec 2017 14:16:12 +0700</pubDate>
@@ -44,6 +74,36 @@ Arguments Params (required) As parameter, pass the following object:
       <guid>https://docs.rappopo.com/dab/about/</guid>
       <description>These are for dummies only!!! If you&amp;rsquo;re considered yourself as a kungfu master, than you&amp;rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you&amp;rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!
  Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily.</description>
+    </item>
+    
+    <item>
+      <title>afterValidate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-validate/</link>
+      <pubDate>Mon, 08 Jan 2018 09:56:27 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-validate/</guid>
+      <description> afterValidate (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>getDab</title>
+      <link>https://docs.rappopo.com/bdez/model/method/get-dab/</link>
+      <pubDate>Mon, 08 Jan 2018 09:51:57 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/get-dab/</guid>
+      <description> getDab ()
+ </description>
+    </item>
+    
+    <item>
+      <title>getDab</title>
+      <link>https://docs.rappopo.com/bdez/method/get-dab/</link>
+      <pubDate>Mon, 08 Jan 2018 09:49:43 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/get-dab/</guid>
+      <description> getDab (id)
+ </description>
     </item>
     
     <item>
@@ -81,6 +141,36 @@ Response Result It should return an object like the one below:</description>
     </item>
     
     <item>
+      <title>beforeCreate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:54:26 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-create/</guid>
+      <description> beforeCreate (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>getDabCollection</title>
+      <link>https://docs.rappopo.com/bdez/model/method/get-dab-collection/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:02 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/get-dab-collection/</guid>
+      <description> getDabCollection ()
+ </description>
+    </item>
+    
+    <item>
+      <title>delDab</title>
+      <link>https://docs.rappopo.com/bdez/method/del-dab/</link>
+      <pubDate>Mon, 08 Jan 2018 09:49:55 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/del-dab/</guid>
+      <description> delDab (id)
+ </description>
+    </item>
+    
+    <item>
       <title>create</title>
       <link>https://docs.rappopo.com/dab/method/create/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:10 +0700</pubDate>
@@ -90,6 +180,26 @@ Response Result It should return an object like the one below:</description>
  Create or add a new document into a collection.
 Arguments Body (required) Document body should be a plain javascript object. If ID is not provided, it&amp;rsquo;ll be created automatically.
 If collection has fields definition, than the document body will be sanitized according to its type. Columns that aren&amp;rsquo;t listed in collection fields will also discarded. This is to make sure that you&amp;rsquo;ll always get a clean and correct document saved in the database.</description>
+    </item>
+    
+    <item>
+      <title>afterCreate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:54:32 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-create/</guid>
+      <description> afterCreate (body, createResult, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>addModel</title>
+      <link>https://docs.rappopo.com/bdez/method/add-model/</link>
+      <pubDate>Mon, 08 Jan 2018 09:50:02 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/add-model/</guid>
+      <description> addModel (modelDef)
+ </description>
     </item>
     
     <item>
@@ -116,6 +226,26 @@ If collection has fields definition, than the document body will be sanitized ac
     </item>
     
     <item>
+      <title>beforeUpdate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:54:42 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-update/</guid>
+      <description> beforeUpdate (id, body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>getModel</title>
+      <link>https://docs.rappopo.com/bdez/method/get-model/</link>
+      <pubDate>Mon, 08 Jan 2018 09:50:11 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/get-model/</guid>
+      <description> getModel (name)
+ </description>
+    </item>
+    
+    <item>
       <title>remove</title>
       <link>https://docs.rappopo.com/dab/method/remove/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:19 +0700</pubDate>
@@ -126,6 +256,26 @@ If collection has fields definition, than the document body will be sanitized ac
 Arguments ID (required) The document ID.
 Params (required, mixed) A plain javascript object of:
  collection: Required, the name of collection you want to work with. withSource: If you want to get the related document before deleted, set it to true. The document will be put under source key. Optional, defaults to false  Or, you&amp;rsquo;re also allowed to pass a string.</description>
+    </item>
+    
+    <item>
+      <title>afterUpdate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:54:49 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-update/</guid>
+      <description> afterUpdate (id, body, updateResult, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>delModel</title>
+      <link>https://docs.rappopo.com/bdez/method/del-model/</link>
+      <pubDate>Mon, 08 Jan 2018 09:50:23 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/method/del-model/</guid>
+      <description> delModel (name)
+ </description>
     </item>
     
     <item>
@@ -141,6 +291,16 @@ Arguments Body (array, required) Body is always an array of objects. If no ID is
     </item>
     
     <item>
+      <title>beforeRemove</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:04 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-remove/</guid>
+      <description> beforeRemove (id, params)
+ </description>
+    </item>
+    
+    <item>
       <title>bulkUpdate</title>
       <link>https://docs.rappopo.com/dab/method/bulk-update/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:31 +0700</pubDate>
@@ -150,6 +310,16 @@ Arguments Body (array, required) Body is always an array of objects. If no ID is
  Method for updating many documents in one shot. Due to the complexity and effectiveness, it is always a replace operation. Meaning the whole document body, except the id, will be replaced with the new one provided.
 Partial updates are not supported.
 Arguments Body (array, required) Body is always an array of objects. Every object needs to have an ID, otherwise, it&amp;rsquo;ll yield a Not found error.</description>
+    </item>
+    
+    <item>
+      <title>afterRemove</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:11 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-remove/</guid>
+      <description> afterRemove (id, removeResult, params)
+ </description>
     </item>
     
     <item>
@@ -166,6 +336,16 @@ Example:
     </item>
     
     <item>
+      <title>beforeBulkCreate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-bulk-create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:34 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-bulk-create/</guid>
+      <description> beforeBulkCreate (body, params)
+ </description>
+    </item>
+    
+    <item>
       <title>copyFrom</title>
       <link>https://docs.rappopo.com/dab/method/copy-from/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:42 +0700</pubDate>
@@ -176,6 +356,16 @@ Example:
 Arguments Source (mixed, required) If source is a json file, than all contained documents will be inserted to the database, e.g:
 ... dab.copyFrom(&#39;/path/of/my/file.json&#39;, { collection: &#39;test&#39; }) .then(function (result) { ... }) ...  But if source is another DAB instance, then it will be queried and copied over as chunks. E.g:
 var source = new DabKnex({ .</description>
+    </item>
+    
+    <item>
+      <title>afterBulkCreate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-bulk-create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:39 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-bulk-create/</guid>
+      <description> afterBulkCreate (body, bulkCreateResult, params)
+ </description>
     </item>
     
     <item>
@@ -200,6 +390,26 @@ const DabMemory = require(&#39;@rappopo/dab-memory&#39;) const dab = new DabMemo
  Use this method to export your datasource.
 Arguments Dest (mixed, required) If destination is a json file, than all resulting documents that matched the params query will be saved to the file, e.g:
 ... dab.copyTo(&#39;/path/of/my/file.json&#39;, { collection: &#39;test&#39;, query: { age: { $gt: 20 } }, limit: 10 }).then(function (result) { ... }) ...  But if destination is another DAB instance, then your current instance will be queried and copied over as chunks.</description>
+    </item>
+    
+    <item>
+      <title>beforeBulkUpdate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-bulk-update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:45 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-bulk-update/</guid>
+      <description> beforeBulkUpdate (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://docs.rappopo.com/bdez/model/method/find/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:24 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/find/</guid>
+      <description> find (params)
+ </description>
     </item>
     
     <item>
@@ -229,6 +439,26 @@ dbName: the database name. You&amp;rsquo;ll most likely want to give a custom na
     </item>
     
     <item>
+      <title>afterBulkUpdate</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-bulk-update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:50 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-bulk-update/</guid>
+      <description> afterBulkUpdate (body, bulkUpdateResult, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>findOne</title>
+      <link>https://docs.rappopo.com/bdez/model/method/find-one/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:34 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/find-one/</guid>
+      <description> findOne (id, params)
+ </description>
+    </item>
+    
+    <item>
       <title>renameCollection</title>
       <link>https://docs.rappopo.com/dab/method/rename-collection/</link>
       <pubDate>Tue, 02 Jan 2018 10:57:52 +0700</pubDate>
@@ -252,6 +482,26 @@ Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-mongo  And within your script:
 const DabMongo = require(&#39;@rappopo/dab-mongo&#39;) const dab = new DabMongo({ url: &#39;mongodb://localhost:27017/mydb&#39;, collection: &#39;docs&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your MongoDB url endpoint. If it not provided, it defauts to: mongodb://localhost:27017/test
 collection: the collection name. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to docs</description>
+    </item>
+    
+    <item>
+      <title>beforeBulkRemove</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/before-bulk-remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:55:55 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/before-bulk-remove/</guid>
+      <description> beforeBulkRemove (body, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>create</title>
+      <link>https://docs.rappopo.com/bdez/model/method/create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:39 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/create/</guid>
+      <description> create (body, params)
+ </description>
     </item>
     
     <item>
@@ -281,6 +531,26 @@ const DabKnex = require(&#39;@rappopo/dab-knex&#39;) const dab = new DabKnex({ c
     </item>
     
     <item>
+      <title>afterBulkRemove</title>
+      <link>https://docs.rappopo.com/bdez/model/hook/after-bulk-remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:56:01 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/hook/after-bulk-remove/</guid>
+      <description> afterBulkRemove (body, bulkRemoveResult, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>https://docs.rappopo.com/bdez/model/method/update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:47 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/update/</guid>
+      <description> update (id, body, params)
+ </description>
+    </item>
+    
+    <item>
       <title>@rappopo/dab-pouch</title>
       <link>https://docs.rappopo.com/dab/dab-pouch/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:38 +0700</pubDate>
@@ -303,6 +573,16 @@ dbName: the database name. You&amp;rsquo;ll most likely want to give a custom na
     </item>
     
     <item>
+      <title>remove</title>
+      <link>https://docs.rappopo.com/bdez/model/method/remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:52:57 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/remove/</guid>
+      <description> remove (id, params)
+ </description>
+    </item>
+    
+    <item>
       <title>@rappopo/dab-couch</title>
       <link>https://docs.rappopo.com/dab/dab-couch/</link>
       <pubDate>Tue, 19 Dec 2017 09:24:46 +0700</pubDate>
@@ -313,6 +593,16 @@ Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-couch  And within your script:
 const DabCouch = require(&#39;@rappopo/dab-couch&#39;) const dab = new DabCouch({ url: &#39;http://localhost:5984&#39;, dbName: &#39;mydb&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your CouchDB url endpoint. If it not provided, it defauts to: http://localhost:5984
 dbName: the database name to connect to. Defaults to test</description>
+    </item>
+    
+    <item>
+      <title>bulkCreate</title>
+      <link>https://docs.rappopo.com/bdez/model/method/bulk-create/</link>
+      <pubDate>Mon, 08 Jan 2018 09:53:07 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/bulk-create/</guid>
+      <description> bulkCreate (body, params)
+ </description>
     </item>
     
     <item>
@@ -328,6 +618,16 @@ const DabEs = require(&#39;@rappopo/dab-es&#39;) const dab = new DabEs({ hosts: 
     </item>
     
     <item>
+      <title>bulkUpdate</title>
+      <link>https://docs.rappopo.com/bdez/model/method/bulk-update/</link>
+      <pubDate>Mon, 08 Jan 2018 09:53:11 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/bulk-update/</guid>
+      <description> bulkUpdate (body, params)
+ </description>
+    </item>
+    
+    <item>
       <title>@rappopo/dab-couch-es</title>
       <link>https://docs.rappopo.com/dab/dab-couch-es/</link>
       <pubDate>Tue, 19 Dec 2017 10:21:48 +0700</pubDate>
@@ -336,6 +636,16 @@ const DabEs = require(&#39;@rappopo/dab-es&#39;) const dab = new DabEs({ hosts: 
       <description>A DAB implementation for CouchDB 2.0 AND Elasticsearch for finding documents.
 You might ask yourself, why this useless package if there are already @rappopo/dab-couch and @rappopo/dab-es? Well, this package is a thin wrapper around those two. Only the find method is taken from @rappopo/dab-es, while the rest are from @rappopo/dab-couch.
 I make this stupid package because I work alot with both CouchDB and Elasticsearch. Both systems are connected to each other through @rappopo/nesu in the back, which basically listen to CouchDB changes stream and forward it to Elasticsearch for indexing.</description>
+    </item>
+    
+    <item>
+      <title>bulkRemove</title>
+      <link>https://docs.rappopo.com/bdez/model/method/bulk-remove/</link>
+      <pubDate>Mon, 08 Jan 2018 09:53:16 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/bulk-remove/</guid>
+      <description> bulkRemove (body, params)
+ </description>
     </item>
     
     <item>
@@ -349,6 +659,26 @@ Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-redis  And within your script:
 const DabRedis = require(&#39;@rappopo/dab-redis&#39;) const dab = new DabRedis({ url: &#39;redis://myhost:6379&#39;, ns: &#39;docs&#39; }) ... dab.findOne(&#39;my-doc&#39;).then(function(doc) { ... })  Options url: your Redis url endpoint. If it not provided, it defauts to: redis://localhost:6379
 ns: your namespace. You&amp;rsquo;ll most likely want to give a custom name, otherwise it defaults to doc</description>
+    </item>
+    
+    <item>
+      <title>copyFrom</title>
+      <link>https://docs.rappopo.com/bdez/model/method/copy-from/</link>
+      <pubDate>Mon, 08 Jan 2018 09:53:27 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/copy-from/</guid>
+      <description> copyFrom (source, params)
+ </description>
+    </item>
+    
+    <item>
+      <title>copyTo</title>
+      <link>https://docs.rappopo.com/bdez/model/method/copy-to/</link>
+      <pubDate>Mon, 08 Jan 2018 09:53:31 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/bdez/model/method/copy-to/</guid>
+      <description> copyTo (dest, params)
+ </description>
     </item>
     
   </channel>

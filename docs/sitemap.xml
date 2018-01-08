@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-validate/</loc>
+    <lastmod>2018-01-08T09:56:21+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/init/</loc>
+    <lastmod>2018-01-08T09:51:51+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/add-dab/</loc>
+    <lastmod>2018-01-08T09:49:36+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/nesu/setup/</loc>
     <lastmod>2017-12-18T14:16:12+07:00</lastmod>
   </url>
@@ -15,6 +30,21 @@
   <url>
     <loc>https://docs.rappopo.com/dab/about/</loc>
     <lastmod>2017-12-18T10:14:47+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-validate/</loc>
+    <lastmod>2018-01-08T09:56:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/get-dab/</loc>
+    <lastmod>2018-01-08T09:51:57+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/get-dab/</loc>
+    <lastmod>2018-01-08T09:49:43+07:00</lastmod>
   </url>
   
   <url>
@@ -37,6 +67,21 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-create/</loc>
+    <lastmod>2018-01-08T09:54:26+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/get-dab-collection/</loc>
+    <lastmod>2018-01-08T09:52:02+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/del-dab/</loc>
+    <lastmod>2018-01-08T09:49:55+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/create/</loc>
     <lastmod>2017-12-18T13:38:10+07:00</lastmod>
   </url>
@@ -44,6 +89,16 @@
   <url>
     <loc>https://docs.rappopo.com/dab/method/</loc>
     <lastmod>2017-12-18T13:36:05+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-create/</loc>
+    <lastmod>2018-01-08T09:54:32+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/add-model/</loc>
+    <lastmod>2018-01-08T09:50:02+07:00</lastmod>
   </url>
   
   <url>
@@ -57,8 +112,28 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-update/</loc>
+    <lastmod>2018-01-08T09:54:42+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/get-model/</loc>
+    <lastmod>2018-01-08T09:50:11+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/remove/</loc>
     <lastmod>2017-12-18T13:38:19+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-update/</loc>
+    <lastmod>2018-01-08T09:54:49+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/del-model/</loc>
+    <lastmod>2018-01-08T09:50:23+07:00</lastmod>
   </url>
   
   <url>
@@ -67,8 +142,18 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-remove/</loc>
+    <lastmod>2018-01-08T09:55:04+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/bulk-update/</loc>
     <lastmod>2017-12-18T13:38:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-remove/</loc>
+    <lastmod>2018-01-08T09:55:11+07:00</lastmod>
   </url>
   
   <url>
@@ -77,8 +162,18 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-bulk-create/</loc>
+    <lastmod>2018-01-08T09:55:34+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/copy-from/</loc>
     <lastmod>2017-12-18T13:38:42+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-bulk-create/</loc>
+    <lastmod>2018-01-08T09:55:39+07:00</lastmod>
   </url>
   
   <url>
@@ -92,6 +187,16 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-bulk-update/</loc>
+    <lastmod>2018-01-08T09:55:45+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/find/</loc>
+    <lastmod>2018-01-08T09:52:24+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/create-collection/</loc>
     <lastmod>2018-01-02T10:57:39+07:00</lastmod>
   </url>
@@ -99,6 +204,16 @@
   <url>
     <loc>https://docs.rappopo.com/dab/dab-ne/</loc>
     <lastmod>2017-12-19T09:33:32+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-bulk-update/</loc>
+    <lastmod>2018-01-08T09:55:50+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/find-one/</loc>
+    <lastmod>2018-01-08T09:52:34+07:00</lastmod>
   </url>
   
   <url>
@@ -112,6 +227,16 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/before-bulk-remove/</loc>
+    <lastmod>2018-01-08T09:55:55+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/create/</loc>
+    <lastmod>2018-01-08T09:52:39+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/method/remove-collection/</loc>
     <lastmod>2018-01-02T10:57:59+07:00</lastmod>
   </url>
@@ -119,6 +244,16 @@
   <url>
     <loc>https://docs.rappopo.com/dab/dab-knex/</loc>
     <lastmod>2017-12-19T09:33:17+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/after-bulk-remove/</loc>
+    <lastmod>2018-01-08T09:56:01+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/update/</loc>
+    <lastmod>2018-01-08T09:52:47+07:00</lastmod>
   </url>
   
   <url>
@@ -132,8 +267,18 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/remove/</loc>
+    <lastmod>2018-01-08T09:52:57+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/dab-couch/</loc>
     <lastmod>2017-12-19T09:24:46+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/bulk-create/</loc>
+    <lastmod>2018-01-08T09:53:07+07:00</lastmod>
   </url>
   
   <url>
@@ -142,13 +287,58 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/bulk-update/</loc>
+    <lastmod>2018-01-08T09:53:11+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/dab-couch-es/</loc>
     <lastmod>2017-12-19T10:21:48+07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/bulk-remove/</loc>
+    <lastmod>2018-01-08T09:53:16+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/dab/dab-redis/</loc>
     <lastmod>2017-12-19T09:33:43+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/copy-from/</loc>
+    <lastmod>2018-01-08T09:53:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/copy-to/</loc>
+    <lastmod>2018-01-08T09:53:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/hook/</loc>
+    <lastmod>2018-01-08T09:53:55+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/method/</loc>
+    <lastmod>2018-01-08T09:51:44+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/model/</loc>
+    <lastmod>2018-01-08T09:50:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/method/</loc>
+    <lastmod>2018-01-08T09:49:04+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/bdez/</loc>
+    <lastmod>2018-01-08T09:41:37+07:00</lastmod>
   </url>
   
   <url>
