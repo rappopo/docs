@@ -13,19 +13,19 @@
     <title>createCollection :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1515382618" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1515382618" rel="stylesheet">
-    <link href="/css/hybrid.css?1515382618" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1515382618" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1515382618" rel="stylesheet">
-    <link href="/css/auto-complete.css?1515382618" rel="stylesheet">
-    <link href="/css/theme.css?1515382618" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1515382618" rel="stylesheet">
+    <link href="/css/nucleus.css?1515415340" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1515415340" rel="stylesheet">
+    <link href="/css/hybrid.css?1515415340" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1515415340" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1515415340" rel="stylesheet">
+    <link href="/css/auto-complete.css?1515415340" rel="stylesheet">
+    <link href="/css/theme.css?1515415340" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1515415340" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1515382618" rel="stylesheet">
+      <link href="/css/theme-blue.css?1515415340" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1515382618"></script>
+    <script src="/js/jquery-2.x.min.js?1515415340"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1515382618"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1515382618"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1515415340"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1515415340"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1515382618"></script>
+<script type="text/javascript" src="/js/search.js?1515415340"></script>
 
     
   </div>
@@ -140,13 +140,85 @@
  
   
     
-    <li data-nav-id="/dab/method/" title="Methods &amp; Features" class="dd-item 
+    <li data-nav-id="/dab/feature/" title="Features" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/dab/feature/">
+          Features
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/feature/sanitizer/" title="Sanitizer" class="dd-item ">
+        <a href="/dab/feature/sanitizer/">
+        Sanitizer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/feature/validator/" title="Validator" class="dd-item ">
+        <a href="/dab/feature/validator/">
+        Validator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/dab/method/" title="Methods" class="dd-item 
         parent
         
         
         ">
       <a href="/dab/method/">
-          Methods &amp; Features
+          Methods
           
       </a>
       
@@ -1570,7 +1642,7 @@
             
           
           
-            <a href='/'>Documentation</a> > <a href='/dab/'>DAB</a> > <a href='/dab/method/'>Methods & Features</a> > createCollection
+            <a href='/'>Documentation</a> > <a href='/dab/'>DAB</a> > <a href='/dab/method/'>Methods</a> > createCollection
           
          
           
@@ -1634,26 +1706,31 @@
 
 <ul>
 <li><code>name</code>: a unique name to identify the collection. Required.</li>
-<li><code>fields</code>: an array of column definitions. Optional.</li>
+<li><code>attributes</code>: an object of column definitions. Optional.</li>
 </ul>
 
 <p>Take a look at the example below:</p>
 
 <pre><code class="language-javascript">{
   name: 'users',
-  fields: [
-    { id: '_id', type: 'string', required: true },
-    { id: 'username', type: 'string', length: 20, required: true },
-    { id: 'fullname', type: 'string', required: true },
-    { id: 'admin', type: 'boolean', required: true, default: false },
-    { id: 'age', type: 'integer' }
-  ]
+  attributes: {
+    _id: 'string',
+    username: { type: 'string', length: 20, { validator: { required: true }}},
+    email: { type: 'string', length: 50, { validator: { required: true, isEmail: true }}},
+    fullname: { type: 'string', { validator: { required: true }}},
+    admin: { type: 'boolean', { validator: { required: true }}, default: false },
+    age: 'integer'
+  }
 }
 </code></pre>
 
 <p>Supported column types: <code>string</code>, <code>integer</code>, <code>float</code>, <code>boolean</code>, <code>text</code>, <code>date</code>, <code>datetime</code>.</p>
 
-<p>To hide some column from result set, use <code>hidden</code> property and set it to <em>true</em></p>
+<p>If you put a text value instead an object in a column, it&rsquo;ll automatically be translated as its column type.</p>
+
+<p>For some types like: <code>integer</code>, <code>float</code>, <code>boolean</code>, <code>date</code>, and <code>datetime</code>, it&rsquo;ll automatically put the right <a href="/dab/feature/validator/">validator</a> and <a href="/dab/feature/sanitizer/">sanitizer</a> into account.</p>
+
+<p>To hide some columns from result set, use <code>hidden</code> property and set it to <em>true</em></p>
 
 <p>To transform the key to something else, use <code>mask</code> property and set it to any key name.</p>
 
@@ -1670,12 +1747,12 @@
 // with this fields definition:
 {
   name: 'agents',
-  fields: [
-    { id: '_id', type: 'string', mask: 'code' },
-    { id: 'name', type: 'string', mask: 'fullName' },
-    { id: 'gender', type: 'string', mask: 'sex' },
-    { id: 'age', type: 'integer', hidden: true }
-  ]
+  attributes: {
+    _id: { type: 'string', mask: 'code' },
+    name: { type: 'string', mask: 'fullName' },
+    gender: { type: 'string', mask: 'sex' },
+    age: { type: 'integer', hidden: true }
+  }
 }
 ...
 // and execute this method:
@@ -1691,6 +1768,8 @@ dab.find({ collection: 'agents' })
   ]
 }
 </code></pre>
+
+<p>You can also add column <a href="/dab/feature/validator/">validators</a> &amp; <a href="/dab/feature/sanitizer/">sanitizers</a>. These will guarantee that whatever you put in the database are in correct types and values.</p>
 
 <h3 id="params-optional">Params (optional)</h3>
 
@@ -1794,6 +1873,54 @@ dab.find({ collection: 'agents' })
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -2888,20 +3015,20 @@ dab.find({ collection: 'agents' })
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1515382618"></script>
-    <script src="/js/perfect-scrollbar.min.js?1515382618"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1515382618"></script>
-    <script src="/js/jquery.sticky.js?1515382618"></script>
-    <script src="/js/featherlight.min.js?1515382618"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1515382618"></script>
-    <script src="/js/highlight.pack.js?1515382618"></script>
+    <script src="/js/clipboard.min.js?1515415340"></script>
+    <script src="/js/perfect-scrollbar.min.js?1515415340"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1515415340"></script>
+    <script src="/js/jquery.sticky.js?1515415340"></script>
+    <script src="/js/featherlight.min.js?1515415340"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1515415340"></script>
+    <script src="/js/highlight.pack.js?1515415340"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1515382618"></script>
-    <script src="/js/learn.js?1515382618"></script>
-    <script src="/js/hugo-learn.js?1515382618"></script>
+    <script src="/js/modernizr.custom.71422.js?1515415340"></script>
+    <script src="/js/learn.js?1515415340"></script>
+    <script src="/js/hugo-learn.js?1515415340"></script>
 
-    <link href="/mermaid/mermaid.css?1515382618" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1515382618"></script>
+    <link href="/mermaid/mermaid.css?1515415340" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1515415340"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

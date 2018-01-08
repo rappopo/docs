@@ -91,6 +91,13 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.rappopo.com/dab/feature/",
+	"title": "Features",
+	"tags": [],
+	"description": "",
+	"content": "  Sanitizer   Validator   "
+},
+{
 	"uri": "https://docs.rappopo.com/bdez/model/hook/before-create/",
 	"title": "beforeCreate",
 	"tags": [],
@@ -116,11 +123,11 @@
 	"title": "create",
 	"tags": [],
 	"description": "",
-	"content": "  create (body, params)\n Create or add a new document into a collection.\nArguments Body (required) Document body should be a plain javascript object. If ID is not provided, it\u0026rsquo;ll be created automatically.\nIf collection has fields definition, than the document body will be sanitized according to its type. Columns that aren\u0026rsquo;t listed in collection fields will also discarded. This is to make sure that you\u0026rsquo;ll always get a clean and correct document saved in the database.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with.  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If the ID has been used before, it\u0026rsquo;ll yield Document already exists error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
+	"content": "  create (body, params)\n Create or add a new document into a collection.\nArguments Body (required) Document body should be a plain javascript object. If ID is not provided, it\u0026rsquo;ll be created automatically.\nIf collection has fields definition, than the document body will be sanitized according to its type. Columns that aren\u0026rsquo;t listed in collection fields will also discarded. This is to make sure that you\u0026rsquo;ll always get a clean and correct document saved in the database.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with. ignoreColumn: If you want some columns to be ignored on validation process (only in enforced attributes), put its attribute id here. Optional, defaults to [].  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If the ID has been used before, it\u0026rsquo;ll yield Document already exists error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
 	"uri": "https://docs.rappopo.com/dab/method/",
-	"title": "Methods &amp; Features",
+	"title": "Methods",
 	"tags": [],
 	"description": "",
 	"content": " All methods should return promises. Still, node\u0026rsquo;s callback style can be used by chaining the promise with .asCallback(fn)\nExample:\n... // promise-way findOne('my-doc', { collection: 'docs' }) .then(function (result) { console.log(result) }) .catch(function (err) { console.log(err) }) // callback-way findOne('my-doc', { collection: 'docs' }).asCallback(function (err, result) { if (err) console.log(err) else console.log(result) })  Methods  find   findOne   create   update   remove   bulkCreate   bulkUpdate   bulkRemove   copyFrom   copyTo   createCollection   renameCollection   removeCollection   Alias   "
@@ -151,7 +158,7 @@
 	"title": "update",
 	"tags": [],
 	"description": "",
-	"content": "  update (id, body, params)\n Update an existing document in a collection.\nArguments ID (required) The document ID.\nBody (required) The new document body to be used as replacement.\nIf collection has fields definition, than the document body will be sanitized according to its type. Columns that aren\u0026rsquo;t listed in collection fields will also discarded. This is to make sure that you\u0026rsquo;ll always get a clean and correct document saved in the database.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with. fullReplace: If you want to have a full replacement, you should set it to true. Else it\u0026rsquo;ll only update document partially. Optional, defaults to false  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name and replacement mode is set to partial update.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If no document found, it\u0026rsquo;ll yield Document not found error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
+	"content": "  update (id, body, params)\n Update an existing document in a collection.\nArguments ID (required) The document ID.\nBody (required) The new document body to be used as replacement.\nIf collection has fields definition, than the document body will be sanitized according to its type. Columns that aren\u0026rsquo;t listed in collection fields will also discarded. This is to make sure that you\u0026rsquo;ll always get a clean and correct document saved in the database.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with. ignoreColumn: If you want some columns to be ignored on validation process, put its attribute id here. Optional, defaults to []. fullReplace: If you want to have a full replacement, you should set it to true. Else it\u0026rsquo;ll only update document partially. Optional, defaults to false  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name and replacement mode is set to partial update.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If no document found, it\u0026rsquo;ll yield Document not found error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
 	"uri": "https://docs.rappopo.com/bdez/model/hook/before-update/",
@@ -277,7 +284,7 @@
 	"title": "createCollection",
 	"tags": [],
 	"description": "",
-	"content": "  createCollection (definition, params)\n Method to create a collection.\nArguments Definition (required) Collection definition is a plain javascript object. In its simples form, it only need a name:\n name: a unique name to identify the collection. Required. fields: an array of column definitions. Optional.  Take a look at the example below:\n{ name: 'users', fields: [ { id: '_id', type: 'string', required: true }, { id: 'username', type: 'string', length: 20, required: true }, { id: 'fullname', type: 'string', required: true }, { id: 'admin', type: 'boolean', required: true, default: false }, { id: 'age', type: 'integer' } ] }  Supported column types: string, integer, float, boolean, text, date, datetime.\nTo hide some column from result set, use hidden property and set it to true\nTo transform the key to something else, use mask property and set it to any key name.\nExample:\n... // internally saved as this: [ { _id: 'james-bond', name: 'James Bond', gender: 'Male', age: 45 }, { _id: 'jason-bourne', name: 'Jason Bourne', gender: 'Male', age: 36 }, ... ] ... // with this fields definition: { name: 'agents', fields: [ { id: '_id', type: 'string', mask: 'code' }, { id: 'name', type: 'string', mask: 'fullName' }, { id: 'gender', type: 'string', mask: 'sex' }, { id: 'age', type: 'integer', hidden: true } ] } ... // and execute this method: dab.find({ collection: 'agents' }) ... // will return this result set: { success: true, data: [ { code: 'james-bond', fullName: 'James Bond', sex: 'Male' }, { code: 'jason-bourne', fullName: 'Jason Bourne', sex: 'Male' }, ... ] }  Params (optional)  withSchema: optional, defaults to false. If set true, it\u0026rsquo;ll destroy its internal database schema and rebuild a new one. In SQL database, this means very dangerous: drop existing table and recreate a new one with a schema built from the fields definition. All existing records \u0026amp; schema will be lost forever.  Response Result It should return an object like below:\n{ success: true }  Error It\u0026rsquo;ll yield Collection already exists error if the collection name has been used before.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
+	"content": "  createCollection (definition, params)\n Method to create a collection.\nArguments Definition (required) Collection definition is a plain javascript object. In its simples form, it only need a name:\n name: a unique name to identify the collection. Required. attributes: an object of column definitions. Optional.  Take a look at the example below:\n{ name: 'users', attributes: { _id: 'string', username: { type: 'string', length: 20, { validator: { required: true }}}, email: { type: 'string', length: 50, { validator: { required: true, isEmail: true }}}, fullname: { type: 'string', { validator: { required: true }}}, admin: { type: 'boolean', { validator: { required: true }}, default: false }, age: 'integer' } }  Supported column types: string, integer, float, boolean, text, date, datetime.\nIf you put a text value instead an object in a column, it\u0026rsquo;ll automatically be translated as its column type.\nFor some types like: integer, float, boolean, date, and datetime, it\u0026rsquo;ll automatically put the right validator and sanitizer into account.\nTo hide some columns from result set, use hidden property and set it to true\nTo transform the key to something else, use mask property and set it to any key name.\nExample:\n... // internally saved as this: [ { _id: 'james-bond', name: 'James Bond', gender: 'Male', age: 45 }, { _id: 'jason-bourne', name: 'Jason Bourne', gender: 'Male', age: 36 }, ... ] ... // with this fields definition: { name: 'agents', attributes: { _id: { type: 'string', mask: 'code' }, name: { type: 'string', mask: 'fullName' }, gender: { type: 'string', mask: 'sex' }, age: { type: 'integer', hidden: true } } } ... // and execute this method: dab.find({ collection: 'agents' }) ... // will return this result set: { success: true, data: [ { code: 'james-bond', fullName: 'James Bond', sex: 'Male' }, { code: 'jason-bourne', fullName: 'Jason Bourne', sex: 'Male' }, ... ] }  You can also add column validators \u0026amp; sanitizers. These will guarantee that whatever you put in the database are in correct types and values.\nParams (optional)  withSchema: optional, defaults to false. If set true, it\u0026rsquo;ll destroy its internal database schema and rebuild a new one. In SQL database, this means very dangerous: drop existing table and recreate a new one with a schema built from the fields definition. All existing records \u0026amp; schema will be lost forever.  Response Result It should return an object like below:\n{ success: true }  Error It\u0026rsquo;ll yield Collection already exists error if the collection name has been used before.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
 	"uri": "https://docs.rappopo.com/dab/dab-ne/",
@@ -439,6 +446,20 @@
 	"tags": [],
 	"description": "",
 	"content": " copyTo (dest, params)\n "
+},
+{
+	"uri": "https://docs.rappopo.com/dab/feature/sanitizer/",
+	"title": "Sanitizer",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.rappopo.com/dab/feature/validator/",
+	"title": "Validator",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://docs.rappopo.com/bdez/model/hook/",

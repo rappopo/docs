@@ -421,8 +421,8 @@ Arguments Dest (mixed, required) If destination is a json file, than all resulti
       <description>createCollection (definition, params)
  Method to create a collection.
 Arguments Definition (required) Collection definition is a plain javascript object. In its simples form, it only need a name:
- name: a unique name to identify the collection. Required. fields: an array of column definitions. Optional.  Take a look at the example below:
-{ name: &#39;users&#39;, fields: [ { id: &#39;_id&#39;, type: &#39;string&#39;, required: true }, { id: &#39;username&#39;, type: &#39;string&#39;, length: 20, required: true }, { id: &#39;fullname&#39;, type: &#39;string&#39;, required: true }, { id: &#39;admin&#39;, type: &#39;boolean&#39;, required: true, default: false }, { id: &#39;age&#39;, type: &#39;integer&#39; } ] }  Supported column types: string, integer, float, boolean, text, date, datetime.</description>
+ name: a unique name to identify the collection. Required. attributes: an object of column definitions. Optional.  Take a look at the example below:
+{ name: &#39;users&#39;, attributes: { _id: &#39;string&#39;, username: { type: &#39;string&#39;, length: 20, { validator: { required: true }}}, email: { type: &#39;string&#39;, length: 50, { validator: { required: true, isEmail: true }}}, fullname: { type: &#39;string&#39;, { validator: { required: true }}}, admin: { type: &#39;boolean&#39;, { validator: { required: true }}, default: false }, age: &#39;integer&#39; } }  Supported column types: string, integer, float, boolean, text, date, datetime.</description>
     </item>
     
     <item>
@@ -679,6 +679,24 @@ ns: your namespace. You&amp;rsquo;ll most likely want to give a custom name, oth
       <guid>https://docs.rappopo.com/bdez/model/method/copy-to/</guid>
       <description> copyTo (dest, params)
  </description>
+    </item>
+    
+    <item>
+      <title>Sanitizer</title>
+      <link>https://docs.rappopo.com/dab/feature/sanitizer/</link>
+      <pubDate>Mon, 08 Jan 2018 19:39:39 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/feature/sanitizer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Validator</title>
+      <link>https://docs.rappopo.com/dab/feature/validator/</link>
+      <pubDate>Mon, 08 Jan 2018 19:39:31 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/feature/validator/</guid>
+      <description></description>
     </item>
     
   </channel>

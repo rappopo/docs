@@ -67,6 +67,11 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/dab/feature/</loc>
+    <lastmod>2018-01-08T19:38:30+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/bdez/model/hook/before-create/</loc>
     <lastmod>2018-01-08T09:54:26+07:00</lastmod>
   </url>
@@ -314,6 +319,16 @@
   <url>
     <loc>https://docs.rappopo.com/bdez/model/method/copy-to/</loc>
     <lastmod>2018-01-08T09:53:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/feature/sanitizer/</loc>
+    <lastmod>2018-01-08T19:39:39+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/feature/validator/</loc>
+    <lastmod>2018-01-08T19:39:31+07:00</lastmod>
   </url>
   
   <url>
