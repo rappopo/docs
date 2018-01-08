@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Library</title>
+      <link>https://docs.rappopo.com/dab-project/library/</link>
+      <pubDate>Mon, 08 Jan 2018 20:37:29 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab-project/library/</guid>
+      <description>While each and every DAB implementation library share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:
+ @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  </description>
+    </item>
+    
+    <item>
       <title>beforeValidate</title>
       <link>https://docs.rappopo.com/bdez/model/hook/before-validate/</link>
       <pubDate>Mon, 08 Jan 2018 09:56:21 +0700</pubDate>
@@ -203,16 +213,6 @@ If collection has fields definition, than the document body will be sanitized ac
     </item>
     
     <item>
-      <title>Implementation</title>
-      <link>https://docs.rappopo.com/dab/implementation/</link>
-      <pubDate>Tue, 19 Dec 2017 09:22:51 +0700</pubDate>
-      
-      <guid>https://docs.rappopo.com/dab/implementation/</guid>
-      <description>While each and every DAB implementation share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:
- @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  </description>
-    </item>
-    
-    <item>
       <title>update</title>
       <link>https://docs.rappopo.com/dab/method/update/</link>
       <pubDate>Mon, 18 Dec 2017 13:38:15 +0700</pubDate>
@@ -370,10 +370,10 @@ var source = new DabKnex({ .</description>
     
     <item>
       <title>@rappopo/dab-memory</title>
-      <link>https://docs.rappopo.com/dab/dab-memory/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-memory/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:22 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-memory/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-memory/</guid>
       <description>A DAB implementation for in-memory datastore, powered by Lodash and lodash-query.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-memory  And within your script:
@@ -427,10 +427,10 @@ Arguments Definition (required) Collection definition is a plain javascript obje
     
     <item>
       <title>@rappopo/dab-ne</title>
-      <link>https://docs.rappopo.com/dab/dab-ne/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-ne/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:32 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-ne/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-ne/</guid>
       <description>A DAB implementation for NeDB.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-ne  And within your script:
@@ -473,10 +473,10 @@ Params (optional)  withSchema: optional, defaults to false. If set true, it&amp;
     
     <item>
       <title>@rappopo/dab-mongo</title>
-      <link>https://docs.rappopo.com/dab/dab-mongo/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-mongo/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:27 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-mongo/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-mongo/</guid>
       <description>A DAB implementation for MongoDB.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-mongo  And within your script:
@@ -519,10 +519,10 @@ Params (optional)  withSchema: optional, defaults to false. If set true, it&amp;
     
     <item>
       <title>@rappopo/dab-knex</title>
-      <link>https://docs.rappopo.com/dab/dab-knex/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-knex/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:17 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-knex/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-knex/</guid>
       <description>A DAB implementation for Knex
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-knex  Don&amp;rsquo;t forget to also install the needed client library, e.g (if you choose to use sqlite3):
@@ -552,10 +552,10 @@ const DabKnex = require(&#39;@rappopo/dab-knex&#39;) const dab = new DabKnex({ c
     
     <item>
       <title>@rappopo/dab-pouch</title>
-      <link>https://docs.rappopo.com/dab/dab-pouch/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-pouch/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:38 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-pouch/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-pouch/</guid>
       <description>A DAB implementation for PouchDB.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-pouch  And within your script:
@@ -584,10 +584,10 @@ dbName: the database name. You&amp;rsquo;ll most likely want to give a custom na
     
     <item>
       <title>@rappopo/dab-couch</title>
-      <link>https://docs.rappopo.com/dab/dab-couch/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-couch/</link>
       <pubDate>Tue, 19 Dec 2017 09:24:46 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-couch/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-couch/</guid>
       <description>A DAB implementation for CouchDB 2.0 and above.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-couch  And within your script:
@@ -607,10 +607,10 @@ dbName: the database name to connect to. Defaults to test</description>
     
     <item>
       <title>@rappopo/dab-es</title>
-      <link>https://docs.rappopo.com/dab/dab-es/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-es/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:12 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-es/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-es/</guid>
       <description>A DAB implementation for Elasticsearch. The excellent library e3po is used to transform Mongo Query Language to Elasticsearch DSB.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-es  And within your script:
@@ -629,10 +629,10 @@ const DabEs = require(&#39;@rappopo/dab-es&#39;) const dab = new DabEs({ hosts: 
     
     <item>
       <title>@rappopo/dab-couch-es</title>
-      <link>https://docs.rappopo.com/dab/dab-couch-es/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-couch-es/</link>
       <pubDate>Tue, 19 Dec 2017 10:21:48 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-couch-es/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-couch-es/</guid>
       <description>A DAB implementation for CouchDB 2.0 AND Elasticsearch for finding documents.
 You might ask yourself, why this useless package if there are already @rappopo/dab-couch and @rappopo/dab-es? Well, this package is a thin wrapper around those two. Only the find method is taken from @rappopo/dab-es, while the rest are from @rappopo/dab-couch.
 I make this stupid package because I work alot with both CouchDB and Elasticsearch. Both systems are connected to each other through @rappopo/nesu in the back, which basically listen to CouchDB changes stream and forward it to Elasticsearch for indexing.</description>
@@ -650,10 +650,10 @@ I make this stupid package because I work alot with both CouchDB and Elasticsear
     
     <item>
       <title>@rappopo/dab-redis</title>
-      <link>https://docs.rappopo.com/dab/dab-redis/</link>
+      <link>https://docs.rappopo.com/dab-project/dab-redis/</link>
       <pubDate>Tue, 19 Dec 2017 09:33:43 +0700</pubDate>
       
-      <guid>https://docs.rappopo.com/dab/dab-redis/</guid>
+      <guid>https://docs.rappopo.com/dab-project/dab-redis/</guid>
       <description>A DAB implementation for Redis.
 Installation Simply invoke this command in your project folder:
 $ npm install --save @rappopo/dab-redis  And within your script:

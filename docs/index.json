@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://docs.rappopo.com/dab-project/library/",
+	"title": "Library",
+	"tags": [],
+	"description": "",
+	"content": "While each and every DAB implementation library share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:\n @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  "
+},
+{
 	"uri": "https://docs.rappopo.com/bdez/model/hook/before-validate/",
 	"title": "beforeValidate",
 	"tags": [],
@@ -39,7 +46,21 @@
 	"title": "About",
 	"tags": [],
 	"description": "",
-	"content": " These are for dummies only!!! If you\u0026rsquo;re considered yourself as a kungfu master, than you\u0026rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you\u0026rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!\n Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily. It won\u0026rsquo;t be a very sophisticated and overly complex library. On the contrary, it\u0026rsquo;ll only support the most basic operations. Not because I don\u0026rsquo;t need it, but simply because I\u0026rsquo;m too stupid \u0026amp; lazy to write such beast :)\nIn my work as a proud-to-be-called lazy programmer right now, I have to work with many different databases. Be it relational or NoSQL. And through all the times, I have to face the same problem over and over again: different ways to access the data, learning it\u0026rsquo;s query language, and so on. The list grows very quickly.\nThat\u0026rsquo;s why this project is born. It should helps lazy and stupid people like me to get more time to drink beer. Not learning a new alien language over and over again.\nExisting libraries are way to complex for me. I only need the most basic ones: queryable through MongoDB-like query language, pagination mechanism. And a simple import \u0026amp; export data. Also, being a true fan of RESTful APIs, so why don\u0026rsquo;t I blindly steal their ways to find, create, update \u0026amp; remove documents? No more learning! And that means more time for beer!!\nUsage For developers: this package gives you a basic class and guide lines on how to write package for some particular database. All you need to do is just extends this basic class and write methods according to its specification.\nFor end user: never use this package directly, because it won\u0026rsquo;t gives you anything other than useless stuffs! Instead, pick one of its implementation library below that match the database you want to work with.\nIf for some reason you want to change to another one later, the only thing you need to do is just requiring a different library and put its options correctly. Everything else should be the same.\nExample (development):\nvar Dab = require('@rappopo/dab-memory'), dab = new Dab() dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  And later in production, just change to this:\nvar Dab = require('@rappopo/dab-couch'), dab = new Dab({ url: 'http://localhost:5984', dbName: 'mydb' }) // everything below this line should still be the same dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  "
+	"content": " These are for dummies only!!! If you\u0026rsquo;re considered yourself as a kungfu master, than you\u0026rsquo;d probably better to look for masterpieces like Waterline or Sequelize instead!!! But if you\u0026rsquo;re a dummy like me, then welcome to the party! Yay!! Finally a database access for fools!!! With lots of stuff and magic!!!!\n Background Rappopo DAB is a set of conventions of database abstraction layer with focus on how to access and work with data easily. It won\u0026rsquo;t be a very sophisticated and overly complex library. On the contrary, it\u0026rsquo;ll only support the most basic operations. Not because I don\u0026rsquo;t need it, but simply because I\u0026rsquo;m too stupid \u0026amp; lazy to write such beast :)\nIn my work as a proud-to-be-called lazy programmer right now, I have to work with many different databases. Be it relational or NoSQL. And through all the times, I have to face the same problem over and over again: different ways to access the data, learning it\u0026rsquo;s query language, and so on. The list grows very quickly.\nThat\u0026rsquo;s why this project is born. It should helps lazy and stupid people like me to get more time to drink beer. Not learning a new alien language over and over again.\nExisting libraries are way to complex for me. I only need the most basic ones: queryable through MongoDB-like query language, pagination mechanism. And a simple import \u0026amp; export data. Also, being a true fan of RESTful APIs, so why don\u0026rsquo;t I blindly steal their ways to find, create, update \u0026amp; remove documents? No more learning! And that means more time for beer!!\nUsage For developers: this package gives you a basic class and guide lines on how to write package for some particular database. All you need to do is just extends this basic class and write methods according to its specification.\nFor end user: never use this package directly, because it won\u0026rsquo;t gives you anything other than useless stuffs! Instead, pick one of its implementation library chapter that match the database you want to work with.\nIf for some reason you want to change to another one later, the only thing you need to do is just requiring a different library and put its options correctly. Everything else should be the same.\nExample (development):\nvar Dab = require('@rappopo/dab-memory'), dab = new Dab() dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  And later in production, just change to this:\nvar Dab = require('@rappopo/dab-couch'), dab = new Dab({ url: 'http://localhost:5984', dbName: 'mydb' }) // everything below this line should still be the same dab.createCollection({ name: 'test' }) ... dab.find({ collection: 'test' }).then(function (results) =\u0026gt; { ... })  "
+},
+{
+	"uri": "https://docs.rappopo.com/dab/",
+	"title": "DAB",
+	"tags": [],
+	"description": "",
+	"content": " DAB For dummies! Collection of the most useless data access layers! Ever!\nImage source\n"
+},
+{
+	"uri": "https://docs.rappopo.com/dab-project/",
+	"title": "DAB Projects",
+	"tags": [],
+	"description": "",
+	"content": " DAB Projects DAB here! Dab there! Everybody dabs!!\nImage Source\n"
 },
 {
 	"uri": "https://docs.rappopo.com/bdez/model/hook/after-validate/",
@@ -77,13 +98,6 @@
 	"content": "  findOne (id, params)\n Find specific document by its ID throughout a collection.\nArguments ID (required) Document ID to look for.\nParams (required, mixed) A plain javascript object of:\n collection: Required, the name of collection you want to work with.  Or, you\u0026rsquo;re also allowed to pass a string. In this case, it will be interpreted as the collection name.\nResponse Result It should return an object like the one below:\n{ success: true, data: { _id: 'james-bond', name: 'James Bond', age: 40 ... } }  Error If no document found, it\u0026rsquo;ll yield Document not found error.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
-	"uri": "https://docs.rappopo.com/dab/",
-	"title": "DAB",
-	"tags": [],
-	"description": "",
-	"content": " DAB Project For dummies! Collection of the most useless data access layers! Ever!\nImage source\n"
-},
-{
 	"uri": "https://docs.rappopo.com/dab/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
@@ -119,6 +133,13 @@
 	"content": " delDab (id)\n "
 },
 {
+	"uri": "https://docs.rappopo.com/bdez/",
+	"title": "BDEZ",
+	"tags": [],
+	"description": "",
+	"content": " BDEZ An ORM/ODM wannabe for Rappopo DAB\nImage source\n"
+},
+{
 	"uri": "https://docs.rappopo.com/dab/method/create/",
 	"title": "create",
 	"tags": [],
@@ -147,11 +168,11 @@
 	"content": " addModel (modelDef)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/implementation/",
-	"title": "Implementation",
+	"uri": "https://docs.rappopo.com/nesu/",
+	"title": "NESU",
 	"tags": [],
 	"description": "",
-	"content": "While each and every DAB implementation share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:\n @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  "
+	"content": " NESU A CouchDB to Elasticsearch synchronizer, or CouchDB changes input plugin for Logstash \u0026ldquo;contender\u0026rdquo;, or \u0026ldquo;CouchDB River Plugin resurrection\u0026rdquo;, or whatever you want it to call.\nImage source\n"
 },
 {
 	"uri": "https://docs.rappopo.com/dab/method/update/",
@@ -252,7 +273,7 @@
 	"content": " afterBulkCreate (body, bulkCreateResult, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-memory/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-memory/",
 	"title": "@rappopo/dab-memory",
 	"tags": [],
 	"description": "",
@@ -287,7 +308,7 @@
 	"content": "  createCollection (definition, params)\n Method to create a collection.\nArguments Definition (required) Collection definition is a plain javascript object. In its simples form, it only need a name:\n name: a unique name to identify the collection. Required. attributes: an object of column definitions. Optional.  Take a look at the example below:\n{ name: 'users', attributes: { _id: 'string', username: { type: 'string', length: 20, { validator: { required: true }}}, email: { type: 'string', length: 50, { validator: { required: true, isEmail: true }}}, fullname: { type: 'string', { validator: { required: true }}}, admin: { type: 'boolean', { validator: { required: true }}, default: false }, age: 'integer' } }  Supported column types: string, integer, float, boolean, text, date, datetime.\nIf you put a text value instead an object in a column, it\u0026rsquo;ll automatically be translated as its column type.\nFor some types like: integer, float, boolean, date, and datetime, it\u0026rsquo;ll automatically put the right validator and sanitizer into account.\nTo hide some columns from result set, use hidden property and set it to true\nTo transform the key to something else, use mask property and set it to any key name.\nExample:\n... // internally saved as this: [ { _id: 'james-bond', name: 'James Bond', gender: 'Male', age: 45 }, { _id: 'jason-bourne', name: 'Jason Bourne', gender: 'Male', age: 36 }, ... ] ... // with this fields definition: { name: 'agents', attributes: { _id: { type: 'string', mask: 'code' }, name: { type: 'string', mask: 'fullName' }, gender: { type: 'string', mask: 'sex' }, age: { type: 'integer', hidden: true } } } ... // and execute this method: dab.find({ collection: 'agents' }) ... // will return this result set: { success: true, data: [ { code: 'james-bond', fullName: 'James Bond', sex: 'Male' }, { code: 'jason-bourne', fullName: 'Jason Bourne', sex: 'Male' }, ... ] }  You can also add column validators \u0026amp; sanitizers. These will guarantee that whatever you put in the database are in correct types and values.\nParams (optional)  withSchema: optional, defaults to false. If set true, it\u0026rsquo;ll destroy its internal database schema and rebuild a new one. In SQL database, this means very dangerous: drop existing table and recreate a new one with a schema built from the fields definition. All existing records \u0026amp; schema will be lost forever.  Response Result It should return an object like below:\n{ success: true }  Error It\u0026rsquo;ll yield Collection already exists error if the collection name has been used before.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-ne/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-ne/",
 	"title": "@rappopo/dab-ne",
 	"tags": [],
 	"description": "",
@@ -315,7 +336,7 @@
 	"content": "  renameCollection (oldName, newName, params)\n Method to rename a collection.\nArguments Old Name (required) A string that indicate the existing collection name\nNew Name (required) A string for what the new collection will be named\nParams (optional)  withSchema: optional, defaults to false. If set true, it\u0026rsquo;ll try to rename the internal database while keeping its existing schema and data intact. In SQL database, this means: rename table  Response Result It should return an object like below:\n{ success: true }  Error It\u0026rsquo;ll yield Collection already exists error if the new collection name has been used before. And Collection not found if the named collection is nowhere to be found.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-mongo/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-mongo/",
 	"title": "@rappopo/dab-mongo",
 	"tags": [],
 	"description": "",
@@ -343,7 +364,7 @@
 	"content": "  removeCollection (name, params)\n Method to remove a collection.\nArguments Name (required) A string that indicate which collection to be removed\nParams (optional)  withSchema: optional, defaults to false. If set true, it\u0026rsquo;ll destroy both the internal schema and data for good.  Response Result It should return an object like below:\n{ success: true }  Error It\u0026rsquo;ll yield Collection not found if the named collection is nowhere to be found.\nAny other error will yield a normal Node error object you can catch through promise easily.\n"
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-knex/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-knex/",
 	"title": "@rappopo/dab-knex",
 	"tags": [],
 	"description": "",
@@ -364,7 +385,7 @@
 	"content": " update (id, body, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-pouch/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-pouch/",
 	"title": "@rappopo/dab-pouch",
 	"tags": [],
 	"description": "",
@@ -385,7 +406,7 @@
 	"content": " remove (id, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-couch/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-couch/",
 	"title": "@rappopo/dab-couch",
 	"tags": [],
 	"description": "",
@@ -399,7 +420,7 @@
 	"content": " bulkCreate (body, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-es/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-es/",
 	"title": "@rappopo/dab-es",
 	"tags": [],
 	"description": "",
@@ -413,7 +434,7 @@
 	"content": " bulkUpdate (body, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-couch-es/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-couch-es/",
 	"title": "@rappopo/dab-couch-es",
 	"tags": [],
 	"description": "",
@@ -427,7 +448,7 @@
 	"content": " bulkRemove (body, params)\n "
 },
 {
-	"uri": "https://docs.rappopo.com/dab/dab-redis/",
+	"uri": "https://docs.rappopo.com/dab-project/dab-redis/",
 	"title": "@rappopo/dab-redis",
 	"tags": [],
 	"description": "",
@@ -490,25 +511,11 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.rappopo.com/bdez/",
-	"title": "BDEZ",
-	"tags": [],
-	"description": "",
-	"content": " BDEZ An ORM/ODM wannabe for Rappopo DAB\nImage source\n"
-},
-{
 	"uri": "https://docs.rappopo.com/",
 	"title": "Documentation",
 	"tags": [],
 	"description": "",
-	"content": " Welcome to Documentation  DAB   BDEZ   NESU   "
-},
-{
-	"uri": "https://docs.rappopo.com/nesu/",
-	"title": "NESU",
-	"tags": [],
-	"description": "",
-	"content": " NESU A CouchDB to Elasticsearch synchronizer, or CouchDB changes input plugin for Logstash \u0026ldquo;contender\u0026rdquo;, or \u0026ldquo;CouchDB River Plugin resurrection\u0026rdquo;, or whatever you want it to call.\nImage source\n"
+	"content": " Welcome to Documentation  DAB   DAB Projects   BDEZ   NESU   "
 },
 {
 	"uri": "https://docs.rappopo.com/categories/",

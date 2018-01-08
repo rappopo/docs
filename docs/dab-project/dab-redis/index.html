@@ -1,0 +1,3012 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <meta name="description" content="">
+<meta name="author" content="Ardhi Lukianto &lt;ardhi@lukianto.com&gt;">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>@rappopo/dab-redis :: Documentation</title>
+    
+    
+    <link href="/css/nucleus.css?1515419482" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1515419482" rel="stylesheet">
+    <link href="/css/hybrid.css?1515419482" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1515419482" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1515419482" rel="stylesheet">
+    <link href="/css/auto-complete.css?1515419482" rel="stylesheet">
+    <link href="/css/theme.css?1515419482" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1515419482" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1515419482" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1515419482"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/dab-project/dab-redis/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="https://rappopo.com"><img src="/images/rappopo.png" alt="Rappopo" width="70%"></a>
+<p><a href="/" style="color:#fff">Documentation</a></p>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1515419482"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1515419482"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/docs.rappopo.com\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1515419482"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/dab/" title="DAB" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/dab/">
+          DAB
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/about/" title="About" class="dd-item ">
+        <a href="/dab/about/">
+        About
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/getting-started/" title="Getting Started" class="dd-item ">
+        <a href="/dab/getting-started/">
+        Getting Started
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/dab/feature/" title="Features" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/dab/feature/">
+          Features
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/feature/sanitizer/" title="Sanitizer" class="dd-item ">
+        <a href="/dab/feature/sanitizer/">
+        Sanitizer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/feature/validator/" title="Validator" class="dd-item ">
+        <a href="/dab/feature/validator/">
+        Validator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/dab/method/" title="Methods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/dab/method/">
+          Methods
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/find/" title="find" class="dd-item ">
+        <a href="/dab/method/find/">
+        find
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/find-one/" title="findOne" class="dd-item ">
+        <a href="/dab/method/find-one/">
+        findOne
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create/" title="create" class="dd-item ">
+        <a href="/dab/method/create/">
+        create
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/update/" title="update" class="dd-item ">
+        <a href="/dab/method/update/">
+        update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove/" title="remove" class="dd-item ">
+        <a href="/dab/method/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/bulk-create/" title="bulkCreate" class="dd-item ">
+        <a href="/dab/method/bulk-create/">
+        bulkCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/bulk-update/" title="bulkUpdate" class="dd-item ">
+        <a href="/dab/method/bulk-update/">
+        bulkUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/bulk-remove/" title="bulkRemove" class="dd-item ">
+        <a href="/dab/method/bulk-remove/">
+        bulkRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/copy-from/" title="copyFrom" class="dd-item ">
+        <a href="/dab/method/copy-from/">
+        copyFrom
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/copy-to/" title="copyTo" class="dd-item ">
+        <a href="/dab/method/copy-to/">
+        copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/create-collection/" title="createCollection" class="dd-item ">
+        <a href="/dab/method/create-collection/">
+        createCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/rename-collection/" title="renameCollection" class="dd-item ">
+        <a href="/dab/method/rename-collection/">
+        renameCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/remove-collection/" title="removeCollection" class="dd-item ">
+        <a href="/dab/method/remove-collection/">
+        removeCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab/method/alias/" title="Alias" class="dd-item ">
+        <a href="/dab/method/alias/">
+        Alias
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/dab-project/" title="DAB Projects" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/dab-project/">
+          DAB Projects
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/library/" title="Library" class="dd-item ">
+        <a href="/dab-project/library/">
+        Library
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-memory/" title="@rappopo/dab-memory" class="dd-item ">
+        <a href="/dab-project/dab-memory/">
+        @rappopo/dab-memory
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-ne/" title="@rappopo/dab-ne" class="dd-item ">
+        <a href="/dab-project/dab-ne/">
+        @rappopo/dab-ne
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-mongo/" title="@rappopo/dab-mongo" class="dd-item ">
+        <a href="/dab-project/dab-mongo/">
+        @rappopo/dab-mongo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-knex/" title="@rappopo/dab-knex" class="dd-item ">
+        <a href="/dab-project/dab-knex/">
+        @rappopo/dab-knex
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-pouch/" title="@rappopo/dab-pouch" class="dd-item ">
+        <a href="/dab-project/dab-pouch/">
+        @rappopo/dab-pouch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-couch/" title="@rappopo/dab-couch" class="dd-item ">
+        <a href="/dab-project/dab-couch/">
+        @rappopo/dab-couch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-es/" title="@rappopo/dab-es" class="dd-item ">
+        <a href="/dab-project/dab-es/">
+        @rappopo/dab-es
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-couch-es/" title="@rappopo/dab-couch-es" class="dd-item ">
+        <a href="/dab-project/dab-couch-es/">
+        @rappopo/dab-couch-es
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/dab-project/dab-redis/" title="@rappopo/dab-redis" class="dd-item active">
+        <a href="/dab-project/dab-redis/">
+        @rappopo/dab-redis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bdez/" title="BDEZ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bdez/">
+          BDEZ
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/bdez/model/" title="Model" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bdez/model/">
+          Model
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/bdez/model/hook/" title="Hooks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bdez/model/hook/">
+          Hooks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-validate/" title="beforeValidate" class="dd-item ">
+        <a href="/bdez/model/hook/before-validate/">
+        beforeValidate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-validate/" title="afterValidate" class="dd-item ">
+        <a href="/bdez/model/hook/after-validate/">
+        afterValidate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-create/" title="beforeCreate" class="dd-item ">
+        <a href="/bdez/model/hook/before-create/">
+        beforeCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-create/" title="afterCreate" class="dd-item ">
+        <a href="/bdez/model/hook/after-create/">
+        afterCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-update/" title="beforeUpdate" class="dd-item ">
+        <a href="/bdez/model/hook/before-update/">
+        beforeUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-update/" title="afterUpdate" class="dd-item ">
+        <a href="/bdez/model/hook/after-update/">
+        afterUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-remove/" title="beforeRemove" class="dd-item ">
+        <a href="/bdez/model/hook/before-remove/">
+        beforeRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-remove/" title="afterRemove" class="dd-item ">
+        <a href="/bdez/model/hook/after-remove/">
+        afterRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-bulk-create/" title="beforeBulkCreate" class="dd-item ">
+        <a href="/bdez/model/hook/before-bulk-create/">
+        beforeBulkCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-bulk-create/" title="afterBulkCreate" class="dd-item ">
+        <a href="/bdez/model/hook/after-bulk-create/">
+        afterBulkCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-bulk-update/" title="beforeBulkUpdate" class="dd-item ">
+        <a href="/bdez/model/hook/before-bulk-update/">
+        beforeBulkUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-bulk-update/" title="afterBulkUpdate" class="dd-item ">
+        <a href="/bdez/model/hook/after-bulk-update/">
+        afterBulkUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/before-bulk-remove/" title="beforeBulkRemove" class="dd-item ">
+        <a href="/bdez/model/hook/before-bulk-remove/">
+        beforeBulkRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/hook/after-bulk-remove/" title="afterBulkRemove" class="dd-item ">
+        <a href="/bdez/model/hook/after-bulk-remove/">
+        afterBulkRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/bdez/model/method/" title="Methods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bdez/model/method/">
+          Methods
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/init/" title="init" class="dd-item ">
+        <a href="/bdez/model/method/init/">
+        init
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/get-dab/" title="getDab" class="dd-item ">
+        <a href="/bdez/model/method/get-dab/">
+        getDab
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/get-dab-collection/" title="getDabCollection" class="dd-item ">
+        <a href="/bdez/model/method/get-dab-collection/">
+        getDabCollection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/find/" title="find" class="dd-item ">
+        <a href="/bdez/model/method/find/">
+        find
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/find-one/" title="findOne" class="dd-item ">
+        <a href="/bdez/model/method/find-one/">
+        findOne
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/create/" title="create" class="dd-item ">
+        <a href="/bdez/model/method/create/">
+        create
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/update/" title="update" class="dd-item ">
+        <a href="/bdez/model/method/update/">
+        update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/remove/" title="remove" class="dd-item ">
+        <a href="/bdez/model/method/remove/">
+        remove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/bulk-create/" title="bulkCreate" class="dd-item ">
+        <a href="/bdez/model/method/bulk-create/">
+        bulkCreate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/bulk-update/" title="bulkUpdate" class="dd-item ">
+        <a href="/bdez/model/method/bulk-update/">
+        bulkUpdate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/bulk-remove/" title="bulkRemove" class="dd-item ">
+        <a href="/bdez/model/method/bulk-remove/">
+        bulkRemove
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/copy-from/" title="copyFrom" class="dd-item ">
+        <a href="/bdez/model/method/copy-from/">
+        copyFrom
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/model/method/copy-to/" title="copyTo" class="dd-item ">
+        <a href="/bdez/model/method/copy-to/">
+        copyTo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/bdez/method/" title="Methods" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bdez/method/">
+          Methods
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/add-dab/" title="addDab" class="dd-item ">
+        <a href="/bdez/method/add-dab/">
+        addDab
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/get-dab/" title="getDab" class="dd-item ">
+        <a href="/bdez/method/get-dab/">
+        getDab
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/del-dab/" title="delDab" class="dd-item ">
+        <a href="/bdez/method/del-dab/">
+        delDab
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/add-model/" title="addModel" class="dd-item ">
+        <a href="/bdez/method/add-model/">
+        addModel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/get-model/" title="getModel" class="dd-item ">
+        <a href="/bdez/method/get-model/">
+        getModel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bdez/method/del-model/" title="delModel" class="dd-item ">
+        <a href="/bdez/method/del-model/">
+        delModel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/nesu/" title="NESU" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nesu/">
+          NESU
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nesu/setup/" title="Setup" class="dd-item ">
+        <a href="/nesu/setup/">
+        Setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nesu/config/" title="Configuration" class="dd-item ">
+        <a href="/nesu/config/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://github.com/rappopo"><i class='fa fa-github'></i> Github Repos</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://twitter.com/rappopoto"><i class='fa fa-twitter'></i> Twitter</a>
+              </li>
+          
+              <li class="" role=""> 
+                  <a class="padding" href="https://rappopo.com/"><i class='fa fa-home'></i> Homepage</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Documentation</a> > <a href='/dab-project/'>DAB Projects</a> > @rappopo/dab-redis
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#methods">Methods</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>@rappopo/dab-redis</h1>
+          
+
+        
+
+
+
+
+<p>A DAB implementation for <a href="https://redis.io">Redis</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Simply invoke this command in your project folder:</p>
+
+<pre><code>$ npm install --save @rappopo/dab-redis
+</code></pre>
+
+<p>And within your script:</p>
+
+<pre><code class="language-javascript">const DabRedis = require('@rappopo/dab-redis')
+const dab = new DabRedis({
+  url: 'redis://myhost:6379',
+  ns: 'docs'
+})
+...
+dab.findOne('my-doc').then(function(doc) { ... })
+</code></pre>
+
+<h2 id="options">Options</h2>
+
+<p><code>url</code>: your Redis url endpoint. If it not provided, it defauts to: <em>redis://localhost:6379</em></p>
+
+<p><code>ns</code>: your namespace. You&rsquo;ll most likely want to give a custom name, otherwise it defaults to <em>doc</em></p>
+
+<h2 id="methods">Methods</h2>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> <a href="/dab/method/find/">find</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/find-one/">findOne</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/create/">create</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/update/">update</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/remove/">remove</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-create/">bulkCreate</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-update/">bulkUpdate</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/dab/method/bulk-remove/">bulkRemove</a></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <a href="/dab/method/copy-from/">copyFrom</a></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <a href="/dab/method/copy-to/">copyTo</a></label></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/dab-project/dab-couch-es/" title="@rappopo/dab-couch-es"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/bdez/" title="BDEZ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1515419482"></script>
+    <script src="/js/perfect-scrollbar.min.js?1515419482"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1515419482"></script>
+    <script src="/js/jquery.sticky.js?1515419482"></script>
+    <script src="/js/featherlight.min.js?1515419482"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1515419482"></script>
+    <script src="/js/highlight.pack.js?1515419482"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1515419482"></script>
+    <script src="/js/learn.js?1515419482"></script>
+    <script src="/js/hugo-learn.js?1515419482"></script>
+
+    <link href="/mermaid/mermaid.css?1515419482" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1515419482"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
