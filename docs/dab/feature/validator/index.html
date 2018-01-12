@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.31.1" />
+    <meta name="generator" content="Hugo 0.32.4" />
     <meta name="description" content="">
 <meta name="author" content="Ardhi Lukianto &lt;ardhi@lukianto.com&gt;">
 
@@ -13,24 +13,28 @@
     <title>Validator :: Documentation</title>
     
     
-    <link href="/css/nucleus.css?1515419482" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1515419482" rel="stylesheet">
-    <link href="/css/hybrid.css?1515419482" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1515419482" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1515419482" rel="stylesheet">
-    <link href="/css/auto-complete.css?1515419482" rel="stylesheet">
-    <link href="/css/theme.css?1515419482" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1515419482" rel="stylesheet">
+    <link href="/css/nucleus.css?1515740312" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1515740312" rel="stylesheet">
+    <link href="/css/hybrid.css?1515740312" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1515740312" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1515740312" rel="stylesheet">
+    <link href="/css/auto-complete.css?1515740312" rel="stylesheet">
+    <link href="/css/theme.css?1515740312" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1515740312" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1515419482" rel="stylesheet">
+      <link href="/css/theme-blue.css?1515740312" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1515419482"></script>
+    <script src="/js/jquery-2.x.min.js?1515740312"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -52,14 +56,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1515419482"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1515419482"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1515740312"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1515740312"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.rappopo.com\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1515419482"></script>
+<script type="text/javascript" src="/js/search.js?1515740312"></script>
 
     
   </div>
@@ -165,6 +169,25 @@
  
   
     
+      <li data-nav-id="/dab/feature/sort/" title="Sort Order" class="dd-item ">
+        <a href="/dab/feature/sort/">
+        Sort Order
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/dab/feature/sanitizer/" title="Sanitizer" class="dd-item ">
         <a href="/dab/feature/sanitizer/">
         Sanitizer
@@ -225,6 +248,8 @@
       
         <ul>
           
+          
+            
           
           
           
@@ -1706,6 +1731,387 @@
         
 
 
+<p>Validation is a way to validate document. That being said, for example, if a column is declared to be an email, it should also have correct format.</p>
+
+<p>DAB <strong>won&rsquo;t</strong> automatically validate a document. You must execute it manually using <a href="/dab/method/misc/validate-doc/"><code>dab.validateDoc()</code></a> call.</p>
+
+<p>DAB will try to validate document if:</p>
+
+<ul>
+<li>Its schema collection (i.e: <code>attributes</code>) isn&rsquo;t empty</li>
+<li>Explicitly defined in <code>validator</code> options</li>
+</ul>
+
+<p><code>dab.validateDoc()</code> is a synchronous function. It&rsquo;ll return an Error if it fails to validate and <code>null</code> otherwise. More on this please <a href="/dab/method/misc/validate-doc/">click here</a></p>
+
+<p>Example:</p>
+
+<pre><code class="language-javascript">...
+dab.createCollection({
+  name: 'users',
+  attributes: {
+    username: { 
+      type: 'string', 
+      validator: { 
+        required: true, 
+        isAlpha: true 
+      }
+    },
+    name: { 
+      type: 'string', 
+      validator: { 
+      	required: true,
+      	isAlphanumeric: true
+      }
+    },
+    gender: { 
+      type: 'boolean'
+    },
+    birth_date: { 
+      type: 'date', 
+      validator: { 
+        isBefore: ['2000-01-01', 'YYYY-MM-DD'] 
+      }
+    },
+    email: { 
+      type: 'string', 
+      validator: {
+      	required: true, 
+        isEmail: true
+      }
+    }
+    ...
+  }
+})
+...
+
+</code></pre>
+
+<p>From the example above:</p>
+
+<ul>
+<li><code>username</code> can&rsquo;t be left blank and must contain letters only</li>
+<li><code>name</code> is required and must contain letters and numbers only</li>
+<li><code>gender</code> can be empty (<code>null</code>). If it&rsquo;s not empty, it must be a boolean value (1, true, 0, false)</li>
+<li><code>birth_date</code> can be left empty. If not, it must be before January 1st 2000 and use &lsquo;YYYY-MM-DD&rsquo; format</li>
+<li><code>email</code> is required and must be in correct format</li>
+</ul>
+
+<p>All <a href="https://github.com/chriso/validator.js#validators">validator.js method</a> are supported:</p>
+
+<table>
+<thead>
+<tr>
+<th>Validator</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>contains: &quot;&lt;seed&gt;&quot;</code></td>
+<td>Check if value contains the seed</td>
+</tr>
+
+<tr>
+<td><code>equals: &quot;&lt;comparison&gt;&quot;</code></td>
+<td>Check if value matches the comparison</td>
+</tr>
+
+<tr>
+<td><code>isAfter: true</code> or <code>isAfter: [&lt;dt&gt;, &lt;format&gt;]</code></td>
+<td>Check if value is a date that&rsquo;s after <code>now</code> or after <code>dt</code> in moment.js specified format</td>
+</tr>
+
+<tr>
+<td><code>isAlpha: true</code> or <code>isAlpha: &quot;&lt;locale&gt;&quot;</code></td>
+<td>Check if value contains only letters (a-zA-Z) in <code>en-US</code> or <a href="https://github.com/chriso/validator.js#validators">specific locale</a></td>
+</tr>
+
+<tr>
+<td><code>isAlphanumeric: true</code> or <code>isAlphanumeric: &quot;&lt;locale&gt;&quot;</code></td>
+<td>Check if value contains only letters and numbers in <code>en-US</code> or <a href="https://github.com/chriso/validator.js#validators">specific locale</a></td>
+</tr>
+
+<tr>
+<td><code>isAscii: true</code></td>
+<td>Check if value contains ASCII chars only</td>
+</tr>
+
+<tr>
+<td><code>isBase64: true</code></td>
+<td>Check if value is base64 encoded</td>
+</tr>
+
+<tr>
+<td><code>isBefore: true</code> or <code>isBefore: [&lt;dt&gt;, &lt;format&gt;]</code></td>
+<td>Check if value is a date that&rsquo;s before <code>now</code> or before <code>dt</code> in moment.js specified format</td>
+</tr>
+
+<tr>
+<td><code>isBoolean: true</code></td>
+<td>Check if a string is a boolean</td>
+</tr>
+
+<tr>
+<td><code>isByteLength: {...}</code></td>
+<td>Check if value&rsquo;s length (in UTF-8 bytes) falls in a range. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isCreditCard: true</code></td>
+<td>Check if value is a credit card</td>
+</tr>
+
+<tr>
+<td><code>isCurrency: true</code> or <code>isCurrency: {...}</code></td>
+<td>Check if value is a valid currency amount. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isDataURI: true</code></td>
+<td>Check if value is a data uri format</td>
+</tr>
+
+<tr>
+<td><code>isDecimal: true</code> or <code>isDecimal: {...}</code></td>
+<td>Check if value represents a decimal number. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isDivisibleBy: &lt;number&gt;</code></td>
+<td>Check if value is a number that&rsquo;s divisible by another</td>
+</tr>
+
+<tr>
+<td><code>isEmail: true</code> or <code>isEmail: {...}</code></td>
+<td>Check if value is an email. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isEmpty: true</code></td>
+<td>Check if value has a length of zero</td>
+</tr>
+
+<tr>
+<td><code>isFQDN: true</code> or <code>isFQDN: {...}</code></td>
+<td>Check if value is a fully qualified domain name. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isFloat: true</code> or <code>isFloat: {...}</code></td>
+<td>Check if value is a float. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isFullWidth: true</code></td>
+<td>Check if value contains any full-width chars</td>
+</tr>
+
+<tr>
+<td><code>isHalfWidth: true</code></td>
+<td>Check if value contains any half-width chars</td>
+</tr>
+
+<tr>
+<td><code>isHash: &quot;&lt;algorithm&gt;&quot;</code></td>
+<td>Check if value is a hash of type algorithm. <a href="https://github.com/chriso/validator.js#validators">More on algorithm</a></td>
+</tr>
+
+<tr>
+<td><code>isHexColor: true</code></td>
+<td>Check if value is a hexadecimal color</td>
+</tr>
+
+<tr>
+<td><code>isHexadecimal: true</code></td>
+<td>Check if value is a hexadecimal number</td>
+</tr>
+
+<tr>
+<td><code>isIP: true</code> or <code>isIP: &quot;&lt;version&gt;&quot;</code></td>
+<td>Check if value is an IP. <code>version</code> = 4 or 6</td>
+</tr>
+
+<tr>
+<td><code>isISBN: true</code> or <code>isISBN: &quot;&lt;version&gt;&quot;</code></td>
+<td>Check if value is an ISBN. <code>version</code> = 10 or 13</td>
+</tr>
+
+<tr>
+<td><code>isISSN: true</code> or <code>isISSN: {...}</code></td>
+<td>Check if value is an ISSN. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isISIN: true</code></td>
+<td>Check if value is an ISIN (stock/security identifier)</td>
+</tr>
+
+<tr>
+<td><code>isISO8601: true</code></td>
+<td>Check if value is a valid ISO 8601 date</td>
+</tr>
+
+<tr>
+<td><code>isISO31661Alpha2: true</code></td>
+<td>Check if value is a valid ISO 3166-1 alpha-2 officially assigned country code</td>
+</tr>
+
+<tr>
+<td><code>isISRC: true</code></td>
+<td>Check if value is a ISRC</td>
+</tr>
+
+<tr>
+<td><code>isIn: [...]</code></td>
+<td>Check if value is in a array of allowed values</td>
+</tr>
+
+<tr>
+<td><code>isInteger: true</code> or <code>isInteger: {...}</code></td>
+<td>Check if value is an integer. <a href="https://github.com/chriso/validator.js#validators">More on algorithm</a></td>
+</tr>
+
+<tr>
+<td><code>isJSON: true</code></td>
+<td>Check if value is valid JSON</td>
+</tr>
+
+<tr>
+<td><code>isLatLong: true</code></td>
+<td>Check if value is a valid latitude-longitude coordinate in the format <code>lat,long</code> or <code>lat, long</code></td>
+</tr>
+
+<tr>
+<td><code>isLength: {...}</code></td>
+<td>Check if value&rsquo;s length falls in a range. <a href="https://github.com/chriso/validator.js#validators">More on algorithm</a></td>
+</tr>
+
+<tr>
+<td><code>isLowercase: true</code></td>
+<td>Check if value is lowercase</td>
+</tr>
+
+<tr>
+<td><code>isMACAddress: true</code></td>
+<td>Check if value is a MAC address</td>
+</tr>
+
+<tr>
+<td><code>isMD5: true</code></td>
+<td>Check if value is a MD5 hash</td>
+</tr>
+
+<tr>
+<td><code>isMimeType: true</code></td>
+<td>Check if value matches to a valid MIME type format</td>
+</tr>
+
+<tr>
+<td><code>isMobilePhone: &quot;&lt;locale&gt;&quot;</code></td>
+<td>Check if value is a mobile phone number. <a href="https://github.com/chriso/validator.js#validators">More on locale</a></td>
+</tr>
+
+<tr>
+<td><code>isMongoId: true</code></td>
+<td>Check if value is a valid hex-encoded representation of a MongoDB ObjectId</td>
+</tr>
+
+<tr>
+<td><code>isMultibyte: true</code></td>
+<td>Check if value contains one or more multibyte chars</td>
+</tr>
+
+<tr>
+<td><code>isNumeric: true</code></td>
+<td>Check if value contains only numbers</td>
+</tr>
+
+<tr>
+<td><code>isPort: true</code></td>
+<td>Check if value is a valid port number</td>
+</tr>
+
+<tr>
+<td><code>isPostalCode: &quot;&lt;locale&gt;&quot;</code></td>
+<td>Check if value is a postal code. <a href="https://github.com/chriso/validator.js#validators">More on locale</a></td>
+</tr>
+
+<tr>
+<td><code>isSurrogatePair: true</code></td>
+<td>Check if value contains any surrogate pairs chars</td>
+</tr>
+
+<tr>
+<td><code>isURL: true</code> or <code>isURL: {...}</code></td>
+<td>Check if value is an URL. <a href="https://github.com/chriso/validator.js#validators">More on options</a></td>
+</tr>
+
+<tr>
+<td><code>isUUID: true</code> or <code>isUUID: &quot;&lt;version&gt;&quot;</code></td>
+<td>Check if value is a UUID. <code>version</code> = 3, 4, or 5</td>
+</tr>
+
+<tr>
+<td><code>isUppercase: true</code></td>
+<td>Check if value is uppercase</td>
+</tr>
+
+<tr>
+<td><code>isVariableWidth: true</code></td>
+<td>Check if value contains a mixture of full and half-width chars</td>
+</tr>
+
+<tr>
+<td><code>isWhitelisted: &quot;&lt;chars&gt;&quot;</code></td>
+<td>Checks characters if they appear in the whitelist</td>
+</tr>
+
+<tr>
+<td><code>matches: &lt;pattern&gt;</code> or `matches: [<pattern>, <modifier>]</td>
+<td>Check if string matches the pattern. <a href="https://github.com/chriso/validator.js#validators">More on pattern &amp; modifier</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>Furthermore, basic validators and a few built-in validators that injected automatically by attribute types:</p>
+
+<table>
+<thead>
+<tr>
+<th>Validator</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>required: true</code></td>
+<td>Check if value is not empty</td>
+</tr>
+
+<tr>
+<td><code>isDate: true</code> or <code>isDate: &quot;&lt;format&gt;&quot;</code></td>
+<td>Check if value is a date or value in moment.js specific format</td>
+</tr>
+
+<tr>
+<td><code>isDatetime: true</code> or <code>isDatetime: &quot;&lt;format&gt;&quot;</code></td>
+<td>Check if value is a datetime or value in moment.js specific format</td>
+</tr>
+
+<tr>
+<td><code>isObject: true</code></td>
+<td>Check if value is an object</td>
+</tr>
+
+<tr>
+<td><code>isArray: true</code></td>
+<td>Check if value is an array</td>
+</tr>
+</tbody>
+</table>
 
 
 <footer class=" footline" >
@@ -1828,6 +2234,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1856,40 +2278,10 @@
 
                     
                     
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2063,6 +2455,70 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -2944,20 +3400,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1515419482"></script>
-    <script src="/js/perfect-scrollbar.min.js?1515419482"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1515419482"></script>
-    <script src="/js/jquery.sticky.js?1515419482"></script>
-    <script src="/js/featherlight.min.js?1515419482"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1515419482"></script>
-    <script src="/js/highlight.pack.js?1515419482"></script>
+    <script src="/js/clipboard.min.js?1515740312"></script>
+    <script src="/js/perfect-scrollbar.min.js?1515740312"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1515740312"></script>
+    <script src="/js/jquery.sticky.js?1515740312"></script>
+    <script src="/js/featherlight.min.js?1515740312"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1515740312"></script>
+    <script src="/js/highlight.pack.js?1515740312"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1515419482"></script>
-    <script src="/js/learn.js?1515419482"></script>
-    <script src="/js/hugo-learn.js?1515419482"></script>
+    <script src="/js/modernizr.custom.71422.js?1515740312"></script>
+    <script src="/js/learn.js?1515740312"></script>
+    <script src="/js/hugo-learn.js?1515740312"></script>
 
-    <link href="/mermaid/mermaid.css?1515419482" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1515419482"></script>
+    <link href="/mermaid/mermaid.css?1515740312" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1515740312"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

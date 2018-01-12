@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>beforeValidate :: Documentation</title>
+    <title>Sort Order :: Documentation</title>
     
     
     <link href="/css/nucleus.css?1515740312" rel="stylesheet">
@@ -39,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/bdez/model/hook/before-validate/">
+  <body class="" data-url="/dab/feature/sort/">
     <nav id="sidebar" class="">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/dab/" title="DAB" class="dd-item 
-        
+        parent
         
         
         ">
@@ -145,7 +145,7 @@
   
     
     <li data-nav-id="/dab/feature/" title="Features" class="dd-item 
-        
+        parent
         
         
         ">
@@ -169,7 +169,7 @@
  
   
     
-      <li data-nav-id="/dab/feature/sort/" title="Sort Order" class="dd-item ">
+      <li data-nav-id="/dab/feature/sort/" title="Sort Order" class="dd-item active">
         <a href="/dab/feature/sort/">
         Sort Order
         
@@ -820,7 +820,7 @@
   
     
     <li data-nav-id="/bdez/" title="BDEZ" class="dd-item 
-        parent
+        
         
         
         ">
@@ -847,7 +847,7 @@
   
     
     <li data-nav-id="/bdez/model/" title="Model" class="dd-item 
-        parent
+        
         
         
         ">
@@ -874,7 +874,7 @@
   
     
     <li data-nav-id="/bdez/model/hook/" title="Hooks" class="dd-item 
-        parent
+        
         
         
         ">
@@ -898,7 +898,7 @@
  
   
     
-      <li data-nav-id="/bdez/model/hook/before-validate/" title="beforeValidate" class="dd-item active">
+      <li data-nav-id="/bdez/model/hook/before-validate/" title="beforeValidate" class="dd-item ">
         <a href="/bdez/model/hook/before-validate/">
         beforeValidate
         
@@ -1752,13 +1752,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Documentation</a> > <a href='/bdez/'>BDEZ</a> > <a href='/bdez/model/'>Model</a> > <a href='/bdez/model/hook/'>Hooks</a> > beforeValidate
-          
-         
+            <a href='/'>Documentation</a> > <a href='/dab/'>DAB</a> > <a href='/dab/feature/'>Features</a> > Sort Order
           
          
           
@@ -1772,7 +1766,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#as-string">As String</a></li>
+<li><a href="#as-array">As Array</a></li>
+<li><a href="#as-object">As Object</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -1784,15 +1787,68 @@
         
         <div id="body-inner">
           
-            <h1>beforeValidate</h1>
+            <h1>Sort Order</h1>
           
 
         
 
 
-<blockquote>
-<p><strong>beforeValidate (body, params)</strong></p>
-</blockquote>
+
+
+<p>To get a sorted result on <a href="/dab/method/find/">find()</a>, you can put <code>sort</code> option as parameter. The following rules apply:</p>
+
+<h2 id="as-string">As String</h2>
+
+<p>This is the most simplest one: put the column name to sort on that column. E.g:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: 'name' })
+</code></pre>
+
+<p>To sort on multiple columns, use comma &ldquo;,&rdquo; as separator. Like this:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: 'name, age' })
+</code></pre>
+
+<p>What about sort direction? Easy peasy:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: 'name asc, age desc' })
+</code></pre>
+
+<h2 id="as-array">As Array</h2>
+
+<p>You can also put sort option as array, like these examples below:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: ['name'] })
+dab.find({ sort: ['name', 'age'] })
+</code></pre>
+
+<p>For sort order, wrap it as object and make the column name as the key while the direction being its value:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: [
+  { name: 'asc' },
+  { age: 'desc' }
+] })
+</code></pre>
+
+<p>You can also use MongoDB-like syntax for sort order: 1 for ascending, -1 for descending order. You may also mix and match any style above:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: [
+  'name',
+  { age: -1 },
+  { gender: 'asc' }
+] })
+</code></pre>
+
+<h2 id="as-object">As Object</h2>
+
+<p>The preferred way to express sort order in Dab. Clean &amp; expressive:</p>
+
+<pre><code class="language-javascript">dab.find({ sort: {
+  name: 1,
+  age: -1,
+  gender: 'asc'
+}} )
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1831,8 +1887,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1848,6 +1902,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1880,6 +1937,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1894,6 +1952,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1909,6 +1968,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2398,7 +2460,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2413,7 +2474,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -2430,7 +2490,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2443,7 +2502,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -2460,9 +2518,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -3067,10 +3122,10 @@
 
 
         
-            <a class="nav nav-prev" href="/bdez/model/hook/" title="Hooks"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/dab/feature/" title="Features"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/bdez/model/hook/after-validate/" title="afterValidate" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/dab/feature/sanitizer/" title="Sanitizer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

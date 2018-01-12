@@ -17,8 +17,8 @@
       <pubDate>Mon, 08 Jan 2018 20:37:29 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab-project/library/</guid>
-      <description>While each and every DAB implementation library share the same methods, its init options might not. Therefore, please refer to its accompaniying document instead:
- @rappopo/dab-couch for CouchDB 2.0 and above @rappopo/dab-es for Elasticsearch @rappopo/dab-knex for KnexJS @rappopo/dab-memory a custom lodash based memory database @rappopo/dab-mongo for MongoDB @rappopo/dab-ne for NeDB @rappopo/dab-pouch for PouchDB @rappopo/dab-redis for Redis  </description>
+      <description>While each and every DAB implementation library share the same methods &amp;amp; features, its init options might not. Therefore, please refer to its accompaniying document instead:
+   Library DAB Ver. DB Driver Note     @rappopo/dab-memory 0.5.1 Lodash 4.17    @rappopo/dab-mongo 0.5.1 MongoDB 3.x    @rappopo/dab-knex 0.5.1 KnexJS 0.14    @rappopo/dab-pouch 0.5.1 PouchDB 6.3 IndexDB only   @rappopo/dab-couch 0.0.11 Nano 6.</description>
     </item>
     
     <item>
@@ -72,8 +72,8 @@ Setup as a Library Go to your node.</description>
       <description>find (params)
  Query specific document from selected database using MongoDB-like query language.
 Arguments Params (required) As parameter, pass the following object:
- collection: Required, the name of collection you want to work with. query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as an array of object. Optional. Example:
-[{ name: &#39;asc&#39;, age: &#39;desc&#39; }]  limit: max. number of documents in one page.</description>
+ collection: Required, the name of collection you want to work with. query: query in MongoDB-style query syntax. Optional, defaults to: {} (match all). sort: sort order, as a string, array or object. Optional. Example:
+{ name: 1, age: -1 }  limit: max. number of documents in one page.</description>
     </item>
     
     <item>
@@ -682,12 +682,36 @@ ns: your namespace. You&amp;rsquo;ll most likely want to give a custom name, oth
     </item>
     
     <item>
+      <title>validateDoc</title>
+      <link>https://docs.rappopo.com/dab/method/misc/validate-doc/</link>
+      <pubDate>Fri, 12 Jan 2018 13:03:15 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/method/misc/validate-doc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sort Order</title>
+      <link>https://docs.rappopo.com/dab/feature/sort/</link>
+      <pubDate>Fri, 12 Jan 2018 06:07:45 +0700</pubDate>
+      
+      <guid>https://docs.rappopo.com/dab/feature/sort/</guid>
+      <description>To get a sorted result on find(), you can put sort option as parameter. The following rules apply:
+As String This is the most simplest one: put the column name to sort on that column. E.g:
+dab.find({ sort: &#39;name&#39; })  To sort on multiple columns, use comma &amp;ldquo;,&amp;rdquo; as separator. Like this:
+dab.find({ sort: &#39;name, age&#39; })  What about sort direction? Easy peasy:
+dab.find({ sort: &#39;name asc, age desc&#39; })  As Array You can also put sort option as array, like these examples below:</description>
+    </item>
+    
+    <item>
       <title>Sanitizer</title>
       <link>https://docs.rappopo.com/dab/feature/sanitizer/</link>
       <pubDate>Mon, 08 Jan 2018 19:39:39 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/feature/sanitizer/</guid>
-      <description></description>
+      <description>Every document that goes to the database need to be sanitized first. This is to ensure that the document is properly saved according its schema definition.
+If schema collection is provided (i.e: attributes isn&amp;rsquo;t empty), then on every create() and update() operation the body parameter is automatically sanitized:
+ According to its type: boolean, date, datetime, float, and integer will automatically sanitized using its related sanitizer. According to its sanitizer definition below.</description>
     </item>
     
     <item>
@@ -696,7 +720,10 @@ ns: your namespace. You&amp;rsquo;ll most likely want to give a custom name, oth
       <pubDate>Mon, 08 Jan 2018 19:39:31 +0700</pubDate>
       
       <guid>https://docs.rappopo.com/dab/feature/validator/</guid>
-      <description></description>
+      <description>Validation is a way to validate document. That being said, for example, if a column is declared to be an email, it should also have correct format.
+DAB won&amp;rsquo;t automatically validate a document. You must execute it manually using dab.validateDoc() call.
+DAB will try to validate document if:
+ Its schema collection (i.e: attributes) isn&amp;rsquo;t empty Explicitly defined in validator options  dab.validateDoc() is a synchronous function. It&amp;rsquo;ll return an Error if it fails to validate and null otherwise.</description>
     </item>
     
   </channel>

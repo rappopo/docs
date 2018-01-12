@@ -267,6 +267,11 @@
   </url>
   
   <url>
+    <loc>https://docs.rappopo.com/dab/method/misc/</loc>
+    <lastmod>2018-01-12T13:02:59+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://docs.rappopo.com/bdez/model/hook/after-bulk-remove/</loc>
     <lastmod>2018-01-08T09:56:01+07:00</lastmod>
   </url>
@@ -334,6 +339,16 @@
   <url>
     <loc>https://docs.rappopo.com/bdez/model/method/copy-to/</loc>
     <lastmod>2018-01-08T09:53:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/method/misc/validate-doc/</loc>
+    <lastmod>2018-01-12T13:03:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.rappopo.com/dab/feature/sort/</loc>
+    <lastmod>2018-01-12T06:07:45+07:00</lastmod>
   </url>
   
   <url>
